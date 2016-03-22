@@ -1,2 +1,2 @@
-# hk-skit.github.io
+# Code Pulses
 An ordinary blog with extra ordinary code...
