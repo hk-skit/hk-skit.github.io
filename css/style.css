@@ -1,0 +1,8 @@
+body{
+    background-image: url('images/background.png');
+    background-repeat: repeat;  
+}
+.site-titlenbt{
+    color: #49352f;
+    font-family: "Comic Sans MS", "Times New Roman", serif;
+ }
