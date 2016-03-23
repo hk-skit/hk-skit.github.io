@@ -1,0 +1,15 @@
+{
+    "name": "Code Pulses",
+    "version": "1.0.0",
+    "authors": [
+        "Hitesh Kumar"
+    ],
+    "license": "Copyright © 2016 Unknown :)",
+    "private": true,
+    "dependencies": {
+        "angular": "~1.4.9"
+    },
+    "resolutions": {
+        "angular": "~1.4.9"
+    }
+}
