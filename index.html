@@ -1,30 +1,76 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Code Pulses</title>
+
     <meta charset="utf-8">
+    <title>Code Pluses| A Blog for programmers</title>
+
+    <!-- Behavioral Meta Data -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--TODO: Change title icon here-->
+    <link rel="icon" type="image/png" href="css/images/title-logo.jpg" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
 </head>
 
-<body>
-    <!--HEADER-->
-    <header class="site-titlenbt">
-        <h1>Code Pulses</h1>
-        <p>Paint smile on every face you meet & make the world a better place...</p>
-    </header>
-    <!--SECTION-->
-    <section>
+<body ng-app="app">
 
+    <!-- Header -->
+
+    <header class="primary-header container group">
+
+        <h1 class="logo">
+        <a href="#/"><strong>Code <br> Pulses<strong></a>
+      </h1>
+
+        <h3 class="tagline">Let's play the code string.</h3>
+
+        <nav class="nav primary-nav">
+            <ul>
+                <li><a href="#/">Home</a></li>
+
+                <li><a href="#/about">About</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!--All the views for ng-view will be loaded here.-->
+    <section>
+        <div ng-view></div>
     </section>
-    <!--FOOTER-->
-    <footer>
+
+    <!-- Footer -->
+
+    <footer class="primary-footer container group">
+
+        <small>&copy; Code Pulses</small>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#/">Home</a></li>
+
+                <li><a href="#/about">About</a></li>
+
+            </ul>
+        </nav>
 
     </footer>
-    
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-    
+
+    <script type="text/javascript" src="api/angular.min.js"></script>
+    <script type="text/javascript" src="api/angular-route.min.js"></script>
+
+    <!--Scripts-->
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/configuration/config.js"></script>
+
+    <!--Controllers-->
+    <script type="text/javascript" src="js/controllers/HomeController.js"></script>
+    <script type="text/javascript" src="js/controllers/AboutController.js"></script>
+
 </body>
 
 </html>
