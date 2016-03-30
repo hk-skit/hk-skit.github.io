@@ -266,11 +266,11 @@ p a {
   font-weight: 100;
   letter-spacing: .5px;
   line-height: 44px;
-  padding: 40px 0 22px 0;
+  padding: 15px 0 0 0;
   text-transform: uppercase;
 }
 .tagline {
-  margin: 66px 0 22px 0;
+  margin: 20px 0 22px 0;
   text-align: right;
 }
 .primary-nav {
@@ -289,8 +289,8 @@ p a {
 .primary-footer {
   color: #648880;
   font-size: 14px;
-  padding-bottom: 44px;
-  padding-top: 44px;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 .primary-footer small {
   float: left;
@@ -491,3 +491,84 @@ textarea {
 .register-group textarea {
   height: 78px;
 }
+
+
+
+.profile-container {
+  width: 284px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  float: left;
+}
+
+.user-image-container {
+  float: left;
+  width: 100%;
+  height:95px;
+  margin-top:113px; 
+}
+
+.user-photo-div{
+  width:95px; 
+  height:95px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-photo{
+  width: 95px;
+    height: 95px;
+    border-radius: 50%;
+}
+
+.user-profile-header{
+  width: 100%;
+   padding-top:80px;
+}
+
+.semi-transprant-black {
+  width: 100%;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .67), transparent);
+  background-image: linear-gradient(bottom, rgba(0, 0, 0, .67), transparent);
+}
+
+.profile-info-container {
+  width: 100%;
+  padding-top:47px;
+  padding-bottom: 14px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+
+.user-name-container {
+  padding-left: 14px;
+  padding-right: 14px;
+  font: normal 18px Roboto, arial, sans-serif;
+  overflow: hidden;
+  white-space: normal;
+  line-height: 22px;
+  max-height: 45px;
+  padding-top: 11px;
+}
+
+.user-name {
+  text-decoration: none;
+  color: #262626
+}
+
+.user-role {
+  color: #737373;
+  padding-left: 14px;
+  padding-right: 14px;
+  font: normal 12px Roboto, arial, sans-serif;
+  overflow: hidden;
+  white-space: normal;
+  line-height: 14px;
+  max-height: 28px;
+  padding-top: 11px;
+}
+
