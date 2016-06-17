@@ -1,0 +1,16 @@
+[
+  {
+    "tag": "travel",
+    "thumbnail": "coorg-thumbnail.png",
+    "title": "A Walk to Coord & Mysore",
+    "url": "coorg",
+    "summary": "Coorg is of the must visit places in India. When I was in Bangluru I went to Coorg with my colleague Vikas."
+  },
+  {
+    "tag": "javascript",
+    "thumbnail": "coorg-thumbnail.png",
+    "title": "Dilemma of \"this\" keyword",
+    "url": "dilemma-of-this",
+    "summary": "JavaScript's \"this\" keyword is most widley used and misunderstood keyword. It's because people compare it's behaviour with high level object oriented language."
+  }
+]

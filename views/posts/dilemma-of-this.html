@@ -1,0 +1,88 @@
+<div class="content">
+  <div class="wrap">
+    <div class="single-page">
+      <div class="single-page-artical">
+        <div class="artical-content">
+          <img src="images/single-post-pic.jpg" title="Dilemma of this keyword">
+          <h2><a>Dilemma of "this" keyword</a></h2>
+          <p>
+            'this' keyword of javascript almost haunts every programmer whether he is novice or experienced. 'this' changes it's behaviour the way a chamelon changes it's color. When you'll dive into this post you'll know why I said so. Why 'this' is a weirdo, but once you understand it's eccentric behaviour you will find it very handy to use and comprehend. Almost an year ago, when I started learning javascript, 'this' keyword confused me a lot. But after satying with it for longer run, I finally acquianted myself with it. In this blog I am writing whatever I have learned and observed reagrding to this keyword so far. There might be stuff with that you may agree or disagree, you can post your thoughts in the comment section below. This is my very first techincal post. I hope it will be helpful. So let's start.
+          </p>
+          Javascript's 'this' is completely different from other Object Oriented Languages. In Object Oriented Languages like Java, C#, 'this' refers to the current instance of the class. While in javascript, 'this' refers to the context of invocation and where it is called. The value of this is determined by invocation pattern. As Douglous Crockford explained in Javascript: The Good Part, There are four patterns of invocation:
+          <ul>
+            <li> Method Invocation pattern: function is called using an object reference. </li>
+            <li> Function invocation pattern: simple function call. </li>
+            <li> Constructor invocation pattern: Function is called using new. </li>
+            <li> Apply invocation pattern: Function is called using call, apply, bind. </li>
+          </ul>
+          So behaviour of this varies with invocation patterns. We will discuss invocation patterns briefly along with this and see how behaviour of this varies with this patterns. An invocation pattern as a way of calling a function. There are four ways in which you can call a function. Value of 'this' mainly depends on these invocation patterns. a) With Function Invocation Pattern(Global Context or Context-free): When a function is not a property of an object then it is invoked as a function:
+          <div>
+            var tweets=loadTweet();
+          </div>
+          Look at examples below and try to guess they logs.
+          <div>
+            Ex1:
+            <br>function helloThis(){
+            <br>console.log(this);
+            <br>}
+            <br>helloThis();
+            <br>Ex2:
+            <br>(function(){
+            <br>console.log(this);
+            <br>}());
+            <br> Ex3:
+            <br>(function(){
+            <br> function helloThis(){
+            <br>console.log(this);
+            <br> } helloThis();
+            <br> }());
+          </div>
+          You will be surprised to know that in all the three above cases the output is same i.e. Window object is logged. In all three cases value of this is bound to global object. Whenever a function is invoked using function invocation pattern(the way calling a function directly without any context e.g.
+          <code>add(3,4))</code> it's 'this' bound to global object i.e. the window object. Unless and until you have 'use strict' statement in your script or on top of function. In case of use strict, this is undefined if the function is invoked using the function invocation pattern inside an annonymous function or directly in the script file. Let's try a couple of more example:
+          <div hljs no-escape>
+            Ex4:
+            <br> function
+            <br>Person(){
+            <br> function x(){
+            <br>console.log(this);
+            <br>}
+            <br>x();
+            <br> }
+            <br> var p=new Person();
+            <br>Ex5:
+            <br> var x={
+            <br>a:131,
+            <br> b:function(){
+            <br> function x(){
+            <br>console.log(this);
+            <br> }
+            <br> x();
+            <br>}
+            <br>};
+            <br> x.b();
+            <br> Ex6:
+            <br> var button=document.getElementById('myClick');
+            <br> button.addEventListener('click',function(e){
+            <br> function x(){
+            <br>console.log(this);
+            <br> } x();
+            <br> });
+          </div>
+          So far by looking at these examples one thing is clear that whenever a function is invoked using function invocation pattern it's 'this' refers to global object i.e. window object of browser(if 'use strict' is not used). b) Method invocation pattern(object-context): When a function is stored as a property of an object, it is called method. Whenever a method is called it's this is bound to it's object by which it is called. Eg.
+          <div>
+            Ex7: var x={ a: 12, b: function (){ console.log(this); } }; x.b();
+          </div>
+          Output: It logs this of object x. Once we understand context part of 'this' keyword then it becomes very easy to use it. the 'this' keyword of a function is always to bound to the context by which it is called. If there's no context(function invocation) then 'this' is bound to global object. Whenever I get confused with this keyword I always recall this line and the confusion is cleared. It's worth repeating: 'this' keyword of a function is always bound to the context by which it is called. If there's no context then 'this' is bound to global object. You can try it with any example. You will find that whatever I said always makes sense regardless of the situation you are in. Let's have some example which proves that whatever I said makes sense:
+          <div>
+            Ex8: var x={ a: 12, b: function (){ //refers the object using which b is called. //Here is called using x so this refers to x. console.log(this); function helloThis(){ //helloThis is called without any context. //So this is bound to global context. console.log(this); } helloThis(); } }; x.b();
+          </div>
+          Output: First log statment logs x while second log statement logs window object.
+          <div>
+            Ex9: var x={ a: 12, b: function (){ //refers the object using which b is called. //Here is called using x so this refers to x. console.log(this); function helloThis(){ //helloThis is called without any context. //So this is bound to global context. console.log(this); } helloThis(); }, c:{ d:12313, e:function(){ console.log(this); function sayThis(){ console.log(this); } sayThis(); } } }; x.c.e();
+          </div>
+          Output: First log inside e logs object c and second log logs window object. So we can see that it does not matter how much nested it becomes 'this' keyword of a function is always bound to the context by which it is called. If there's no context then 'this' is bound to global object. I will repeat this line till the end of this post cause it solves the dilemma of 'this'. c) Constructor invocation pattern: As return in Javascript good parts, Functions which are intended to be used with new prefix are called constructors. In javascript, we can call a function using the new create. In this case function plays the role of constructor. eg. var p = new Person(); Here Person is invoked as constructor which creates an object p. You might be wondering why we are discussing constructors here. To understand 'this' it is important to be familiar with constructor in javascript. If you are not familiar with constructor then don't worry I'll explain it briefly. In javascript, constructr are simliar to function but they are meant to create object. They are invoked with the new keyword. e.g Ex:10 function Singer(firstName,lastName){ this.firstName=firstName; this.lastName=lastName; this.toString=function(){ return this.firstName+' '+this.lastName; }; } var bruno=new Singer('Bruno', 'Mars'); console.log(bruno.toString());//Bruno Mars. Whenever a function is invoked with new keyword, a new object is created with a hidden link to the function's prototype member and this is bound to the new object. Here when we called Singer function using new a bruno object is created with the hidden link of prototypes of Singer and it's this is bound to bruno object. Ex:11 function Singer(firstName,lastName){ this.firstName=firstName; this.lastName=lastName; this.toString=function(){ console.log(this); function sayThis(){ console.log(this); } sayThis(); return this.firstName+' '+this.lastName; }; } var bruno=new Singer('Bruno', 'Mars'); bruno.toString(); first log logs bruno object and second console log logs window object. So now again you can see that 'this' keyword of a function is always bound to the context by which it is called. Now we'll see how this behaves when it is in event callback.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
