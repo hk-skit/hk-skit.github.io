@@ -525,6 +525,8 @@ header {
   font-weight: 400;
   padding: 0.9em 0 0;
   display: block;
+  /*Dont know why this is not working*/
+  font-family:'Monaco';
 }
 
 .artical-content p {
@@ -532,6 +534,11 @@ header {
   color: #9b9b9b;
   padding: 17px 0px;
   font-weight: 400;
+}
+
+.artical-content ol{
+  list-style-type: disc;
+  list-style-position: inside;
 }
 
 .artical-content img {
@@ -1522,5 +1529,12 @@ span.mail a:hover {
   }
 }
 
-
+code{
+  padding: 1px 5px;
+  background-color:#fDFDfD !important;
+  border: 1px solid #ddd;
+  border-width: 1px;
+  border-radius: 3px !important;
+  font-family: sans-serif;
+}
 /*--//End-media Quries for 320px-monitors-*/

@@ -7,7 +7,11 @@
 (function () {
   'use strict';
 
-  function Config($routeProvider, Pages) {
+  function Config($routeProvider, Pages, hljsServiceProvider) {
+
+hljsServiceProvider.setOptions({
+		colo: '#f7f7f7'
+	});
 
     //setting routes.
     function forEachPage(page) {
@@ -29,6 +33,7 @@
     requires = [
       '$routeProvider',
       'Pages',
+      'hljsServiceProvider',
       Config
     ];
   app.config(requires);
