@@ -516,24 +516,28 @@ header {
 
 /*----start-single-page----*/
 
-.artical-content {}
+.artical-content {
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
 
 .artical-content h3 a {
-  font: 400 28px/28px;
+  
   color: #626262;
   text-align: left;
-  font-weight: 400;
   padding: 0.9em 0 0;
   display: block;
   /*Dont know why this is not working*/
-  font-family:'Monaco';
+  
 }
 
 .artical-content p {
-  font: normal 16px/26px;
   color: #9b9b9b;
   padding: 17px 0px;
-  font-weight: 400;
 }
 
 .artical-content ol{
@@ -1535,6 +1539,12 @@ code{
   border: 1px solid #ddd;
   border-width: 1px;
   border-radius: 3px !important;
-  font-family: sans-serif;
+  
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
 }
 /*--//End-media Quries for 320px-monitors-*/
