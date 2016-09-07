@@ -1,57 +1,32 @@
-/*global angular*/
-(function (params) {
+(function(){
   'use strict';
-  angular.module('Codiary', ['ngRoute', 'ngResource', 'hljs']);
-}());
-
-(function () {
-  'use strict';
-
-  function Config($routeProvider, Pages, hljsServiceProvider) {
-
-hljsServiceProvider.setOptions({
-		colo: '#f7f7f7'
-	});
-
-    //setting routes.
-    function forEachPage(page) {
-      $routeProvider.when(page.url, {
-        templateUrl: page.templateUrl
+  
+  var app= angular.module('Codiary', [
+    
+    'ngRoute',
+    'ngCodiaryCore'
+    
+    ]);
+  
+  function config($routeProvider, Routes){
+    
+    
+    //configuring routes
+    function forEachRoute(route){
+      $routeProvider.when(route.url, {
+        templateUrl: route.templateUrl
       });
     }
-
-    angular.forEach(Pages, forEachPage);
-
+    
     //default route
     $routeProvider
       .otherwise({
         redirectTo: '/home'
       });
-
+    angular.forEach(Routes, forEachRoute);
+    
   }
-  var app = angular.module('Codiary'),
-    requires = [
-      '$routeProvider',
-      'Pages',
-      'hljsServiceProvider',
-      Config
-    ];
-  app.config(requires);
-}());
-
-(function () {
-  'use strict';
-
-  function run($rootScope, $location) {
-    $rootScope.isHome = function () {
-      return $location.path().indexOf('/home') !== -1;
-    };
-  }
-  var app = angular.module('Codiary'),
-    requires = [
-      '$rootScope',
-      '$location',
-      run
-    ];
-  app.run(requires);
+  
+  app.config(['$routeProvider','Routes', config]);
+  
 }());

@@ -1,88 +1,58 @@
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>Codiary : Diary of A Programmer</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
-  <link rel="stylesheet" href="vendor/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="vendor/tomorrow.min.css">
-</head>
-
-<body ng-app="Codiary">
-  <header>
-    <div class="wrap">
-      <!--Logo-->
+  <head>
+    <title>Codiary- Diary of a pragrammer</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body ng-app="Codiary">
+    <header>
       <div class="logo">
-        <a href="index.html"><img src="images/logo.png" title="Codiary" /></a>
+        <a href="#/home">
+        <img src="images/logo.png" height="32">  
+        </a>
       </div>
-
-      <div class="box" id="box">
-        <div class="menu_box_list" style="float:left; padding:0.5em 0;">
-          <ul>
-            <li><a href="#"><span>Image</span></a></li>
-            <li><a href="#"><span>Favourites</span></a></li>
-            <li><a href="contact.html"><span>Contact</span></a></li>
-          </ul>
-        </div>
-        <!--Search bar-->
-        <div class="top-searchbar" style="width:30%;" ng-if="isHome()">
-          <form name="search">
-            <input type="text" ng-model="search.title" />
-            <input type="submit" value="" />
-          </form>
-        </div>
-      </div>
-
-
-
-      <!--User Icon-->
-      <!--Make it a drop down-->
-      <div class="userinfo">
-        <div class="user">
-          <ul>
-            <li>
-              <a href="#"><img src="images/user-pic.png" title="Hitesh Kumar" /><span>Hitesh</span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
       <div class="clear"></div>
-    </div>
-  </header>
-
-  <section>
-    <div ng-view></div>
-  </section>
-
-  <footer>
-    <!--If required then footer content goes here-->
-    <div class="footer">
-      <p>Design by <a href="http://w3layouts.com/">W3layouts</a></p>
-    </div>
-  </footer>
-
-  <script type="text/javascript" src="vendor/jquery.min.js"></script>
-  <script type="text/javascript" src="vendor/bootstrap.min.js"></script>
-  <script type="text/javascript" src="vendor/highlight.js"></script>
-  <script type="text/javascript" src="vendor/angular.min.js"></script>
-  <script type="text/javascript" src="vendor/angular-route.min.js"></script>
-  <script type="text/javascript" src="vendor/angular-resource.min.js"></script>
-  <script type="text/javascript" src="vendor/angular-highlightjs.min.js"></script>
-
-  <script type="text/javascript" src="app.js"></script>
-  <!--Constants-->
-  <script type="text/javascript" src="scripts/constants/Pages.js"></script>
-  <!--Services-->
-  <script type="text/javascript" src="scripts/services/SourceLoader.js"></script>
-  <script type="text/javascript" src="scripts/directives/ngCodiaryPostTile.js"></script>
-  <!--Filters-->
-  <script type="text/javascript" src="scripts/filters/pascalCase.js"></script>
-  <!--Controllers-->
-  <script type="text/javascript" src="scripts/controllers/HomeController.js"></script>
-</body>
-
+      <nav class="links">
+        <ul>
+          <li>
+            <a href="#/album">Album</a>
+          </li>
+          <li>
+            <a href="#/about">About</a>
+          </li>
+          <li>
+            <a href="#/open-source-libs">Open Source Libs</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <section>
+      <div class="container">
+        <ng-view></ng-view>  
+      </div>
+    </section>
+    
+    <script type="text/javascript" src="vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/angular.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-route.min.js"></script>
+    
+    
+    <!--Module: ngCodiaryCore-->
+    <script type="text/javascript" src="modules/ngCodiaryCore.js"></script>
+    <!--ngCodiaryCore: services-->
+    <script type="text/javascript" src="modules/services/ApiService.js"></script>
+    <script type="text/javascript" src="modules/services/PostService.js"></script>
+    
+    <!--App: Codiary-->
+    <script type="text/javascript" src="app.js"></script>
+    
+    <!--Codiary: Constants-->
+    <script type="text/javascript" src="constants/Routes.js"></script>
+    
+    <!--Codiary: Controllers-->
+    <script type="text/javascript" src="controllers/HomeController.js"></script>
+    
+  </body>
 </html>
