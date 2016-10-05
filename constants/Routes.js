@@ -22,6 +22,10 @@
     'open-source-libs': {
       url: '/open-source-libs',
       templateUrl: 'views/open-source-libs.html'
+    },
+    'post-read':{
+      url:'/post-read/:postId',
+      templateUrl: 'views/post-read.html',
     }
   });
 }());
