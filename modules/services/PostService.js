@@ -14,6 +14,7 @@
   
   function PostService($q, $log, ApiService){
     
+    
     function loadPosts(){
     var deferred= $q.defer();
     ApiService.getPosts().then(function(response){
@@ -27,13 +28,27 @@
       }
     }, function(error){
       $log.error('Unable to retrieve posts.', error);
-      deferred.resolve(error);
+      deferred.reject(error);
     });
     return deferred.promise;
     }
     
+    
+    function loadPost(postId){
+      var deferred=$q.defer();
+      ApiService.getPost(postId).then(function(response){
+        deferred.resolve(response.data);
+      }, function(error){
+      $log.error('Unable to retrieve posts.', error);
+      deferred.reject(error);
+    });
+    return deferred.promise;
+    }
+    
+    
     return{
-      loadPosts: loadPosts
+      loadPosts: loadPosts,
+      loadPost:loadPost
     };
   }
   

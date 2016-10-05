@@ -1,3 +1,12 @@
-<div ng-controller="PostReadController">
-  'Blah blah blah'
+<div ng-controller="PostReadController" class="post-read">
+  
+  <div class="post-read-header">
+
+      <img ng-src="{{ post['header-image'] }}" alt="">  
+      
+      <h2 ng-bind="post.title"></h2>
+  </div>
+  <div class="post-read-content">
+    <p ng-bind="post.content"></p>
+  </div>
 </div>

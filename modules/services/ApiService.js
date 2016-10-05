@@ -8,13 +8,20 @@
     
     function ApiService($http){
       
-      var postApi= 'assets/posts.json';
+      var assetApi= 'assets/';
       
       function getPosts(){
-        return $http.get(postApi);
+        return $http.get(assetApi+'posts.json');
       }
+      
+      
+      function getPost(postId){
+        return $http.get(assetApi+postId+'.json');
+      }
+      
       return {
-        getPosts: getPosts
+        getPosts: getPosts,
+        getPost:getPost
       };
     }
     
