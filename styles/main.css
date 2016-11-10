@@ -1,0 +1,115 @@
+body {
+  width: 100%;
+  background: #F7F7F7;
+  padding: 0;
+  margin: 0;
+  font-family: 'Bree Serif', serif;
+  color: #333333;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: tomato;
+}
+
+.main-header {
+  background: white;
+  box-shadow: 0px 1px 10px rgba(33, 33, 33, 0.3);
+  text-align: center;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.main-header .navigation {
+  flex-grow: 1;
+}
+
+.logo,
+ul {
+  margin: 0;
+}
+
+.logo {
+  padding: 0.25em 1em;
+  font-family: 'Rochester', cursive;
+  position: absolute;
+  font-size: xx-large;
+}
+
+.navigation ul {
+  padding: 1em 0;
+}
+
+.navigation li {
+  display: inline-block;
+}
+
+.navigation a {
+  margin: 1.4em 1.4em;
+  font-size: 1.4em;
+}
+
+.navigation a::after {
+  color: tomato;
+  border: 2px solid tomato;
+  border-radius: 50%;
+  content: '';
+  width: 0.3em;
+  height: 0.3em;
+  margin: 0.6em 1.4em;
+  position: absolute;
+  background: tomato;
+}
+
+.navigation li:last-child a::after {
+  display: none;
+}
+
+.active {
+  color: tomato;
+}
+
+.container {
+  width: 90%;
+  margin: 1em auto;
+}
+
+.about {
+  background: white;
+  display: flex;
+  font-family: 'Rochester', cursive;
+  font-size: 1.7em;
+  align-content: center;
+  align-items: center;
+  border-bottom: 0.2em solid tomato;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 0.2em solid rgba(33, 33, 33, 0.2);
+}
+
+.about a {
+  color: teal;
+}
+
+.about a:hover {
+  color: tomato;
+}
+
+.about-image {
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+}
+
+.about-image img {
+  border: 5px solid rgba(100, 100, 100, 0.2);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
