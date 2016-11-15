@@ -16,10 +16,15 @@ a:hover {
   color: tomato;
 }
 
+.shadow{
+  box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.2);
+}
+
 .main-header {
   background: white;
   box-shadow: 0px 1px 10px rgba(33, 33, 33, 0.3);
   text-align: center;
+  display: -webkit-flex;
   display: flex;
   align-content: center;
   align-items: center;
@@ -39,6 +44,8 @@ ul {
   font-family: 'Rochester', cursive;
   position: absolute;
   font-size: xx-large;
+  top: 0;
+  left: 0;
 }
 
 .navigation ul {
@@ -81,16 +88,12 @@ ul {
 
 .about {
   background: white;
-  display: flex;
+  padding: 1em;
+  border-top: 0.2em solid rgba(255, 67, 43, 0.7);
   font-family: 'Rochester', cursive;
   font-size: 1.7em;
-  align-content: center;
-  align-items: center;
-  border-bottom: 0.2em solid tomato;
-  border-radius: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-top: 0.2em solid rgba(33, 33, 33, 0.2);
+  text-align: justify;
+  
 }
 
 .about a {
@@ -109,7 +112,7 @@ ul {
 
 .about-image img {
   border: 5px solid rgba(100, 100, 100, 0.2);
-  border-radius: 50%;
+  border-radius: 20%;
   width: 200px;
   height: 200px;
 }
