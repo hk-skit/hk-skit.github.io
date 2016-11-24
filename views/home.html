@@ -1,4 +1,4 @@
-<section class="home">
+<section class="home" ng-controller="HomeController as ctrl">
   <section class="home-banner">
     <div class="intro">
       <h1>{Codiary}</h1>
@@ -14,7 +14,11 @@
       <div class="intro-scroll-down"><span class="fa fa-arrow-circle-down"></span></div>
     </div>
   </section>
-  <section class="post-grid">
-    <h1>Post grid will be here</h1>
+  <section class="quote">
+    <span class="quote-head"><a href="{{:: ctrl.quote.permalink}}" target="_blank">~: Quote of the Day :~</a></span>
+    <div class="quote-content">
+      <blockquote> {{ ::ctrl.quote.quote }}</blockquote>
+      <span>~ {{ ::ctrl.quote.author }} </span>  
+    </div>
   </section>
 </section>

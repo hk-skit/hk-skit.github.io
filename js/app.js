@@ -2,7 +2,8 @@
 (function () {
   'use strict';
   var app = angular.module('codiary', [
-    'ui.router'
+    'ui.router',
+    'codiary.home'
   ]);
   app.config([
     '$urlRouterProvider',

@@ -6,6 +6,9 @@ body {
   font-family: 'Bree Serif', serif;
   color: #333333;
 }
+blockquote{
+  margin: 0;
+}
 
 a {
   color: #333333;
@@ -110,6 +113,17 @@ ul {
   font-size: 3em;
 }
 
+.quote{
+  text-align: center;
+  background: white;
+  padding: 1em;
+}
+.quote-head{
+  font-size: 1.7em;
+}
+.quote-content{
+  font-size: 1.3em;
+}
 
 .about {
   background: white;
