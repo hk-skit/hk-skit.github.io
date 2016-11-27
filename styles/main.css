@@ -17,6 +17,7 @@ a {
 
 a:hover {
   color: tomato;
+  cursor: pointer;
 }
 
 .shadow{
@@ -86,7 +87,7 @@ ul {
 
 .home-banner{
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(150, 0, 0, 0.7)), url('../images/coconuts.jpg');
+  background-image: linear-gradient(rgba(0, 200, 200, 0.1), rgba(0, 0, 0, 0.9)), url('../images/coconuts.jpg');
   background-position: center;
 }
 .intro {
@@ -107,12 +108,17 @@ ul {
   margin-bottom: 0.5em;
 }
 
-.intro-scroll-down {
+.intro-social {
   background: transparent;
   color: white;
-  font-size: 3em;
+  font-size: 2.5em;
 }
-
+.intro-social a{
+  color: white;
+}
+.intro-social a:hover{
+  color: tomato;
+}
 .quote{
   text-align: center;
   background: white;
@@ -124,10 +130,30 @@ ul {
 .quote-content{
   font-size: 1.3em;
 }
-
+.home-image-bar{
+  display: flex;
+  position: relative;
+  height: 300px;
+}
+.home-image-bar::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.home-image-bar-item{
+  flex-grow: 1;
+}
+.home-image-bar-item img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 .about {
   background: white;
-  padding: 1em;
   border-top: 0.2em solid rgba(255, 67, 43, 0.7);
   font-family: 'Rochester', cursive;
   font-size: 1.7em;

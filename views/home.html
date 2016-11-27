@@ -11,14 +11,38 @@
       Codiary nagar's Entropy(Rate of Randomness). That's why the stuff found at Codiary
       is very random, dyanmic, unique, jovial, technical, euphoric, blah blah blah blah blah blah...
       </p>
-      <div class="intro-scroll-down"><span class="fa fa-arrow-circle-down"></span></div>
+      <div class="intro-social">
+        <a>
+          <span class="fa fa-facebook-square"></span>
+        </a>
+        <a>
+          <span class="fa fa-twitter-square"></span>
+        </a>
+        <a>
+          <span class="fa fa-github-square"></span>
+        </a>
+        <a>
+          <span class="fa fa-linkedin-square"></span>
+        </a>
+      </div>
     </div>
   </section>
   <section class="quote">
     <span class="quote-head"><a href="{{:: ctrl.quote.permalink}}" target="_blank">~: Quotable Quote :~</a></span>
     <div class="quote-content">
-      <blockquote> {{ ::ctrl.quote.quote }}</blockquote>
+      <blockquote> {{ ::ctrl.quote.quote }} <span class="fa fa-frown-o" ng-if="!ctrl.quote.permalink"></span></blockquote>
       <span>~ {{ ::ctrl.quote.author }} </span>  
+    </div>
+  </section>
+  <section class="home-image-bar">
+    <div class="home-image-bar-item">
+      <img src="images/coconuts.jpg" width="100%" height="100%">
+    </div>
+    <div class="home-image-bar-item">
+      <img src="images/hitesh.jpg" width="100%" height="100%">
+    </div>
+    <div class="home-image-bar-item">
+      <img src="images/bar_1.jpg" width="100%" height="100%">
     </div>
   </section>
 </section>

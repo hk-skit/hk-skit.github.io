@@ -9,6 +9,11 @@
     function onLoad(){
       QuoteFactory.get(function(quote){
         vm.quote = quote;
+      }, function(error){
+        vm.quote = {
+          quote: 'Something just blew up. Not able to fetch quote ',
+          author: 'Codiary'
+        };
       });
     }
     

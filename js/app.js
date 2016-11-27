@@ -24,7 +24,7 @@
           template: '<h1>blog Page</h1>'
         })
         .state('other', {
-          url: '/about',
+          url: '/other',
           template: '<h1>Other Page</h1>'
         })
         .state('photos', {
