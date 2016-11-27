@@ -87,7 +87,7 @@ ul {
 
 .home-banner{
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 200, 200, 0.1), rgba(0, 0, 0, 0.9)), url('../images/coconuts.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url('../images/coconuts.jpg');
   background-position: center;
 }
 .intro {
