@@ -1,9 +1,14 @@
-(function(){
+/*global angular*/
+(function () {
   'use strict';
   var app = angular.module('codiary.api.quote', ['ngResource']);
-  app.factory('QuoteFactory', ['$resource', function($resource){
-    var api= 'http://quotes.stormconsultancy.co.uk/random.json';
+  app.factory('QuoteFactory', ['$resource', function ($resource) {
+    var api = 'http://quotes.stormconsultancy.co.uk/random.json';
     var quote = $resource(api);
-    return quote;
+    return {
+      get: function () {
+        return quote.get().$promise;
+      }
+    };
   }]);
 }());

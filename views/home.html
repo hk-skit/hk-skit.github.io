@@ -3,26 +3,20 @@
     <div class="intro">
       <h1>{Codiary}</h1>
       <h3>The Diary of A Programmer.</h3>
-      <p>You know somewhere over the internet, there's a nagar called <b>Codiary</b> 
-      and pleased to inform you that you are @Codiary. Codiary is by product 
-      of a geek's engagement with web technologies. Codiary is renowned for 
-      it's sapiosexuality. Whenever this geek has leisure time, he visits this 
-      nagar and powers it's spaiosexuality. Every visit brings a drastic change in
-      Codiary nagar's Entropy(Rate of Randomness). That's why the stuff found at Codiary
-      is very random, dyanmic, unique, jovial, technical, euphoric, blah blah blah blah blah blah...
+      <p>You know somewhere over the internet, there's a nagar called <b>Codiary</b> and pleased to inform you that you are @Codiary. Codiary is by product of a geek's engagement with web technologies. Codiary is renowned for it's sapiosexuality. Whenever this geek has leisure time, he visits this nagar and powers it's spaiosexuality. Every visit brings a drastic change in Codiary nagar's Entropy(Rate of Randomness). That's why the stuff found at Codiary is very random, dyanmic, unique, jovial, technical, euphoric, blah blah blah blah blah blah...
       </p>
       <div class="intro-social">
         <a>
-          <span class="fa fa-facebook-square"></span>
+          <span class="fa fa-2x fa-fw fa-facebook"></span>
         </a>
         <a>
-          <span class="fa fa-twitter-square"></span>
+          <span class="fa fa-2x fa-fw fa-twitter"></span>
         </a>
         <a>
-          <span class="fa fa-github-square"></span>
+          <span class="fa fa-2x fa-fw fa-github"></span>
         </a>
         <a>
-          <span class="fa fa-linkedin-square"></span>
+          <span class="fa fa-2x fa-fw fa-linkedin"></span>
         </a>
       </div>
     </div>
@@ -30,25 +24,18 @@
   <section class="quote">
     <span class="quote-head"><a href="{{:: ctrl.quote.permalink}}" target="_blank">~: Quotable Quote :~</a></span>
     <div class="quote-content">
-      <blockquote> {{ ::ctrl.quote.quote }} <span class="fa fa-frown-o" ng-if="!ctrl.quote.permalink"></span></blockquote>
-      <span>~ {{ ::ctrl.quote.author }} </span>  
+      <blockquote>
+        {{ ::ctrl.quote.quote }}
+        <span class="fa fa-frown-o" ng-if="!ctr.loading && !ctrl.quote.permalink"></span>
+        <span ng-if="ctrl.loading && !ctrl.quote.permalink" class="fa fa-spinner fa-pulse fa-spin" aria-hidden="true"></span>
+      </blockquote>
+      <span>~ {{ ::ctrl.quote.author }} </span>
     </div>
   </section>
   <section class="image-bar">
-    <img src="images/bar_0.JPG">
-    <img src="images/bar_1.JPG">
-    <img src="images/bar_2.JPG">
-    <img src="images/bar_3.JPG">
+    <img src="images/thumb_0.jpg">
+    <img src="images/thumb_1.jpg">
+    <img src="images/thumb_2.jpg">
+    <img src="images/thumb_3.jpg">
   </section>
 </section>
-
-
-
-
-
-
-
-
-
-
-
