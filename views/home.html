@@ -26,8 +26,7 @@
     <div class="quote-content">
       <blockquote>
         {{ ::ctrl.quote.quote }}
-        <span class="fa fa-frown-o" ng-if="!ctr.loading && !ctrl.quote.permalink"></span>
-        <span ng-if="ctrl.loading && !ctrl.quote.permalink" class="fa fa-spinner fa-pulse fa-spin" aria-hidden="true"></span>
+        <span class="fa fa-frown-o" ng-if="ctrl.quote && !ctrl.quote.permalink"></span>
       </blockquote>
       <span>~ {{ ::ctrl.quote.author }} </span>
     </div>
