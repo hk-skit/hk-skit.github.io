@@ -3,7 +3,8 @@
   'use strict';
   var app = angular.module('codiary', [
     'ui.router',
-    'codiary.home'
+    'codiary.home',
+    'codiary.bannerTag'
   ]);
   app.config([
     '$urlRouterProvider',
