@@ -1,2 +1,2 @@
-# Code Pulses
-Paint smile on every face you meet & make the world a better place...
+# Codiary
+Diary of a programmer
