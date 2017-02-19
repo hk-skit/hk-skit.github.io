@@ -4,10 +4,18 @@ class Server{
 
     constructor(){
         this.app = express();
+        this.router = express.Router();
     }
 
     configureApp(){
         this.app.set('port', (process.env.PORT || 8080));
+    }
+
+    configureRoutes(){
+        this.router.get('/', (res, req)=>{
+           req.send('Hello from the other side!');
+        });
+        this.app.use('/',this.router);
     }
 
     listen(port){
@@ -18,7 +26,10 @@ class Server{
 
     run(){
         this.configureApp();
+        this.configureRoutes();
         this.listen(this.app.get('port'));
     }
 
 }
+
+module.exports = Server;
