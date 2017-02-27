@@ -1,5 +1,5 @@
 {
-  "name": "smelly-code",
+  "name": "smellycode",
   "version": "1.0.0",
   "description": "A blog inspired by Phoebe Buffay's smelly cat.",
   "main": "index.js",
@@ -26,6 +26,9 @@
   },
   "homepage": "https://github.com/hk-skit/hk-skit.github.io#readme",
   "dependencies": {
+    "angular": "^1.6.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.14.1"
-  }
+  },
+  "devDependencies": {}
 }
