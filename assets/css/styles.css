@@ -1,6 +1,12 @@
 .intro-header {
     background: #0085A1;
 }
+.social a {
+    -webkit-transition: color 500ms ease-out;
+    -moz-transition: color 500ms ease-out;
+    -o-transition: color 500ms ease-out;
+    transition: color 500ms ease-out;
+}
 .stackoverflow a:hover {
     color: #f48024;
 }
