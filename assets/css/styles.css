@@ -1,3 +1,6 @@
-.intro-header{
-   background: #0085A1;
+.intro-header {
+    background: #0085A1;
+}
+.stackoverflow a:hover {
+    color: #f48024;
 }
