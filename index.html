@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<!--
+ (                                                       
+ )\ )              (   (           (          (          
+(()/(    )      (  )\  )\ (        )\         )\ )   (   
+ /(_))  (      ))\((_)((_))\ )   (((_)   (   (()/(  ))\  
+(_))    )\  ' /((_)_   _ (()/(   )\___   )\   ((_))/((_) 
+/ __| _((_)) (_)) | | | | )(_)) ((/ __| ((_)  _| |(_))   
+\__ \| '  \()/ -_)| | | || || |  | (__ / _ \/ _` |/ -_)  
+|___/|_|_|_| \___||_| |_| \_, |   \___|\___/\__,_|\___|  
+                          |__/                           
+-->
 <html lang="en">
 
 <head>
@@ -75,6 +86,26 @@
             </div>
         </div>
     </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview" ng-repeat="post in ctrl.posts track by $index">
+                    <a ng-href="{{post.url}}">
+                        <h2 class="post-title">
+                            {{post.title}}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{post.description}}
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">{{post.author}}</a> on {{post.date | date}}</p>
+                    <hr ng-if="!$last">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <hr>
     <!-- Footer -->

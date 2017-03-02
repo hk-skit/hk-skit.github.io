@@ -1,0 +1,11 @@
+[
+    {
+        "id": "1",
+        "title": "Angular => extend, copy & merge",
+        "description": "Superheroic AngularJs comes with a set of utility functions which are not specific to angular and can be leveraged anywhere...",
+        "url": "posts/angular-extend-copy-merge.html",
+        "date": "1483014390755",
+        "tags": ["JavaScript", "AngularJs"],
+        "author": "Hitesh Kumar"
+  }
+]
