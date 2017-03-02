@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--
+ (                                                       
+ )\ )              (   (           (          (          
+(()/(    )      (  )\  )\ (        )\         )\ )   (   
+ /(_))  (      ))\((_)((_))\ )   (((_)   (   (()/(  ))\  
+(_))    )\  ' /((_)_   _ (()/(   )\___   )\   ((_))/((_) 
+/ __| _((_)) (_)) | | | | )(_)) ((/ __| ((_)  _| |(_))   
+\__ \| '  \()/ -_)| | | || || |  | (__ / _ \/ _` |/ -_)  
+|___/|_|_|_| \___||_| |_| \_, |   \___|\___/\__,_|\___|  
+                          |__/                           
+-->
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A blog inspired by Phoebe Buffay's smelly cat.">
+    <meta name="author" content="Hitesh Kumar">
+
+    <title>angular.extend(), angular.copy() &amp; angular.merge() | Hitesh Kumar</title>
+
+    <link rel="stylesheet" href="../dev_dependencies/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="../assets/css/clean-blog.min.css" rel="stylesheet">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../dev_dependencies/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">Smelly Code</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <!--
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Angular => extend, copy &amp; merge</h1>
+                        <h2 class="subheading">Let's extend copies and merge them.</h2>
+                        <span class="meta">Posted by <a href="#">Hitesh Kumar</a> on December 10, 2016</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--Post Content-->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>
+                        Superheroic <a href="http://angularjs.org/" target="_blank">AngularJs</a> comes with a set of utility functions which are not specific to angular and can be leveraged anywhere. In this post, we will discuss <code>angular.copy()</code>, <code>angular.extend()</code> &amp; <code>angular.merge()</code>. Before delving into these, we need to walk through two important concepts <em>Deep Copy</em> and <em>Shallow Copy</em> cause these functions linger around these concepts.
+                    </p>
+                    <p>
+                        <b>Shallow Copy</b> is a field by field copy of an object. All the fields of an object are copied to another object. If a field value is a reference to an object (e.g., a memory address) it copies the reference and if field value is a primitive type it copies the value of the primitive type. Since we copy the reference only so <em>if one object is modified then changes will be visible in other object also</em>.
+                    </p>
+                    <p>
+                        <b>Deep Copy</b> duplicates everything. In lieu of copying the references, it creates a new copy of object and then copy the refrence of new object to destination object. Since we create a brand new object and refer it. Thus <em>the changes made in one objects are not visible to another object</em>. A detailed discussion on deep copy and shallow copy <a href="https://en.wikipedia.org/wiki/Object_copying" target="_blank">can be</a> <a href="http://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy" target="_blank">found here</a>.
+                    </p>
+                    <p>
+                        Well now it's high time for our celebrated functions. Let's look into them one by one.
+                        <br>
+                    </p>
+                    <p>
+                        <code>angular.copy()</code> does deep copy of an object. In other words, it creates the new <code class="code__vanila">destination</code> object(if not supplied) by duplicating the values from supplied <code class="code__vanila">source</code> object.
+                    </p>
+                    <div class="code__block">
+                        <pre hljs>angular.copy(source,  [destination]);</pre>
+                    </div>
+                    <p>
+                        As you can see the second parameter is optional. So when it is not passed a new object is created otherwise properties will be copied to destination object.
+                    </p>
+                    <div class="code__block">
+                        <pre hljs hljs-language="javascript">
+var source = {
+    a: 'a',
+    b: 'b'
+};
+var destination = {
+  x: 'my ex',
+  y: 'your y'
+}
+var sourceCopy = angular.copy(source);
+sourceCopy.a = 'Changed a';
+console.log(source.a, sourceCopy.a); //"a", "Changed a"</pre>
+                    </div>
+                    <p>
+                        Here's are some cases from the official api doc for <a href="https://docs.angularjs.org/api/ng/function/angular.copy" target="_blank"><code>angular.copy()</code></a> which extensively talks about it.
+                    </p>
+                    <ul>
+                        <li>If no destination is supplied, a copy of the object or array is created.</li>
+                        <li>If a destination is provided, all of its elements (for arrays) or properties (for objects) are deleted and then all elements/properties from the source are copied to it.</li>
+                        <li>If <code class="code__vanila">source</code> is not an object or array (inc. <code class="code__vanila">null</code> and <code class="code__vanila">undefined</code>), <code class="code__vanila">source</code> is returned.</li>
+                        <li>If <code class="code__vanila">source</code> is identical to <code class="code__vanila">destination</code> an exception will be thrown.</li>
+                    </ul>
+                    <p>
+                        <code>angular.extend()</code> as name suggests it extends the <code class="code__vanila">destination</code> object by copying enumerable properties of <code class="code__vanila">source</code> object. Let's see it in action.
+                    </p>
+                    <div class="code__block">
+                        <pre hljs hljs-language="javascript">
+var source = {
+  a: 'a'
+};
+var destination = {  
+  b: 'b'
+}
+angular.extend(destination, source);
+console.log(destination); //{a: 'a', b: 'b'}
+var obj = {
+  c: 'c'
+};
+//if you don't want to mess with original destination obj.
+var r = angular({}, obj, source);
+console.log(r); //{a: 'a', c:'c'}</pre>
+                    </div>
+                    <p>
+                        <code>angular.extends()</code> does shallow copy which means if changes are made in non-primitive property of source object than they wil be visible in destination object or vice versa.
+                    </p>
+                    <div class="code__block">
+                        <pre hljs hljs-language="javascript">
+var source = {
+  a: {
+    c: 'Some value of c'
+  }
+};
+var destination = {
+  b: 'this is b'
+};
+angular.extend(destination, source);
+console.log(destination); // {a: {c: 'Some value of c'}, b: 'this is b'}
+source.a.c = 'modified c';
+console.log(destination.a.c); // "modified c"</pre>
+                    </div>
+                    <blockquote>
+                        <code>angular.extend()</code> does not support rescursive merge(deep copy). That's where <code>angular.merge()</code> comes into picture.
+                    </blockquote>
+                    <div class="code__block">
+                        <pre hljs hljs-language="javascript">
+var objA = {
+	a: {
+      b: 'b'
+    }	
+};
+var objB = {
+	a: {
+      c: 'c'
+    }
+};
+var r = angular.extend({},objA, objB);
+// It will log { a: { c : "c" } } instead of // { a: { b: "b", c : "c" }}
+console.log(r);</pre>
+                    </div>
+                    <p>
+                        <code>angular.merge()</code> deeply extends <code class="code__vanila">destination</code> object by copying enumerable properties from the <code class="code__vanila">source</code> to <code class="code__vanila">destination</code>. Unlike <code class="code__vanila">extend()</code>, <code class="code__vanila">merge()</code> recursively descends into object properties of source and perform copy.
+                    </p>
+                    <div class="code__block">
+                        <pre hljs hljs-language="javascript">
+var objA = {
+	a: {
+      b: 'b'
+    }	
+};
+var objB = {
+	a: {
+      c: 'c'
+    }
+};
+var r = angular.merge({},objA, objB);
+console.log(r); // { a: { b: "b", c : "c" }}</pre>
+                    </div>
+                    <p>
+                        That's all folks!! Here are the references: <a href="https://docs.angularjs.org/api/ng/function/angular.extend">angular.extend()</a>, <a href="https://docs.angularjs.org/api/ng/function/angular.copy">angular.copy()</a> & <a href="https://docs.angularjs.org/api/ng/function/angular.merge">angular.merge()</a>.
+                    </p>
+                    <p style="margin: 20px 0;">
+                        <strong>P.S:</strong> It's my first blog post. I have never written any technical post before so if there's any mistake then please forgive me and leave your comments in comment section. Thanks.
+                    </p>
+
+                    <div id="disqus_thread"></div>
+                    <!--Discuss-->
+                    <script>
+                        var disqus_config = function() {
+                            this.page.url = "https://smellycode.com/posts/angular-extend-copy-merge.html";
+                        };
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                            var d = document,
+                                s = d.createElement('script');
+                            s.src = '//smelly-code.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center social">
+                        <li class="stackoverflow">
+                            <a href="http://stackoverflow.com/users/2879146/hitesh-kumar" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="github">
+                            <a href="https://github.com/hk-skit" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="twitter">
+                            <a href="https://twitter.com/developerhk" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="linkedin">
+                            <a href="https://www.linkedin.com/in/programmerhk/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; SmellyCode 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../dev_dependencies/jquery/dist/jquery.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../dev_dependencies/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/clean-blog.js"></script>
+
+    <script src="../dev_dependencies/angular/angular.min.js"></script>
+
+    <!-- App JS -->
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

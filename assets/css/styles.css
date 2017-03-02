@@ -1,5 +1,23 @@
+code {
+    background: #f5f5f5;
+    font-family: monaco;
+    color: #333;
+    /*TODO: Add monaco fonts*/
+}
+.code__vanila {
+    background-color: #f9f2f4
+}
 .intro-header {
     background: #0085A1;
+}
+article a {
+    text-decoration: none;
+    color: steelblue;
+    transition: background-color 200ms ease;
+}
+article a:hover {
+    color: gray;
+    text-decoration: none;
 }
 .social a {
     -webkit-transition: color 500ms ease-out;
