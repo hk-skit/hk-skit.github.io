@@ -173,9 +173,9 @@ console.log(destination); // {a: {c: 'Some value of c'}, b: 'this is b'}
 source.a.c = 'modified c';
 console.log(destination.a.c); // "modified c"</pre>
                     </div>
-                    <blockquote>
+                    <p>
                         <code>angular.extend()</code> does not support rescursive merge(deep copy). That's where <code>angular.merge()</code> comes into picture.
-                    </blockquote>
+                    </p>
                     <div class="code__block">
                         <pre hljs hljs-language="javascript">
 var objA = {

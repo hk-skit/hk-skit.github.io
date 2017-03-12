@@ -1,8 +1,11 @@
 code {
     background: #f5f5f5;
-    font-family: monaco;
     color: #333;
-    /*TODO: Add monaco fonts*/
+    font-size: 80%;
+}
+code,
+pre {
+    font-family: monaco, Consolas, "Lucida Console", monospace;
 }
 .code__vanila {
     background-color: #f9f2f4
