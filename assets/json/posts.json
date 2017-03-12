@@ -1,11 +1,20 @@
 [
     {
-        "id": "1",
+        "id": "2",
         "title": "Angular => extend, copy & merge",
         "description": "Superheroic AngularJs comes with a set of utility functions which are not specific to angular and can be leveraged anywhere...",
         "url": "posts/angular-extend-copy-merge.html",
         "date": "1483014390755",
         "tags": ["JavaScript", "AngularJs"],
+        "author": "Hitesh Kumar"
+  },
+    {
+        "id": "1",
+        "title": "My Angel",
+        "description": "A verse for someone special 😊",
+        "url": "posts/my-angel.html",
+        "date": "1414953000000",
+        "tags": ["poetry"],
         "author": "Hitesh Kumar"
   }
 ]
