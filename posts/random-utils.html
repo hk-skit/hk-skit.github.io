@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--
+ (                                                       
+ )\ )              (   (           (          (          
+(()/(    )      (  )\  )\ (        )\         )\ )   (   
+ /(_))  (      ))\((_)((_))\ )   (((_)   (   (()/(  ))\  
+(_))    )\  ' /((_)_   _ (()/(   )\___   )\   ((_))/((_) 
+/ __| _((_)) (_)) | | | | )(_)) ((/ __| ((_)  _| |(_))   
+\__ \| '  \()/ -_)| | | || || |  | (__ / _ \/ _` |/ -_)  
+|___/|_|_|_| \___||_| |_| \_, |   \___|\___/\__,_|\___|  
+                          |__/                           
+-->
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A blog inspired by Phoebe Buffay's smelly cat.">
+    <meta name="author" content="Hitesh Kumar">
+
+    <title>Random Utils - A utility to get random stuff | Hitesh Kumar</title>
+
+    <link rel="stylesheet" href="../dev_dependencies/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="../assets/css/clean-blog.min.css" rel="stylesheet">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../dev_dependencies/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!--Facebook meta data-->
+    <meta property="og:url" content="http://smellycode.com/posts/random-utils.html">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Random Utils | Hitesh Kumar">
+    <meta property="og:description" content="Random functions to get random stuff...">
+    <meta property="og:image" content="http://smellycode.com/assets/images/logo.png">
+    <!--/Facebook meta data-->
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">Smelly Code</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <!--
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Random Utils</h1>
+                        <h2 class="subheading">Random functions to get random stuff.</h2>
+                        <span class="meta">Posted by <a href="#">Hitesh Kumar</a> on March 18, 2017</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /Page Header -->
+
+    <!--Post Content-->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>
+                        A programmer often need a random number, integer, color, alphanumeric string etc. in his/her day to day life. After googling for sometime, I found that there's no place where I can find all these functions together. So I decided to write a post to put them together.
+                    </p>
+                    <p>
+                        <code>getRandomNumber(a, b)</code>: An overloaded function which returns a random number based on the <code>arguments</code> passed to it.
+                    </p>
+                    <div class="code__block">
+                        <pre hljs hljs-language="javascript">
+/**
+ * Returns a random number in range of [a, b]. If only a is passed then
+ * returned number is less than a. If no arguments then between(0, 1).
+ */
+function getRandomNumber(a, b) {
+    let n = Math.random();
+
+    if (arguments.length === 1) {
+        n *= +a;
+    } else if (arguments.length === 2) {
+        n *= Math.abs(a - b);
+        n += Math.min(a, b);
+    }
+    return n;
+}</pre>
+                    </div>
+                    <p>
+                        <code>getRandomInteger(a, b)</code>: An overloaded function which returns a random integer based on the <code>arguments</code> passed to it.
+                    </p>
+                    <div class="code__block">
+                        <pre hljs hljs-language="javascript">
+/**
+ * Returns random integer.
+ */
+Earlier ES6:
+function getRandomInteger() {
+    return ~~getRandomNumber.apply(null, arguments);
+}
+
+ES6:
+function getRandomInteger() {
+    return ~~getRandomNumber(...arguments);
+}</pre>
+                    </div>
+                    <p>
+                        <b>Note:</b> We are using <code>~~</code>(double tilde) operator to get integer part of generated number. You can read about double tilde <a href="http://stackoverflow.com/questions/4055633/what-does-double-tilde-do-in-javascript">here</a> or <a href="http://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript">here</a>. We will not dive into double tilde here cause it's worth writing a whole new post.
+                    </p>
+                    <p>
+                        <code>getRandomColor()</code>: Returns a random hex code as string.
+                    </p>
+                    <div class="code__block">
+                        <pre hljs hljs-language="javascript">
+/**
+ * Returns a random hex code as string.
+ */
+function getRandomColor() {
+    var color = getRandomNumber() * 0xFFFFFF; // random number less than max hex value.
+    color = ~~color; // integer part
+    color = color.toString(16);     // equivalent hex code.
+    while (color.length &lt; 6) {   // pad zero to make length 0.
+        color = '0' + color;    // pad zero
+    }
+    return '#' + color;
+}</pre>
+                    </div>
+                    <p>
+                        <code>getRandomString(length)</code>: Returns a random alphanumeric of desired length.
+                    </p>
+                    <div class="code__block">
+                        <pre hljs hljs-language="javascript">
+                        /**
+ * Returns a random string of passed length. If no length is passed then 
+ * string of length 6 is returned.
+ */
+function getRandomString(length) {
+    var str = '';
+    var ALPHANUMERIC = 'ABCEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz0123456789';
+    length = length || 6; //default length;
+    while (str.length &lt; length) {
+        str += ALPHANUMERIC[getRandomInteger(ALPHANUMERIC.length)];
+    }
+    return str;
+}</pre>
+                    </div>
+                    <div id="disqus_thread"></div>
+                    <!--Discuss-->
+                    <script>
+                        var disqus_config = function() {
+                            this.page.url = "https://smellycode.com/posts/random-utils.html";
+                        };
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                            var d = document,
+                                s = d.createElement('script');
+                            s.src = '//smelly-code.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center social">
+                        <li class="stackoverflow">
+                            <a href="http://stackoverflow.com/users/2879146/hitesh-kumar" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="github">
+                            <a href="https://github.com/hk-skit" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="twitter">
+                            <a href="https://twitter.com/developerhk" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="linkedin">
+                            <a href="https://www.linkedin.com/in/programmerhk/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; SmellyCode 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../dev_dependencies/jquery/dist/jquery.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../dev_dependencies/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/clean-blog.js"></script>
+
+</body>
+
+</html>

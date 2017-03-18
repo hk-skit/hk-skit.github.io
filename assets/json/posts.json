@@ -1,5 +1,14 @@
 [
     {
+        "id": "3",
+        "title": "Random Utils",
+        "description": "Random functions to get random stuff.",
+        "url": "posts/random-utils.html",
+        "date": "1489813342828",
+        "tags": ["javascript"],
+        "author": "Hitesh Kumar"
+    },
+    {
         "id": "2",
         "title": "Angular => extend, copy & merge",
         "description": "Superheroic AngularJs comes with a set of utility functions which are not specific to angular and can be leveraged anywhere...",
@@ -7,7 +16,7 @@
         "date": "1483014390755",
         "tags": ["JavaScript", "AngularJs"],
         "author": "Hitesh Kumar"
-  },
+    },
     {
         "id": "1",
         "title": "My Angel",
@@ -16,5 +25,5 @@
         "date": "1414953000000",
         "tags": ["poetry"],
         "author": "Hitesh Kumar"
-  }
+    }
 ]
