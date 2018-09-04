@@ -1,8 +1,7 @@
 {
   "name": "smellycode",
   "version": "1.0.0",
-  "description": "A blog inspired by Phoebe Buffay's smelly cat.",
-  "main": "index.js",
+  "description": "HK's personal website",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,13 +10,8 @@
     "url": "git+https://github.com/hk-skit/hk-skit.github.io.git"
   },
   "keywords": [
-    "blog",
-    "javascript",
-    "angularjs",
-    "typescript",
-    "angular2",
-    "personal",
-    "self-help"
+    "website",
+    "personal-website"
   ],
   "author": "Hitesh Kumar",
   "license": "ISC",
@@ -25,12 +19,6 @@
     "url": "https://github.com/hk-skit/hk-skit.github.io/issues"
   },
   "homepage": "https://github.com/hk-skit/hk-skit.github.io#readme",
-  "dependencies": {
-    "angular": "^1.6.2",
-    "bootstrap": "^3.3.7",
-    "express": "^4.14.1",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.1.1"
-  },
+  "dependencies": {},
   "devDependencies": {}
 }

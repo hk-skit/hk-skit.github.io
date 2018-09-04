@@ -1,0 +1,9 @@
+@import '../modules/colors';
+
+a {
+  color: $link-text-color;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.3;
+  }
+}

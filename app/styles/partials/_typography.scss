@@ -1,0 +1,14 @@
+@import './base';
+@import '../modules/colors';
+
+body {
+  font-family: $base-font-family;
+  font-size: 16px;
+  color: $text-color;
+  letter-spacing: $base-letter-spacing;
+}
+
+p {
+  font-family: $base-font-family;
+  color: $text-color;
+}
