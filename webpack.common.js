@@ -42,7 +42,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      template: './app/index.html'
+      template: './app/index.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
