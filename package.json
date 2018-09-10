@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "HK's personal website",
   "scripts": {
-    "build": "webpack -p --config webpack.prod.js",
+    "build": "webpack -p --config ./config/webpack.prod.js",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "webpack-dev-server --open --config ./config/webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

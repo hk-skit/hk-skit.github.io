@@ -1,9 +1,28 @@
 @import '../modules/colors';
 
+$link-hover-opacity: 0.3;
+$link-text-decoration: none;
 a {
   color: $link-text-color;
-  text-decoration: none;
+  text-decoration: $link-text-decoration;
   &:hover {
-    opacity: 0.3;
+    opacity: $link-hover-opacity;
+  }
+}
+
+ul.nav {
+  list-style: none;
+  padding: 0;
+}
+
+.nav {
+  margin-top: 39px;
+  margin-bottom: 36px;
+
+  &-item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 26px;
+    }
   }
 }

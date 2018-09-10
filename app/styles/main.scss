@@ -1,3 +1,75 @@
 @import './fonts';
 @import './partials/typography';
 @import './partials/link';
+@import './partials/icons';
+@import './parallax-shapes';
+
+body {
+  padding-left: 139px;
+  padding-top: 55px;
+  padding-bottom: 30px;
+}
+
+hr,
+.hr {
+  background: $hr-rule-color;
+  margin: 0;
+  border: none;
+  height: $hr-size;
+}
+.hr {
+  &-top {
+    top: 145px;
+    position: absolute;
+    left: -26px;
+    right: -252px;
+    z-index: -1;
+  }
+
+  &-bottom {
+    margin-left: -123px;
+    margin-right: -252px;
+  }
+}
+// main container.
+.container {
+  $container-width: 414px;
+
+  padding-top: 57px;
+  padding-bottom: 19px;
+  padding-left: 97px;
+  width: $container-width;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: relative;
+  background-image: $container-background;
+}
+
+.me {
+  $thumbnail-dimension: 172px;
+  $thumbnail-filters: grayscale(100%);
+
+  background: url('../assets/images/me_2.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  width: $thumbnail-dimension;
+  height: $thumbnail-dimension;
+
+  filter: $thumbnail-filters;
+}
+
+.about {
+  .content {
+    $content-width: 150%;
+    width: $content-width;
+  }
+}
+
+footer {
+  > p {
+    font-size: 12px;
+    margin-top: 19px;
+    margin-bottom: 0;
+  }
+}
