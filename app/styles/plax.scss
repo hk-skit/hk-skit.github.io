@@ -1,0 +1,29 @@
+@import './modules/colors';
+
+$parallax-shape-opacity: 0.3;
+
+.plax {
+  position: absolute;
+
+  &-circle {
+    border-radius: 50%;
+    opacity: $parallax-shape-opacity;
+    background: $parallax-shape-background;
+
+    z-index: -1;
+
+    &__small {
+      width: 71px;
+      height: 71px;
+      top: -44px;
+      left: 128px;
+    }
+
+    &__big {
+      width: 200px;
+      height: 200px;
+      left: 172px;
+      top: 25px;
+    }
+  }
+}

@@ -4,6 +4,11 @@ export class PlaxLayer {
   constructor(element) {
     this._options = this._getOptions(element);
     this._element = element;
+    this.startX = 0;
+    this.startY = 0;
+    this.transformStartX = 0;
+    this.transformStartY = 0;
+    this.transformStartZ = 0;
   }
 
   get element() {
@@ -54,12 +59,12 @@ export class PlaxLayer {
     };
   }
 
-  // Get the translate position of the element
-  //
-  // return 3 element array for translate3d
-  // Get the translate position of the element
-  //
-  // return 3 element array for translate3d
+  /**
+   * Get the translate position of the element
+   *
+   * @returns 3 element array for translate3d
+   * @memberof PlaxLayer
+   */
   get3dTranslation() {
     const matrix =
       this.css('-webkit-transform') ||
@@ -92,6 +97,72 @@ export class PlaxLayer {
     return [x, y, z];
   }
 
+  /**
+   * Plaxifies the layer to the appropriate position.
+   *
+   * @returns void 0
+   * @memberof PlaxLayer
+   */
+  plaxify() {
+    if (this._options.background) {
+      // animate using the element's background
+      const pos = (this.css('background-position') || '0px 0px').split(/ /);
+      if (pos.length != 2) {
+        return;
+      }
+      x = pos[0].match(/^((-?\d+)\s*px|0+\s*%|left)$/);
+      y = pos[1].match(/^((-?\d+)\s*px|0+\s*%|top)$/);
+      if (!x || !y) {
+        // no can-doesville, babydoll, we need pixels or top/left as initial
+        // values (it mightbe possible to construct a temporary image from the
+        // background-image property and get the dimensions and run some numbers,
+        // but that'll almost definitely be slow)
+        return;
+      }
+      this.startX = x[2] || 0;
+      this.startY = y[2] || 0;
+      this.transformStartX = 0;
+      this.transformStartY = 0;
+      this.transformStartZ = 0;
+    } else {
+      // Figure out where the element is positioned, then reposition it from the
+      // top/left, same for transform if using translate3d
+      const position = this.position();
+      const transformTranslate = this.get3dTranslation();
+      this.css({
+        transform: transformTranslate.join() + 'px',
+        top: position.top + 'px',
+        left: position.left + 'px',
+        right: '',
+        bottom: ''
+      });
+      // TODO: Add options properly.
+      this.startX = position.left;
+      this.startY = position.top;
+      [
+        this.transformStartX,
+        this.transformStartY,
+        this.transformStartZ
+      ] = transformTranslate;
+    }
+
+    this.startX -= this.inversionFactor * Math.floor(this._options.xRange / 2);
+    this.startY -= this.inversionFactor * Math.floor(this._options.yRange / 2);
+    this.transformStartX -=
+      this.inversionFactor * Math.floor(this._options.xRange / 2);
+    this.transformStartY -=
+      this.inversionFactor * Math.floor(this._options.yRange / 2);
+    this.transformStartZ -=
+      this.inversionFactor * Math.floor(this._options.zRange / 2);
+  }
+
+  /**
+   * Extract data value from element and returns them as options.
+   *
+   * @param {*} element
+   * @returns
+   * @memberof PlaxLayer
+   */
   _getOptions(element) {
     return {
       xRange: +element.getAttribute('data-xrange') || 0,

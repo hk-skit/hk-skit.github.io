@@ -8,7 +8,6 @@ const cache = {
   delay: (1 / MAX_FPS) * 1e3,
   lastRender: new Date().getTime(),
   layers: [],
-  plaxLayers: [],
   motionDegrees: 30,
   motionMax: 1,
   motionMin: -1,
@@ -58,10 +57,9 @@ const onMouseMove = (event) => {
   }
 
   cache.lastRender = new Date().getTime();
-  let x = event.pageX;
-  let y = event.pageY;
+  let { pageX: x, pageY: y } = event;
 
-  if (!PlaxHelper.isInViewport(cache.plaxLayers[0].element.parentNode)) {
+  if (!PlaxHelper.isInViewport(cache.layers[0].element.parentNode)) {
     return;
   }
 
@@ -70,7 +68,7 @@ const onMouseMove = (event) => {
       cache.ignoreMoveable = true;
       return;
     }
-    var values = valuesFromMotion(event);
+    const values = valuesFromMotion(event);
     // Admittedly fuzzy measurements
     x = values.x / cache.motionDegrees;
     y = values.y / cache.motionDegrees;
@@ -91,118 +89,55 @@ const onMouseMove = (event) => {
     x = (x + 1) / 2;
     y = (y + 1) / 2;
   }
-  var newX,
-    newY,
-    newZ,
-    clientRect = document.body.getBoundingClientRect(),
-    hRatio = x / (moveable() === true ? cache.motionMax : clientRect.width),
-    vRatio = y / (moveable() === true ? cache.motionMax : clientRect.height);
+  const clientRect = document.body.getBoundingClientRect();
+  const hRatio = x / (moveable() === true ? cache.motionMax : clientRect.width);
+  const vRatio =
+    y / (moveable() === true ? cache.motionMax : clientRect.height);
 
-  for (var index = cache.plaxLayers.length - 1; index >= 0; index -= 1) {
-    const plaxLayer = cache.plaxLayers[index];
-    if (PlaxHelper.supports3dTransform() && !plaxLayer.options.background) {
+  cache.layers.forEach((layer) => {
+    let newX, newY, newZ;
+
+    if (PlaxHelper.supports3dTransform() && !layer.options.background) {
       newX =
-        plaxLayer.transformStartX +
-        plaxLayer.inversionFactor * (plaxLayer.options.xRange * hRatio);
+        layer.transformStartX +
+        layer.inversionFactor * (layer.options.xRange * hRatio);
       newY =
-        plaxLayer.transformStartY +
-        plaxLayer.inversionFactor * (plaxLayer.options.yRange * vRatio);
-      newZ = plaxLayer.transformStartZ;
-      plaxLayer.css({
+        layer.transformStartY +
+        layer.inversionFactor * (layer.options.yRange * vRatio);
+      newZ = layer.transformStartZ;
+      layer.css({
         transform: 'translate3d(' + newX + 'px,' + newY + 'px,' + newZ + 'px)'
       });
     } else {
       newX =
-        plaxLayer.startX +
-        plaxLayer.inversionFactor * (plaxLayer.options.xRange * hRatio);
+        layer.startX + layer.inversionFactor * (layer.options.xRange * hRatio);
       newY =
-        plaxLayer.startY +
-        plaxLayer.inversionFactor * (plaxLayer.options.yRange * vRatio);
-      if (plaxLayer.options.background) {
-        plaxLayer.css({
+        layer.startY + layer.inversionFactor * (layer.options.yRange * vRatio);
+      if (layer.options.background) {
+        layer.css({
           'background-position': newX + 'px ' + newY + 'px'
         });
       } else {
-        plaxLayer.css({
+        layer.css({
           left: newX,
           top: newY
         });
       }
     }
-  }
+  });
 };
 
-const plaxify = (layer) => {
-  let layerExistsAt = -1;
+const plaxify = (element) => {
+  const layer = new PlaxLayer(element);
 
-  // const params = getParams(layer);
+  layer.plaxify();
 
-  const plaxLayer = new PlaxLayer(layer);
+  const layerExistsAt = cache.layers.findIndex((_layer) => layer === _layer);
 
-  cache.layers.forEach((_layer, transformTranslate) => {
-    if (layer === _layer.obj.getLayer()) {
-      layerExistsAt = transformTranslate;
-    }
-  });
-
-  if (plaxLayer.options.background) {
-    // animate using the element's background
-    const pos = (plaxLayer.css('background-position') || '0px 0px').split(/ /);
-    if (pos.length != 2) {
-      return;
-    }
-    x = pos[0].match(/^((-?\d+)\s*px|0+\s*%|left)$/);
-    y = pos[1].match(/^((-?\d+)\s*px|0+\s*%|top)$/);
-    if (!x || !y) {
-      // no can-doesville, babydoll, we need pixels or top/left as initial
-      // values (it mightbe possible to construct a temporary image from the
-      // background-image property and get the dimensions and run some numbers,
-      // but that'll almost definitely be slow)
-      return;
-    }
-    // TODO: Add options properly.
-    plaxLayer.originX = plaxLayer.startX = x[2] || 0;
-    plaxLayer.originY = plaxLayer.startY = y[2] || 0;
-    plaxLayer.transformOriginX = plaxLayer.transformStartX = 0;
-    plaxLayer.transformOriginY = plaxLayer.transformStartY = 0;
-    plaxLayer.transformOriginZ = plaxLayer.transformStartZ = 0;
-  } else {
-    // Figure out where the element is positioned, then reposition it from the
-    // top/left, same for transform if using translate3d
-    const position = plaxLayer.position();
-    const transformTranslate = plaxLayer.get3dTranslation();
-    plaxLayer.css({
-      transform: transformTranslate.join() + 'px',
-      top: position.top + 'px',
-      left: position.left + 'px',
-      right: '',
-      bottom: ''
-    });
-    // TODO: Add options properly.
-    plaxLayer.originX = plaxLayer.startX = position.left;
-    plaxLayer.originY = plaxLayer.startY = position.top;
-    plaxLayer.transformOriginX = plaxLayer.transformStartX =
-      transformTranslate[0];
-    plaxLayer.transformOriginY = plaxLayer.transformStartY =
-      transformTranslate[1];
-    plaxLayer.transformOriginZ = plaxLayer.transformStartZ =
-      transformTranslate[2];
-  }
-
-  plaxLayer.startX -=
-    plaxLayer.inversionFactor * Math.floor(plaxLayer.options.xRange / 2);
-  plaxLayer.startY -=
-    plaxLayer.inversionFactor * Math.floor(plaxLayer.options.yRange / 2);
-  plaxLayer.transformStartX -=
-    plaxLayer.inversionFactor * Math.floor(plaxLayer.options.xRange / 2);
-  plaxLayer.transformStartY -=
-    plaxLayer.inversionFactor * Math.floor(plaxLayer.options.yRange / 2);
-  plaxLayer.transformStartZ -=
-    plaxLayer.inversionFactor * Math.floor(plaxLayer.options.zRange / 2);
   if (layerExistsAt >= 0) {
-    cache.plaxLayers.splice(layerExistsAt, 1, plaxLayer);
+    cache.layers.splice(layerExistsAt, 1, layer);
   } else {
-    cache.plaxLayers.push(plaxLayer);
+    cache.layers.push(layer);
   }
 };
 

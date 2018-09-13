@@ -2,7 +2,9 @@
 @import './partials/typography';
 @import './partials/link';
 @import './partials/icons';
-@import './parallax-shapes';
+@import './plax';
+
+$top-header-height: 172px;
 
 body {
   padding-left: 139px;
@@ -43,18 +45,21 @@ hr,
   border-radius: 10px;
   position: relative;
   background-image: $container-background;
+
+  > header {
+    height: $top-header-height;
+  }
 }
 
 .me {
-  $thumbnail-dimension: 172px;
   $thumbnail-filters: grayscale(100%);
 
   background: url('../assets/images/me_2.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 50%;
-  width: $thumbnail-dimension;
-  height: $thumbnail-dimension;
+  width: $top-header-height;
+  height: $top-header-height;
 
   filter: $thumbnail-filters;
 }
