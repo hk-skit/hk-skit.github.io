@@ -1,10 +1,12 @@
+$icon-size: 44px;
 .icon {
-  width: 36px;
-  height: 36px;
+  width: $icon-size;
+  height: $icon-size;
   object-fit: contain;
   display: inline-block;
   opacity: 0.5;
   background-size: cover !important;
+  transition: opacity 0.3s ease-in-out;
 
   &:hover {
     opacity: 1;

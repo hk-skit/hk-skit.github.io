@@ -6,12 +6,6 @@
 
 $top-header-height: 172px;
 
-body {
-  padding-left: 139px;
-  padding-top: 55px;
-  padding-bottom: 30px;
-}
-
 hr,
 .hr {
   background: $hr-rule-color;
@@ -21,24 +15,26 @@ hr,
 }
 .hr {
   &-top {
-    top: 145px;
+    top: 190px;
     position: absolute;
-    left: -26px;
-    right: -252px;
+    left: -123px;
+    right: 215px;
     z-index: -1;
   }
 
   &-bottom {
     margin-left: -123px;
-    margin-right: -252px;
+    margin-right: -310px;
   }
 }
 // main container.
 .container {
   $container-width: 414px;
 
-  padding-top: 57px;
-  padding-bottom: 19px;
+  margin-left: 139px;
+  margin-top: 55px;
+  margin-bottom: 30px;
+
   padding-left: 97px;
   width: $container-width;
   box-sizing: border-box;
@@ -47,14 +43,23 @@ hr,
   background-image: $container-background;
 
   > header {
+    padding-top: 106px;
+    padding-right: 110px;
     height: $top-header-height;
+    width: 731px;
+    position: relative;
+
+    > .nav {
+      margin-top: 100px;
+      margin-bottom: 0;
+    }
   }
 }
 
 .me {
   $thumbnail-filters: grayscale(100%);
 
-  background: url('../assets/images/me_2.jpg') no-repeat;
+  background: url('../assets/images/me.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -74,7 +79,8 @@ hr,
 footer {
   > p {
     font-size: 12px;
-    margin-top: 19px;
-    margin-bottom: 0;
+    margin: 0;
+    padding-top: 19px;
+    padding-bottom: 19px;
   }
 }

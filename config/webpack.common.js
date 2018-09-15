@@ -29,7 +29,8 @@ module.exports = {
           DEV_MODE ? 'style-loader' : MiniCssExtractPlugin.loader,
           // MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader'
+          'sass-loader',
+          'postcss-loader'
         ]
       },
       {

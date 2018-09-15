@@ -13,6 +13,13 @@ a {
 ul.nav {
   list-style: none;
   padding: 0;
+  display: flex;
+
+  > li {
+    &:first-child {
+      margin-left: auto;
+    }
+  }
 }
 
 .nav {
@@ -22,7 +29,7 @@ ul.nav {
   &-item {
     display: inline-block;
     &:not(:last-child) {
-      margin-right: 26px;
+      margin-right: 11px;
     }
   }
 }
