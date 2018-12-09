@@ -22,6 +22,7 @@ p {
 }
 
 .text-center {
-  text-align: justify;
-  text-align-last: center;
+  text-align: center;
+  // For safari.
+  text-align: -webkit-center;
 }
