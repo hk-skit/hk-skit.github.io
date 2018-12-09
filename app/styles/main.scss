@@ -4,7 +4,24 @@
 @import './partials/icons';
 @import './plax';
 
-$top-header-height: 172px;
+$thumbnail-size: 172px;
+
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  max-width: 692px;
+  margin: auto;
+  header {
+    position: relative;
+  }
+}
 
 hr,
 .hr {
@@ -15,72 +32,58 @@ hr,
 }
 .hr {
   &-top {
-    top: 190px;
-    position: absolute;
-    left: -123px;
-    right: 215px;
-    z-index: -1;
+    margin: 200px -120px 114px -120px;
   }
-
   &-bottom {
-    margin-left: -123px;
-    margin-right: -310px;
+    margin: 0 14px;
   }
 }
-// main container.
-.container {
-  $container-width: 414px;
 
-  margin-left: 139px;
-  margin-top: 55px;
-  margin-bottom: 30px;
-
-  padding-left: 97px;
-  width: $container-width;
-  box-sizing: border-box;
-  border-radius: 10px;
-  position: relative;
-  background-image: $container-background;
-
-  > header {
-    padding-top: 106px;
-    padding-right: 110px;
-    height: $top-header-height;
-    width: 731px;
-    position: relative;
-
-    > .nav {
-      margin-top: 100px;
-      margin-bottom: 0;
+header {
+  .plax-circle {
+    &__small {
+      top: -150px;
     }
-  }
-}
-
-.me {
-  $thumbnail-filters: grayscale(100%);
-
-  background: url('../assets/images/me.jpg') no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  width: $top-header-height;
-  height: $top-header-height;
-
-  filter: $thumbnail-filters;
-}
-
-.about {
-  .content {
-    $content-width: 150%;
-    width: $content-width;
+    &__big {
+      top: -118px;
+      left: calc(50% - (300px / 2) + 80px);
+    }
   }
 }
 
 footer {
   > p {
     font-size: 12px;
-    margin: 0;
-    padding-top: 19px;
-    padding-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.about {
+  max-width: 450px;
+  margin: 0 auto;
+  text-align-last: center;
+  text-align: justify;
+}
+
+.me {
+  $thumbnail-filters: grayscale(45%);
+
+  background: url('../assets/images/me.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  width: $thumbnail-size;
+  height: $thumbnail-size;
+
+  top: calc(-#{$thumbnail-size} / 2);
+  left: calc(50% - #{$thumbnail-size} / 2);
+  filter: $thumbnail-filters;
+}
+
+@media (max-width: 700px) {
+  .hr-top {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

@@ -14,17 +14,12 @@ ul.nav {
   list-style: none;
   padding: 0;
   display: flex;
-
-  > li {
-    &:first-child {
-      margin-left: auto;
-    }
-  }
+  justify-content: center;
 }
 
 .nav {
-  margin-top: 39px;
-  margin-bottom: 36px;
+  margin-top: 33px;
+  margin-bottom: 29px;
 
   &-item {
     display: inline-block;

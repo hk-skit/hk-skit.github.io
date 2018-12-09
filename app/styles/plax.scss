@@ -1,6 +1,6 @@
 @import './modules/colors';
 
-$parallax-shape-opacity: 0.3;
+$parallax-shape-opacity: 0.2;
 
 .plax {
   position: absolute;
@@ -15,14 +15,12 @@ $parallax-shape-opacity: 0.3;
     &__small {
       width: 71px;
       height: 71px;
-      top: -35px;
     }
 
     &__big {
       width: 200px;
       height: 200px;
-      left: 75px;
-      top: 75px;
+      background: $shape-color2;
     }
   }
 }
