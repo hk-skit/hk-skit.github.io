@@ -63,8 +63,8 @@ PS: Hitesh likes to talk about himself in third person. 🙂`,
     contact: {
       order: 8, enabled: true,
       label: "Contact",
-      heading: "Get in Touch",
-      text: "Want to chat? Just shoot me a dm with a direct question on twitter and I'll respond whenever I can. I will ignore all soliciting.",
+      heading: "Say hi",
+      text: "Hitesh actually reads his email. [Drop him a line](mailto:hk.skit@gmail.com) — he'll write back. No spam, please.",
     },
   },
   photos: [
