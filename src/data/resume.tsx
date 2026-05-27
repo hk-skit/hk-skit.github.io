@@ -63,8 +63,8 @@ PS: Hitesh likes to talk about himself in third person. 🙂`,
     contact: {
       order: 8, enabled: true,
       label: "Contact",
-      heading: "Say hi",
-      text: "Hitesh's inbox is mostly empty. Help fill it with something interesting — [drop him a note](mailto:hk.skit@gmail.com). Spam not invited.",
+      heading: "Namaste",
+      text: "Hitesh's inbox is mostly empty. Help fill it with something interesting — [say hi](mailto:hk.skit@gmail.com). Spam not invited.",
     },
   },
   photos: [
