@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import Markdown from "react-markdown";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { DATA } from "@/data/resume";
 
@@ -23,12 +23,23 @@ export default function ContactSection() {
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
           {DATA.sections.contact.heading}
         </h2>
-        <p className="mx-auto max-w-lg text-muted-foreground text-balance">
-          {DATA.sections.contact.text}
-        </p>
-        <Button asChild size="sm" className="mt-2">
-          <a href={`mailto:${DATA.contact.email}`}>Say hello</a>
-        </Button>
+        <div className="mx-auto max-w-lg text-muted-foreground text-balance">
+          <Markdown
+            components={{
+              p: ({ children }) => <p>{children}</p>,
+              a: ({ href, children }) => (
+                <a
+                  href={href}
+                  className="font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  {children}
+                </a>
+              ),
+            }}
+          >
+            {DATA.sections.contact.text}
+          </Markdown>
+        </div>
       </div>
     </div>
   );
