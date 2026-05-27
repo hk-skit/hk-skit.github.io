@@ -3,9 +3,9 @@ export const CONFIG = {
   // Site Settings
   // ---------------------------------------------------------------------------
   site: {
-    url: "https://alexmercer.dev",
+    url: "https://hiteshkumar.dev",
     locale: "en_US",
-    twitterHandle: "@alexmercer_dev",
+    twitterHandle: "@_smellycode",
   },
 
   // ---------------------------------------------------------------------------
