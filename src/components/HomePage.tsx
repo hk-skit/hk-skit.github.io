@@ -155,7 +155,7 @@ export default function HomePage() {
                 <AvatarImage
                   alt={DATA.name}
                   src={DATA.avatarUrl}
-                  className="grayscale"
+                  className="object-cover"
                 />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
