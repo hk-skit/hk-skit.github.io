@@ -30,7 +30,7 @@ export default function ContactSection() {
               a: ({ href, children }) => (
                 <a
                   href={href}
-                  className="font-medium text-foreground hover:text-primary transition-colors"
+                  className="font-medium text-foreground underline underline-offset-4 hover:text-primary transition-colors"
                 >
                   {children}
                 </a>
