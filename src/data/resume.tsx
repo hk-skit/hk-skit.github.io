@@ -94,6 +94,12 @@ PS: Hitesh likes to talk about himself in third person. 🙂`,
     email: "hk.skit@gmail.com",
     tel: "",
     social: {
+      Blog: {
+        name: "Blog",
+        url: "https://smellycode.com",
+        icon: Icons.blog,
+        navbar: true,
+      },
       GitHub: {
         name: "GitHub",
         url: "https://github.com/hk-skit",
@@ -116,12 +122,6 @@ PS: Hitesh likes to talk about himself in third person. 🙂`,
         name: "Stack Overflow",
         url: "https://stackoverflow.com/users/2879146/hitesh-kumar",
         icon: Icons.stackoverflow,
-        navbar: true,
-      },
-      Blog: {
-        name: "Blog",
-        url: "https://smellycode.com",
-        icon: Icons.blog,
         navbar: true,
       },
       email: {
