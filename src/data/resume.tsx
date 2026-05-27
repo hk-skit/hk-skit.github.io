@@ -1,5 +1,4 @@
 import { Icons } from "@/components/icons";
-import { House, FileText, BookOpen } from "lucide-react";
 import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
 import { Typescript } from "@/components/ui/svgs/typescript";
@@ -91,11 +90,6 @@ PS: Hitesh likes to talk about himself in third person. 🙂`,
     { name: "Docker", icon: Docker },
     { name: "Kubernetes", icon: Kubernetes },
   ],
-  navbar: [
-    { href: "/", icon: House, label: "Home" },
-    { href: "/resume", icon: FileText, label: "Resume" },
-    { href: "https://smellycode.com", icon: BookOpen, label: "Blog" },
-  ],
   contact: {
     email: "hk.skit@gmail.com",
     tel: "",
@@ -122,6 +116,12 @@ PS: Hitesh likes to talk about himself in third person. 🙂`,
         name: "Stack Overflow",
         url: "https://stackoverflow.com/users/2879146/hitesh-kumar",
         icon: Icons.stackoverflow,
+        navbar: true,
+      },
+      Blog: {
+        name: "Blog",
+        url: "https://smellycode.com",
+        icon: Icons.blog,
         navbar: true,
       },
       email: {
