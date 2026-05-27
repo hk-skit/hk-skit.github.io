@@ -17,7 +17,7 @@ export const DATA = {
   location: "",
   locationLink: "",
   description:
-    "An enthusiastic software engineer 👨🏻‍💻. Big fan of JavaScript and Coldplay 👨🏻‍🎤. Can be crazy around pizza 🍕 and dark chocolates 🍫.",
+    "Senior frontend architect, increasingly drawn to engineering leadership. Has been building for the web long enough to remember when the hard part was browsers, not models.",
   summary: `Hitesh is a passionate software engineer 👨🏻‍💻 with **${new Date().getFullYear() - 2014}+ years** of experience. He tinkers with the web 🌎 for a living.
 
 An engineer wears many hats in his career. Hitesh is not an exception. He has also worn many hats. His latest is that of a **Technical Lead** at [Myntra](https://www.myntra.com) 🤠.
