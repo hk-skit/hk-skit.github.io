@@ -155,7 +155,7 @@ export default function HomePage() {
                 <AvatarImage
                   alt={DATA.name}
                   src={DATA.avatarUrl}
-                  className="object-cover"
+                  className="object-cover object-[35%_center]"
                 />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
