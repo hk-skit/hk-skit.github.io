@@ -37,7 +37,7 @@ In his own words, he is a simple soul tangled up in the convoluted world of web.
 Don't forget to [say hi! 👋🏻](mailto:hk.skit@gmail.com).
 
 PS: Hitesh likes to talk about himself in third person. 🙂`,
-  avatarUrl: "/me.jpg",
+  avatarUrl: "/avatar.png",
   ogImage: "/open-graph.jpg",
   sections: {
     about: { order: 1, enabled: true, heading: "About" },
