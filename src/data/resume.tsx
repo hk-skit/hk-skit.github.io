@@ -59,6 +59,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     { src: "/books/bad-therapy.jpg", alt: "Bad Therapy — Abigail Shrier" },
     { src: "/books/sapiens.jpg", alt: "Sapiens — Yuval Noah Harari" },
     { src: "/books/psychology-of-money.jpg", alt: "The Psychology of Money — Morgan Housel" },
+    { src: "/books/mans-search-for-meaning.jpg", alt: "Man's Search for Meaning — Viktor Frankl" },
   ],
   skills: [
     { name: "Astro", icon: Astro },
