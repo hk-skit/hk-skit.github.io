@@ -60,6 +60,11 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     { src: "/books/sapiens.jpg", alt: "Sapiens — Yuval Noah Harari" },
     { src: "/books/psychology-of-money.jpg", alt: "The Psychology of Money — Morgan Housel" },
     { src: "/books/mans-search-for-meaning.jpg", alt: "Man's Search for Meaning — Viktor Frankl" },
+    { src: "/books/saint-surfer-ceo.jpg", alt: "The Saint, the Surfer, and the CEO — Robin Sharma" },
+    { src: "/books/shiva-trilogy.jpg", alt: "Shiva Trilogy — Amish Tripathi" },
+    { src: "/books/who-will-cry-when-you-die.jpg", alt: "Who Will Cry When You Die? — Robin Sharma" },
+    { src: "/books/awaken-the-giant-within.jpg", alt: "Awaken the Giant Within — Tony Robbins" },
+    { src: "/books/seven-habits.jpg", alt: "The Seven Habits of Highly Effective People — Stephen R. Covey" },
   ],
   skills: [
     { name: "Astro", icon: Astro },
