@@ -18,25 +18,9 @@ export const DATA = {
   locationLink: "",
   description:
     "Senior architect. Building for the web since browsers were the hard part — not models.",
-  summary: `Hitesh is a passionate software engineer 👨🏻‍💻 with **${new Date().getFullYear() - 2014}+ years** of experience. He tinkers with the web 🌎 for a living.
+  summary: `Over the past decade, I've built for the web across the full spectrum — large marketplaces like Myntra, B2B SaaS, and the founding teams of early-stage D2C startups. Quietly obsessed with craft, performance, and the long game of shipping.
 
-An engineer wears many hats in his career. Hitesh is not an exception. He has also worn many hats. His latest is that of a **Technical Lead** at [Myntra](https://www.myntra.com) 🤠.
-
-Hitesh is a big fan of **JavaScript** and likes everything that revolves around it. Currently, he is working with **React** and **NodeJs**, but he has plenty of experience with **Angular(Js)**, **TypeScript** and many other cutting-edge web technologies including **HTML5**, **CSS3**, and **Canvas** 🎨.
-
-Jargons like high-performant, robust, user-friendly, responsive, cross-browser compatible, etc. are thrown around when people talk about web applications. Hitesh is hooked onto creating these.
-
-He has developed, designed and architected many small & large, simple & complex web applications from scratch. He has also single-handedly written a few UI frameworks to solve domain/organization specific problems.
-
-[Greytip](https://www.greytip.com/) rewarded Hitesh with **A Rising Star Award** 🏆 for going the extra mile and delivering high-quality work on time.
-
-When Hitesh is tired of breaking and building things, he watches TV shows. He also likes to read novels and always carries a book in his bag.
-
-In his own words, he is a simple soul tangled up in the convoluted world of web.
-
-Don't forget to [say hi! 👋🏻](mailto:hk.skit@gmail.com).
-
-PS: Hitesh likes to talk about himself in third person. 🙂`,
+Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mornings, and travelling whenever I can — preferably hills and beaches. I binge documentaries, and occasionally ramble at [smellycode](https://smellycode.com).`,
   avatarUrl: "/avatar.png",
   ogImage: "/open-graph.jpg",
   sections: {
