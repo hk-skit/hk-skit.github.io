@@ -17,7 +17,7 @@ export const DATA = {
   location: "",
   locationLink: "",
   description:
-    "Senior frontend architect, increasingly drawn to engineering leadership. Building for the web since browsers were the hard part — not models.",
+    "Senior architect. Building for the web since browsers were the hard part — not models.",
   summary: `Hitesh is a passionate software engineer 👨🏻‍💻 with **${new Date().getFullYear() - 2014}+ years** of experience. He tinkers with the web 🌎 for a living.
 
 An engineer wears many hats in his career. Hitesh is not an exception. He has also worn many hats. His latest is that of a **Technical Lead** at [Myntra](https://www.myntra.com) 🤠.
@@ -64,7 +64,7 @@ PS: Hitesh likes to talk about himself in third person. 🙂`,
       order: 8, enabled: true,
       label: "Contact",
       heading: "Get in touch",
-      text: "Hitesh's inbox is mostly empty. Help fill it with something interesting — [say hi](mailto:hk.skit@gmail.com). Spam not invited.",
+      text: "Got a question, a project idea, or a good book to recommend? [Say hi](mailto:hk.skit@gmail.com). Spam not invited.",
     },
   },
   photos: [
