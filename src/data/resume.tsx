@@ -42,8 +42,8 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     photos: {
       order: 6, enabled: true,
-      label: "Reading",
-      heading: "What I'm reading",
+      label: "Books",
+      heading: "On my bookshelf",
     },
     contact: {
       order: 8, enabled: true,
