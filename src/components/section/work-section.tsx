@@ -37,7 +37,7 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
 export default function WorkSection() {
   return (
     <Accordion type="single" collapsible className="w-full">
-      <Timeline>
+      <Timeline className="px-0">
         {DATA.work.map((work, idx) => {
           const itemValue = `${work.company}-${work.title}-${idx}`;
           return (
