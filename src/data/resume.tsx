@@ -29,13 +29,13 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     education: { order: 3, enabled: false, heading: "Education" },
     skills: { order: 4, enabled: true, heading: "Skills" },
     projects: {
-      order: 5, enabled: true,
+      order: 5, enabled: false,
       label: "My Projects",
       heading: "Check out my latest work",
       text: "I've worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.",
     },
     hackathons: {
-      order: 7, enabled: true,
+      order: 7, enabled: false,
       label: "Hackathons",
       heading: "I like building things",
       text: "During my time in university, I attended {count}+ hackathons. People from around the country would come together and build incredible things in 2-3 days. It was eye-opening to see the endless possibilities brought to life by a group of motivated and passionate individuals.",
