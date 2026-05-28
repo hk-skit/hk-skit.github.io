@@ -39,12 +39,14 @@ export default function PhotosSection() {
                       src={photo.src}
                       alt=""
                       aria-hidden="true"
-                      className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl"
+                      draggable={false}
+                      className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl select-none"
                     />
                     <img
                       src={photo.src}
                       alt={photo.alt}
-                      className="relative w-full h-full object-contain"
+                      draggable={false}
+                      className="relative w-full h-full object-contain select-none"
                     />
                   </div>
                 </BlurFade>
