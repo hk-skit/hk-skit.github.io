@@ -124,7 +124,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       badges: ["Founding Team"],
       location: "Bengaluru, India",
       title: "Senior Architect, UI Engineering",
-      logoUrl: "https://avatar.vercel.sh/tectonic?size=40",
+      logoUrl: "/logos/tectonic.png",
       start: "Jul 23",
       end: undefined,
       description:
@@ -135,8 +135,8 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       href: "#",
       badges: [],
       location: "Bengaluru, India",
-      title: "Lead Architect",
-      logoUrl: "https://avatar.vercel.sh/virgio?size=40",
+      title: "Technical Lead",
+      logoUrl: "/logos/virgio.png",
       start: "Mar 22",
       end: "Jul 23",
       description:
@@ -184,7 +184,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       badges: [],
       location: "Bengaluru, India",
       title: "Front End Developer",
-      logoUrl: "https://avatar.vercel.sh/eventifier?size=40",
+      logoUrl: "/logos/eventifier.png",
       start: "Oct 16",
       end: "Jan 17",
       description:
@@ -196,7 +196,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       badges: [],
       location: "Jaipur, India",
       title: "Software Developer",
-      logoUrl: "https://avatar.vercel.sh/in-time-tec?size=40",
+      logoUrl: "/logos/in-time-tec.png",
       start: "Jul 14",
       end: "Oct 16",
       description:
