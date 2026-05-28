@@ -123,7 +123,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       href: "#",
       badges: ["Founding Team"],
       location: "Bengaluru, India",
-      title: "Senior Architect, UI Engineering",
+      title: "Senior Architect",
       logoUrl: "/logos/tectonic.png",
       start: "Jul 23",
       end: undefined,
