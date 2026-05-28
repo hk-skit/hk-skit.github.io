@@ -27,7 +27,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     about: { order: 1, enabled: true, heading: "About" },
     work: { order: 2, enabled: true, heading: "Work Experience", presentLabel: "Present" },
     education: { order: 3, enabled: false, heading: "Education" },
-    skills: { order: 4, enabled: true, heading: "Skills" },
+    skills: { order: 4, enabled: false, heading: "Skills" },
     projects: {
       order: 5, enabled: false,
       label: "My Projects",
