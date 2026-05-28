@@ -155,22 +155,10 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       location: "Bengaluru, India",
       title: "Technical Lead",
       logoUrl: "https://www.google.com/s2/favicons?domain=myntra.com&sz=128",
-      start: "Oct 20",
+      start: "Feb 19",
       end: "Mar 22",
       description:
-        "Led frontend engineering across multiple verticals on India's largest fashion marketplace. Drove performance and architecture work for customer-facing surfaces.",
-    },
-    {
-      company: "Myntra",
-      href: "https://www.myntra.com",
-      badges: [],
-      location: "Bengaluru, India",
-      title: "Senior Software Engineer",
-      logoUrl: "https://www.google.com/s2/favicons?domain=myntra.com&sz=128",
-      start: "Feb 19",
-      end: "Oct 20",
-      description:
-        "Built customer-facing features across the Myntra storefront. Contributed to performance and SSR work that shaped subsequent iterations of the consumer experience.",
+        "Led frontend for Vorta.ai, Myntra's in-house AI platform for fashion trend prediction. Designers and buyers used it to spot trends — colors, silhouettes, aesthetics — and turn them into product decisions. Continued to lead the frontend as Vorta evolved into the Market Intelligence Platform — opening up to brands with insights on pricing, promotions, revenues, and sale trends. Earned the Technical Lead title along the way. Helped build the team — interviewing, hiring, and ramping new engineers.\n\nThen took over Spectrum — Myntra's in-house React framework for internal apps. The CLI scaffolded a fully-wired app with Myntra's UI kit, internal libs, and conventions, alongside a Node proxy server; teams just dropped in business-logic screens and shipped. Every Myntra SCM team — inbound and outbound — built their tools on it: data-annotation tools, vendor portals, SCM dashboards. Gave internal talks along the way on React, web development, and performance optimization.",
     },
     {
       company: "Greytip",
@@ -182,7 +170,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       start: "Jan 17",
       end: "Jan 19",
       description:
-        "Worked with cutting-edge frontend technologies on the Employee Self Service (ESS) portal. Stack: Angular(2), ngrx-store, TypeScript, HTML5, and CSS3.",
+        "Rewrote the employee self-service portal from scratch — onboarding, leaves, attendance, payslips, a company feed, and a document manager. Solo on the frontend, owning the modules end-to-end. Built a server-driven UI framework — new screens landed as server config instead of handwritten components. Started an internal Angular + TypeScript training track for the team, and picked up the Rising Star award along the way.",
     },
     {
       company: "Eventifier",
@@ -194,7 +182,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       start: "Oct 16",
       end: "Jan 17",
       description:
-        "Eventifier was a tool to display and embed social media feeds from Twitter, Facebook, Instagram, and Google+ — with moderation, livewall, and stream-dashboard views. Frontend development and refactors, test specs in Mocha, and bug fixes on a single-page application.",
+        "Brief stop at Eventifier, an SPA for moderating and embedding social-media livewalls (Twitter, Facebook, Instagram, Google+). Wrote frontend features, refactors, and Mocha test specs before the company wound down.",
     },
     {
       company: "In Time Tec",
@@ -206,7 +194,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       start: "Jul 14",
       end: "Oct 16",
       description:
-        "First role out of college. Worked on a managed print solution (MPS) — an asset-mapping tool for enterprise print deployments. Frontend stack: JavaScript and AngularJS.",
+        "Built the frontend for Cartos, a managed-print SaaS where fleet designers uploaded floor maps and plotted enterprise printers onto an HTML5 Canvas. Owned the architecture on a MEAN-stack SPA — the Canvas/Konva UI layer, the service layer to the API, and a Karma + Jasmine unit-test setup.",
     },
   ],
   education: [
