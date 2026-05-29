@@ -1,6 +1,5 @@
 import React from "react";
 import { Dock, DockIcon } from "@/components/magicui/dock";
-import { ModeToggle } from "@/components/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
@@ -9,8 +8,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
+  const { theme, setTheme } = useTheme();
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-4 z-30">
       <Dock className="z-50 pointer-events-auto relative h-14 p-2 w-fit mx-auto flex gap-2 border bg-card/90 backdrop-blur-3xl shadow-[0_0_10px_3px] shadow-primary/5">
@@ -51,9 +53,17 @@ export default function Navbar() {
         />
         <Tooltip>
           <TooltipTrigger asChild>
-            <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
-              <ModeToggle className="size-full cursor-pointer" />
-            </DockIcon>
+            <button
+              type="button"
+              aria-label="Toggle theme"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="cursor-pointer"
+            >
+              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+                <SunIcon className="size-full" />
+                <MoonIcon className="size-full hidden" />
+              </DockIcon>
+            </button>
           </TooltipTrigger>
           <TooltipContent
             side="top"
