@@ -5,11 +5,6 @@
 @import "@fontsource-variable/geist-mono";
 
 @custom-variant dark (&:is(.dark *));
-@custom-variant hover {
-  &:where(html:not(.touch) *):hover {
-    @slot;
-  }
-}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
