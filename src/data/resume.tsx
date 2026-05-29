@@ -217,7 +217,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       href: "https://smellycode.com/csrf-in-action/",
       dates: "Jun 10, 2019",
       description:
-        "How cross-site request forgery exploits authenticated sessions, and the defences that actually hold up.",
+        "How cross-site request forgery exploits authenticated sessions, and the defenses that actually hold up.",
       image: "/articles/csrf-in-action.jpg",
     },
     {
