@@ -44,13 +44,6 @@
   "overrides": {
     "vite": "^7"
   },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "tsconfck>typescript": "6"
-      }
-    }
-  },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "typescript": "^6.0.3"
