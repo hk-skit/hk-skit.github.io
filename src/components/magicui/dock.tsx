@@ -35,8 +35,10 @@ const Dock = ({ className, children, magnification = DEFAULT_MAGNIFICATION, dist
   return (
     <DockContext.Provider value={{ mouseX, magnification, distance }}>
       <motion.div
-        onMouseMove={(e) => mouseX.set(e.pageX)}
-        onMouseLeave={() => mouseX.set(Infinity)}
+        onPointerMove={(e) => {
+          if (e.pointerType === "mouse") mouseX.set(e.pageX);
+        }}
+        onPointerLeave={() => mouseX.set(Infinity)}
         className={cn("mx-auto w-max h-full flex items-end justify-center overflow-visible rounded-full border", className)}
       >
         {children}
