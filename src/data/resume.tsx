@@ -80,12 +80,6 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     email: "hk.skit@gmail.com",
     tel: "",
     social: {
-      Blog: {
-        name: "Blog",
-        url: "https://smellycode.com",
-        icon: Icons.blog,
-        navbar: true,
-      },
       GitHub: {
         name: "GitHub",
         url: "https://github.com/hk-skit",
