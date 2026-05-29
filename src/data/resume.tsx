@@ -213,7 +213,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   ],
   projects: [
     {
-      title: "CSRF in Action 🎭",
+      title: "CSRF in Action",
       href: "https://smellycode.com/csrf-in-action/",
       dates: "Jun 10, 2019",
       description:
@@ -221,7 +221,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       image: "/articles/csrf-in-action.jpg",
     },
     {
-      title: "React starter kit for Chrome Extensions with Live Reloading 🤓",
+      title: "React starter kit for Chrome Extensions with Live Reloading",
       href: "https://smellycode.com/chrome-extension-live-reloading-with-react/",
       dates: "May 7, 2019",
       description:
@@ -229,7 +229,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       image: "/articles/chrome-extension-live-reloading-with-react.jpg",
     },
     {
-      title: "JavaScript and Bit-hacks 🧙🏻‍♂️",
+      title: "JavaScript and Bit-hacks",
       href: "https://smellycode.com/js-bithacks/",
       dates: "May 1, 2020",
       description:
@@ -237,7 +237,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       image: "",
     },
     {
-      title: "Building an Accordion with React Hooks.",
+      title: "Building an Accordion with React Hooks",
       href: "https://smellycode.com/accordion-in-reactjs/",
       dates: "Feb 26, 2020",
       description:
