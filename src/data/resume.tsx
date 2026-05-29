@@ -29,10 +29,9 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     education: { order: 3, enabled: false, heading: "Education" },
     skills: { order: 4, enabled: false, heading: "Skills" },
     projects: {
-      order: 5, enabled: false,
-      label: "My Projects",
-      heading: "Check out my latest work",
-      text: "I've worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.",
+      order: 5, enabled: true,
+      label: "Writing",
+      heading: "From the blog",
     },
     hackathons: {
       order: 7, enabled: false,
@@ -214,115 +213,36 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   ],
   projects: [
     {
-      title: "Stackwise",
-      href: "https://stackwise.dev",
-      dates: "March 2024 - Present",
-      active: true,
+      title: "CSRF in Action 🎭",
+      href: "https://smellycode.com/csrf-in-action/",
+      dates: "Jun 10, 2019",
       description:
-        "Built an AI-powered code review tool that integrates with GitHub PRs and provides context-aware feedback based on your team's codebase conventions. Used by 300+ engineering teams.",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "OpenAI API",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://stackwise.dev",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/example-website.webp",
-      video: "",
+        "How cross-site request forgery exploits authenticated sessions, and the defences that actually hold up.",
+      image: "/articles/csrf-in-action.jpg",
     },
     {
-      title: "Logport",
-      href: "https://logport.io",
-      dates: "October 2023 - February 2024",
-      active: true,
+      title: "React starter kit for Chrome Extensions with Live Reloading 🤓",
+      href: "https://smellycode.com/chrome-extension-live-reloading-with-react/",
+      dates: "May 7, 2019",
       description:
-        "Open-source structured logging dashboard for Node.js and Python services. Ingest logs via a lightweight SDK, query them with a SQL-like syntax, and set up alerts in minutes.",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "ClickHouse",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://logport.io",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/alexmercer-dev/logport",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
+        "A React starter for Chrome extensions, with live reloading wired in without tanking dev performance.",
+      image: "/articles/chrome-extension-live-reloading-with-react.jpg",
+    },
+    {
+      title: "JavaScript and Bit-hacks 🧙🏻‍♂️",
+      href: "https://smellycode.com/js-bithacks/",
+      dates: "May 1, 2020",
+      description:
+        "A tour of bitwise operators in JavaScript, with practical tricks for when bits beat arithmetic.",
       image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
     },
     {
-      title: "Formbase",
-      href: "https://formbase.dev",
-      dates: "June 2023 - September 2023",
-      active: true,
+      title: "Building an Accordion with React Hooks.",
+      href: "https://smellycode.com/accordion-in-reactjs/",
+      dates: "Feb 26, 2020",
       description:
-        "A headless form backend that handles submissions, spam filtering, file uploads, and email notifications - no server required. Drop in one script tag and you're done.",
-      technologies: [
-        "Astro",
-        "TypeScript",
-        "Cloudflare Workers",
-        "TailwindCSS",
-        "Stripe",
-        "Resend",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://formbase.dev",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/alexmercer-dev/formbase",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/example-website.png",
-      video: "",
-    },
-    {
-      title: "Patchwork",
-      href: "https://patchwork.run",
-      dates: "February 2023 - May 2023",
-      active: false,
-      description:
-        "A visual diff tool for design tokens and Tailwind config changes. Connect it to your repo and get a live preview of how a config change affects every component in your design system.",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Vercel",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://patchwork.run",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
+        "A reusable, controlled accordion component — no library, just hooks and a few lines of logic.",
+      image: "/articles/accordion-in-reactjs.jpg",
     },
   ],
   hackathons: [
