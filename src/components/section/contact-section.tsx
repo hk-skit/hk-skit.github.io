@@ -4,7 +4,7 @@ import { DATA } from "@/data/resume";
 
 export default function ContactSection() {
   return (
-    <div className="border rounded-xl p-10 relative">
+    <div className="border rounded-xl p-6 sm:p-10 relative">
       <div className="absolute -top-4 border bg-primary z-10 rounded-xl px-4 py-1 left-1/2 -translate-x-1/2">
         <span className="text-background text-sm font-medium">{DATA.sections.contact.label}</span>
       </div>
