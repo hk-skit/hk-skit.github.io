@@ -59,6 +59,17 @@ const { baseFontSize } = CONFIG.typography;
       })();
     </script>
 
+    <!-- Touch detection: disables hover styles on touch devices via the global hover variant -->
+    <script is:inline>
+      document.addEventListener(
+        "touchstart",
+        function () {
+          document.documentElement.classList.add("touch");
+        },
+        { once: true, passive: true }
+      );
+    </script>
+
     <!-- Theme variables from config.ts -->
     <style
       set:html={`

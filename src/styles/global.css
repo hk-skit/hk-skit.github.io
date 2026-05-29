@@ -6,10 +6,8 @@
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant hover {
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      @slot;
-    }
+  &:where(html:not(.touch) *):hover {
+    @slot;
   }
 }
 
