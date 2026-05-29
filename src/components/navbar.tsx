@@ -28,7 +28,7 @@ export default function Navbar() {
                       target={isExternal ? "_blank" : undefined}
                       rel={isExternal ? "noopener noreferrer" : undefined}
                     >
-                      <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+                      <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-foreground backdrop-blur-3xl border border-border">
                         <IconComponent className="size-full rounded-sm overflow-hidden object-contain" />
                       </DockIcon>
                     </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
         />
         <Tooltip>
           <TooltipTrigger asChild>
-            <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+            <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-foreground backdrop-blur-3xl border border-border">
               <ModeToggle className="size-full cursor-pointer" />
             </DockIcon>
           </TooltipTrigger>

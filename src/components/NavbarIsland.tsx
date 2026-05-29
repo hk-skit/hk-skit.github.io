@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar";
 
 export default function NavbarIsland() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <TooltipProvider delayDuration={0}>
         <Navbar />
       </TooltipProvider>
