@@ -42,12 +42,6 @@ export default function Navbar() {
                     <TooltipArrow className="fill-primary" />
                   </TooltipContent>
                 </Tooltip>
-                {index === 0 && (
-                  <Separator
-                    orientation="vertical"
-                    className="h-2/3 m-auto w-px bg-border"
-                  />
-                )}
               </React.Fragment>
             );
           })}
