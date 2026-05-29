@@ -134,7 +134,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       start: "Jul 23",
       end: undefined,
       description:
-        "Leading UI engineering on the founding team — a growth platform that takes D2C brands off vanilla Shopify and rebuilds their storefronts in-house. Web and native apps, performance-first.",
+        "Founding-team engineer co-building Tectonic's storefront platform from scratch — a multi-tenant headless storefront platform for Shopify brands. Tectonic owns everything a shopper sees and a brand team configures — visual page building, merchandising rules through a small scripting language, A/B experiments, and personalization, all on one surface. Web runs on Remix, the app on Capacitor JS, both rendering through the same pipeline. Brand teams iterate live — layouts, experiments, and personalization ship without engineering in the loop. Leading UI engineering across web and app.",
     },
     {
       company: "Virgio",
@@ -146,7 +146,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       start: "Mar 22",
       end: "Jul 23",
       description:
-        "Lead frontend architect at a fast-fashion D2C brand (later pivoted to conscious fashion). Owned the customer-facing surface across web and native apps.",
+        "Led UI engineering at Virgio from day one. Built the app and web from scratch using React Native and React Native Web. Almost all screens and layouts were server-driven. Launched in two months, crossed 100k+ installs. Led architecture and end-to-end development with a team of 3–5.",
     },
     {
       company: "Myntra",
@@ -158,7 +158,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       start: "Feb 19",
       end: "Mar 22",
       description:
-        "Led frontend for Vorta.ai, Myntra's in-house AI platform for fashion trend prediction. Designers and buyers used it to spot trends — colors, silhouettes, aesthetics — and turn them into product decisions. Continued to lead the frontend as Vorta evolved into the Market Intelligence Platform — opening up to brands with insights on pricing, promotions, revenues, and sale trends. Earned the Technical Lead title along the way. Helped build the team — interviewing, hiring, and ramping new engineers.\n\nThen took over Spectrum — Myntra's in-house React framework for internal apps. The CLI scaffolded a fully-wired app with Myntra's UI kit, internal libs, and conventions, alongside a Node proxy server; teams just dropped in business-logic screens and shipped. Every Myntra SCM team — inbound and outbound — built their tools on it: data-annotation tools, vendor portals, SCM dashboards. Gave internal talks along the way on React, web development, and performance optimization.",
+        "Led frontend for Vorta.ai, Myntra's in-house AI platform for fashion trend prediction. Designers and buyers used it to spot trends — colors, silhouettes, aesthetics — and turn them into product decisions. Continued to lead the frontend as Vorta evolved into the Market Intelligence Platform — opening up to brands with insights on pricing, promotions, revenues, sale trends, etc.\n\nIn parallel, owned Spectrum — Myntra's in-house React-based framework for internal apps. The Spectrum CLI scaffolded a fully-wired app with Myntra's UI kit, internal libs, and conventions, plus a Node proxy server (Spectrum Server); teams dropped in business-logic screens and shipped. Every Myntra SCM team — inbound and outbound — built their tools on it: data-annotation tools, vendor portals, SCM dashboards.\n\nEarned the Technical Lead title along the way. Helped build the team — interviewing, hiring, and ramping new engineers. Drove Spectrum adoption with internal talks on React, web development, and performance optimization.",
     },
     {
       company: "Greytip",
