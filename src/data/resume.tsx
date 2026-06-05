@@ -34,7 +34,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
   },
   photos: [
-    { src: "/books/aahil.jpg", alt: "Aahil — Rahgir" },
+    { src: "/books/thinking-fast-and-slow.jpg", alt: "Thinking, Fast and Slow — Daniel Kahneman" },
     { src: "/books/obstacle-is-the-way.jpg", alt: "The Obstacle Is the Way — Ryan Holiday" },
     { src: "/books/tuesdays-with-morrie.jpg", alt: "Tuesdays with Morrie — Mitch Albom" },
     { src: "/books/bad-therapy.jpg", alt: "Bad Therapy — Abigail Shrier" },
