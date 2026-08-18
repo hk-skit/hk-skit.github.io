@@ -107,7 +107,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       },
       StackOverflow: {
         name: "Stack Overflow",
-        url: "https://stackoverflow.com/users/2879146/hitesh-kumar",
+        url: "https://stackoverflow.com/users/2879146",
         icon: Icons.stackoverflow,
         navbar: true,
       },
