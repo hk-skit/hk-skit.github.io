@@ -10,10 +10,11 @@ origin: docs/brainstorms/2026-08-18-resume-page-pdf-requirements.md
 
 ## Summary
 
-Add a standalone `/resume` route that renders Hitesh's resume as a clean,
-monochrome two-column document (no photo), driven by the existing `DATA` config
-in `src/data/resume.tsx` extended with a professional summary, skills,
-education, and per-role highlight bullets. A "Print / Download PDF" button calls
+Add a standalone `/resume` route that renders Hitesh's resume as a monochrome,
+sidebar-forward document (tinted sidebar with photo + a dense right column),
+driven by the existing `DATA` config in `src/data/resume.tsx` extended with a
+professional summary, skills, education, and per-role blurbs + highlight
+bullets. A "Print / Download PDF" button calls
 `window.print()` against a dedicated print stylesheet (A4, light, page-break
 aware) so the browser's Save-as-PDF produces the deliverable. Built in five
 dependency-ordered units mapped to the four brainstorm phases; final copy is

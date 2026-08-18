@@ -123,6 +123,8 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   work: [
     {
       company: "Tectonic",
+      blurb:
+        "A multi-tenant headless storefront platform for Shopify brands — page building, merchandising, experiments, and personalization on one surface. I co-build it as a founding-team engineer leading UI across web and app.",
       highlights: [
         "Founding engineer on a multi-tenant headless storefront platform for Shopify brands — visual page building, a merchandising DSL, A/B experiments, and personalization on one surface.",
         "Lead UI engineering across web (Remix) and app (Capacitor), both rendering through a single shared pipeline.",
@@ -140,6 +142,8 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     {
       company: "Virgio",
+      blurb:
+        "An early-stage fashion D2C. I led UI engineering from day one and built the app and web from the ground up.",
       highlights: [
         "Led UI engineering from day one; built the app and web from scratch on React Native and React Native Web.",
         "Architected an almost fully server-driven UI; launched in two months and crossed 100k+ installs.",
@@ -157,6 +161,8 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     {
       company: "Myntra",
+      blurb:
+        "India's largest fashion marketplace. I led frontend for its in-house AI trend-prediction and market-intelligence platforms, and owned Spectrum, the internal React framework powering SCM tooling.",
       highlights: [
         "Led frontend for Vorta.ai, Myntra's AI fashion-trend platform, and grew it into the Market Intelligence Platform opened to external brands.",
         "Owned Spectrum — Myntra's React framework and CLI for internal apps — adopted by every SCM team for vendor portals, annotation tools, and dashboards.",
@@ -174,6 +180,8 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     {
       company: "Greytip",
+      blurb:
+        "HR and payroll SaaS. I rebuilt the employee self-service portal end-to-end and built the server-driven UI framework behind it.",
       highlights: [
         "Solo-rebuilt the employee self-service portal — onboarding, leave, attendance, payslips, a company feed, and a document manager.",
         "Built a server-driven UI framework so new screens shipped as config, not handwritten components.",
@@ -191,6 +199,8 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     {
       company: "Eventifier",
+      blurb:
+        "A social-media livewall SPA for moderating and embedding feeds from Twitter, Facebook, and Instagram.",
       highlights: [
         "Built frontend features and Mocha test specs for a social-media livewall SPA (Twitter, Facebook, Instagram) before the company wound down.",
       ],
@@ -206,6 +216,8 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     {
       company: "In Time Tec",
+      blurb:
+        "A software services company. I built Cartos, a managed-print SaaS with an HTML5 Canvas floor-plan editor on a MEAN-stack SPA.",
       highlights: [
         "Built the frontend for Cartos, a managed-print SaaS with an HTML5 Canvas/Konva floor-plan editor on a MEAN-stack SPA.",
         "Owned the Canvas/Konva UI layer, the API service layer, and a Karma + Jasmine unit-test setup.",

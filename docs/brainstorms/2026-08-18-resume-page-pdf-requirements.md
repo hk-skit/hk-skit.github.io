@@ -7,9 +7,10 @@ topic: resume-page-pdf
 
 ## Summary
 
-Add a standalone `/resume` route that renders Hitesh's resume in a clean,
-monochrome two-column layout (no photo), driven by the existing `DATA` config
-extended with a professional summary, skills, education, and per-role bullets. A
+Add a standalone `/resume` route that renders Hitesh's resume as a monochrome,
+sidebar-forward document (tinted sidebar with photo, dense right column), driven
+by the existing `DATA` config extended with a professional summary, skills,
+education, and per-role blurbs + bullets. A
 "Print / Download PDF" button hands off to the browser's Save-as-PDF, formatted
 by a dedicated print layer. Delivered in four phases within one PR — data model,
 page & layout, print/PDF, then content last.
@@ -31,9 +32,12 @@ source with.
   existing `DATA` object so career facts have one source and can't drift; a
   separate `resume-content.ts` was rejected for exactly that drift risk. The
   homepage keeps reading its own fields and ignores the additions.
-- **Clean two-column standalone document.** Matches the reference image and the
-  site's minimal monochrome identity — not the tinted-sidebar-with-photo style
-  of the old resume, and not wrapped in the homepage's dock + animated grid.
+- **Sidebar-forward document with photo.** A tinted left sidebar (monochrome
+  light-gray, not color) carries the avatar, identity, labeled contact,
+  proficiencies, education, and social; the wider right column carries the
+  Profile Snapshot and Experience (a short context blurb + bullets per role).
+  Information-dense, using real estate well. Still standalone (no dock/grid) and
+  light-only. (Revised from the initial clean no-photo two-column direction.)
 - **Print-to-PDF now, build-time PDF later.** The button calls `window.print()`
   against a print stylesheet — real, single-source, zero infra on static
   hosting. A true one-click build-time PDF is parked as a later enhancement.
@@ -49,7 +53,7 @@ source with.
 
 - R1. Extend `DATA` in `src/data/resume.tsx` additively with `resume { headline,
   summary }`, `education[]`, a flat `skills: string[]`, and an optional
-  `highlights: string[]` on each `work` entry.
+  `highlights: string[]` plus a short `blurb: string` on each `work` entry.
 - R2. `resume.summary` is a professional summary distinct from the casual
   `DATA.summary`; the homepage continues to use `DATA.summary` and does not
   render the new fields.
@@ -60,9 +64,11 @@ source with.
 
 - R4. A new static, prerendered `/resume` Astro route, consistent with how
   `index.astro` prerenders.
-- R5. Clean two-column layout with no photo: a header (name, headline, contact),
-  a left column for Summary / Skills / Education, and a right column for
-  Experience. Monochrome, matching the site.
+- R5. Sidebar-forward, information-dense layout: a tinted (monochrome
+  light-gray) left sidebar with avatar, name, headline, labeled contact,
+  proficiencies, education, and social; a wider right column with Profile
+  Snapshot and Experience (a short context blurb + bullets per role).
+  Monochrome, matching the site.
 - R6. Rendered as a standalone document — no FlickeringGrid header, no navbar
   dock — in a container wider than the homepage's `max-w-2xl`, with a "Print /
   Download PDF" action and a "← back to hiteshkumar.dev" link.

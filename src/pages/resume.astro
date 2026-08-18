@@ -9,18 +9,17 @@ const stripUrl = (u: string) =>
 const social = DATA.contact.social;
 const presentLabel = DATA.sections.work.presentLabel;
 
-// Contact links render as human-readable handles so the printed PDF carries
-// resolvable addresses, not dead label text.
-const links = [
-  { label: DATA.contact.email, href: `mailto:${DATA.contact.email}` },
-  { label: stripUrl(DATA.url), href: DATA.url },
-  { label: stripUrl(social.LinkedIn.url), href: social.LinkedIn.url },
-  { label: stripUrl(social.GitHub.url), href: social.GitHub.url },
+// Social links shown in the sidebar as full, resolvable handles.
+const socialLinks = [
+  social.GitHub,
+  social.LinkedIn,
+  social.X,
+  social.StackOverflow,
 ];
 ---
 
 <ResumeLayout>
-  <main class="resume">
+  <div class="resume-page">
     <div class="resume-toolbar no-print">
       <a href="/" class="resume-back">← hiteshkumar.dev</a>
       <button type="button" class="resume-print" onclick="window.print()">
@@ -28,55 +27,80 @@ const links = [
       </button>
     </div>
 
-    <header class="resume-header">
-      <div class="resume-id">
+    <main class="resume">
+      <aside class="resume-sidebar">
+        <img
+          class="resume-avatar"
+          src={DATA.avatarUrl}
+          alt={DATA.name}
+          width="128"
+          height="128"
+        />
         <h1 class="resume-name">{DATA.name}</h1>
-        <p class="resume-headline">{DATA.resume.headline}</p>
-      </div>
-      <ul class="resume-contact">
-        <li>{DATA.location}</li>
-        {links.map((l) => (
-          <li><a href={l.href}>{l.label}</a></li>
-        ))}
-        <li class="print-only">{DATA.contact.tel}</li>
-      </ul>
-    </header>
+        <p class="resume-title">{DATA.resume.headline}</p>
 
-    <div class="resume-cols">
-      <aside class="resume-aside">
-        <section class="resume-section">
-          <h2>Summary</h2>
-          <p>{DATA.resume.summary}</p>
+        <dl class="resume-contact">
+          <div class="resume-contact-row print-only">
+            <dt>Telephone</dt>
+            <dd>{DATA.contact.tel}</dd>
+          </div>
+          <div class="resume-contact-row">
+            <dt>Email</dt>
+            <dd><a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a></dd>
+          </div>
+          <div class="resume-contact-row">
+            <dt>Website</dt>
+            <dd><a href={DATA.url}>{stripUrl(DATA.url)}</a></dd>
+          </div>
+          <div class="resume-contact-row">
+            <dt>Address</dt>
+            <dd>{DATA.location}</dd>
+          </div>
+        </dl>
+
+        <section class="resume-sec">
+          <h2>Proficiencies</h2>
+          <p class="resume-prof">{DATA.skills.join(", ")}</p>
         </section>
 
-        <section class="resume-section">
-          <h2>Skills</h2>
-          <ul class="resume-skills">
-            {DATA.skills.map((s) => <li>{s}</li>)}
-          </ul>
-        </section>
-
-        <section class="resume-section">
+        <section class="resume-sec">
           <h2>Education</h2>
           {DATA.education.map((e) => (
             <div class="resume-edu">
-              <p class="resume-edu-degree">{e.degree}, {e.field}</p>
+              <p class="resume-edu-degree">{e.degree} {e.field}</p>
               <p class="resume-edu-school">{e.school}</p>
               <p class="resume-edu-meta">{e.start}&ndash;{e.end} &middot; {e.location}</p>
             </div>
           ))}
         </section>
+
+        <section class="resume-sec">
+          <h2>Social</h2>
+          <ul class="resume-social">
+            {socialLinks.map((s) => (
+              <li><a href={s.url}>{stripUrl(s.url)}</a></li>
+            ))}
+          </ul>
+        </section>
       </aside>
 
       <div class="resume-main">
-        <section class="resume-section">
+        <section class="resume-sec">
+          <h2>Profile Snapshot</h2>
+          <p class="resume-profile">{DATA.resume.summary}</p>
+        </section>
+
+        <section class="resume-sec">
           <h2>Experience</h2>
           {DATA.work.map((job) => (
             <article class="resume-role">
-              <h3 class="resume-role-title">{job.title} &middot; {job.company}</h3>
-              <p class="resume-role-meta">
-                {job.start} &ndash; {job.end ?? presentLabel} &middot; {job.location}
-              </p>
+              <div class="resume-role-head">
+                <h3 class="resume-role-title">{job.title} &middot; {job.company}</h3>
+                <span class="resume-role-dates">
+                  {job.start} &ndash; {job.end ?? presentLabel}
+                </span>
+              </div>
+              {job.blurb && <p class="resume-role-blurb">{job.blurb}</p>}
               {job.highlights && job.highlights.length > 0 && (
                 <ul class="resume-bullets">
                   {job.highlights.map((h) => <li>{h}</li>)}
@@ -86,6 +110,6 @@ const links = [
           ))}
         </section>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </ResumeLayout>

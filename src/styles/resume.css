@@ -1,14 +1,16 @@
 /*
- * Standalone /resume document styles.
- * Screen: two-column monochrome document (collapses to one column on mobile).
- * Print: A4, light, controls hidden, phone revealed, roles never split a page.
- * Colors reference the light tokens from global.css; the page never gets `.dark`.
+ * Standalone /resume document — sidebar-forward, information-dense layout.
+ * Left: tinted sidebar (avatar, identity, contact, proficiencies, education,
+ * social). Right: profile + experience (blurb + bullets per role).
+ * Monochrome: the tint is a light-gray theme token, never a color.
+ * Screen collapses to a single column on mobile; print is A4, light, with the
+ * sidebar tint bleeding to the page edge and roles kept whole.
  */
 
-.resume {
-  max-width: 56rem;
+.resume-page {
+  max-width: 62rem;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 4rem;
+  padding: 2rem 1.5rem 4rem;
 }
 
 /* Toolbar: back link + print button (screen only) */
@@ -16,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .resume-back {
   color: var(--muted-foreground);
@@ -46,106 +48,157 @@
   border-radius: 2px;
 }
 
-/* Header: name + headline left, contact right */
-.resume-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  border-bottom: 2px solid var(--foreground);
-  padding-bottom: 1rem;
-  margin-bottom: 1.75rem;
+/* The document card: tinted sidebar + main column */
+.resume {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--background);
+}
+.resume-sidebar {
+  background: var(--secondary);
+  padding: 2rem 1.5rem;
+}
+.resume-main {
+  padding: 2rem 1.75rem;
+}
+
+/* Sidebar identity */
+.resume-avatar {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  object-position: 35% center;
+  display: block;
+  margin-bottom: 1.1rem;
 }
 .resume-name {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
-.resume-headline {
+.resume-title {
   color: var(--muted-foreground);
-  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  margin: 0.15rem 0 1.25rem;
 }
+
+/* Sidebar contact rows: label + value */
 .resume-contact {
-  list-style: none;
+  margin: 0 0 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
-  text-align: right;
-  font-size: 0.875rem;
+  gap: 0.35rem;
+}
+.resume-contact-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+.resume-contact-row dt {
   color: var(--muted-foreground);
 }
+.resume-contact-row dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
 .resume-contact a {
-  color: var(--muted-foreground);
+  color: inherit;
   text-decoration: none;
 }
 .resume-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar sections */
+.resume-sidebar .resume-sec {
+  margin-top: 1.5rem;
+}
+.resume-sidebar .resume-sec > h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+.resume-prof {
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.resume-edu + .resume-edu {
+  margin-top: 0.6rem;
+}
+.resume-edu-degree {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.resume-edu-school {
+  font-size: 0.85rem;
+}
+.resume-edu-meta {
+  color: var(--muted-foreground);
+  font-size: 0.78rem;
+  margin-top: 0.1rem;
+}
+.resume-social {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.resume-social a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+.resume-social a:hover {
   color: var(--foreground);
   text-decoration: underline;
 }
 
-/* Two-column body */
-.resume-cols {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
-  gap: 2.5rem;
-}
-.resume-section {
+/* Main column */
+.resume-main .resume-sec {
   margin-bottom: 1.75rem;
 }
-.resume-section > h2 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.35rem;
-  margin-bottom: 0.85rem;
+.resume-main .resume-sec > h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
 }
-.resume-aside p,
-.resume-main p {
+.resume-profile {
   line-height: 1.55;
-}
-
-/* Skills as wrapped chips */
-.resume-skills {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-.resume-skills li {
-  font-size: 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.15rem 0.6rem;
-}
-
-/* Education */
-.resume-edu + .resume-edu {
-  margin-top: 0.75rem;
-}
-.resume-edu-degree {
-  font-weight: 600;
-}
-.resume-edu-meta {
-  color: var(--muted-foreground);
-  font-size: 0.85rem;
 }
 
 /* Experience */
 .resume-role {
   margin-bottom: 1.25rem;
 }
+.resume-role-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
 .resume-role-title {
   font-size: 1rem;
   font-weight: 600;
 }
-.resume-role-meta {
+.resume-role-dates {
   color: var(--muted-foreground);
-  font-size: 0.85rem;
-  margin: 0.1rem 0 0.45rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.resume-role-blurb {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0.3rem 0 0.5rem;
 }
 .resume-bullets {
   padding-left: 1.1rem;
@@ -160,21 +213,13 @@
   display: none;
 }
 
-/* Mobile: single column */
-@media (max-width: 640px) {
+/* Mobile: sidebar stacks on top */
+@media (max-width: 680px) {
+  .resume-page {
+    padding: 1.5rem 1rem 3rem;
+  }
   .resume {
-    padding: 1.5rem 1.25rem 3rem;
-  }
-  .resume-cols {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .resume-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .resume-contact {
-    text-align: left;
   }
 }
 
@@ -182,30 +227,39 @@
 @media print {
   @page {
     size: A4;
-    margin: 14mm;
+    margin: 0;
   }
   html {
     font-size: 100%;
   }
   body {
     background: #fff;
-    color: #000;
   }
   .no-print {
     display: none !important;
   }
-  .print-only {
-    display: block;
+  .resume-contact-row.print-only {
+    display: grid;
   }
-  .resume {
+  .resume-page {
     max-width: none;
     margin: 0;
     padding: 0;
   }
-  .resume-cols {
-    gap: 1.75rem;
+  .resume {
+    border: none;
+    border-radius: 0;
   }
-  /* Keep a role together on one page; let pages break between roles. */
+  /* Keep the sidebar tint when printing and let it bleed to the page edge. */
+  .resume-sidebar {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 14mm 10mm;
+  }
+  .resume-main {
+    padding: 14mm 12mm;
+  }
+  /* Keep a role together on one page; break between roles. */
   .resume-role,
   .resume-edu {
     break-inside: avoid;
@@ -213,5 +267,11 @@
   .resume a {
     color: #000;
     text-decoration: none;
+  }
+  .resume-social a,
+  .resume-contact a,
+  .resume-role-dates,
+  .resume-edu-meta {
+    color: #000;
   }
 }
