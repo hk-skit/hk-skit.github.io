@@ -29,7 +29,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
   ],
   skills: [
-    { label: "Languages", items: ["JavaScript", "TypeScript"] },
+    { label: "Languages", items: ["JavaScript", "TypeScript", "HTML5", "CSS"] },
     {
       label: "Frameworks & Libraries",
       items: [
@@ -37,27 +37,19 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "React Native",
         "React Native Web",
         "Remix",
-        "Node.js",
+        "Astro",
+        "Qwik",
+        "Radix UI",
         "Angular",
+        "Node.js",
         "Redux",
         "RxJS",
-        "Capacitor",
+        "Capacitor (Ionic)",
         "Konva",
       ],
     },
-    {
-      label: "Architecture",
-      items: [
-        "Server-driven UI",
-        "Design systems",
-        "Internal frameworks & CLIs",
-        "Web performance",
-        "A/B experimentation",
-        "Personalization",
-      ],
-    },
     { label: "Testing", items: ["Jest", "Mocha", "Jasmine", "Karma"] },
-    { label: "Leadership", items: ["Team building", "Mentoring", "Technical talks"] },
+    { label: "Tools", items: ["Vite", "Webpack", "npm", "pnpm", "Yarn", "Git"] },
   ],
   sections: {
     about: { order: 1, enabled: true, heading: "About" },
