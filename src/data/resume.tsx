@@ -64,7 +64,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "GraphQL",
         "MongoDB",
         "Firebase",
-        "Cloudflare Workers",
+        "Cloudflare",
         "Vercel",
         "Docker",
         "Fly.io",
