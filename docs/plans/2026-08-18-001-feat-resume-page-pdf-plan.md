@@ -130,8 +130,8 @@ src/
     the confirmed entry: B.Tech, Information Technology — SKIT, Jaipur,
     2010–2014 (see Assumptions for name/GPA confirmation).
   - `skills` — grouped as `{ label, items[] }[]` (Languages, Frameworks &
-    Libraries, Testing, Tools), compiled from the current stack + old-resume
-    proficiencies, modernized (drop stale-only tools).
+    Libraries, Backend, Testing & Tools), compiled from the current stack +
+    old-resume proficiencies, modernized (drop stale-only tools).
   - `highlights?: string[]` on each `work[]` entry — achievement bullets;
     optional so the homepage is unaffected.
   - Contact data: set the currently-empty `DATA.location` to "Bengaluru, India"

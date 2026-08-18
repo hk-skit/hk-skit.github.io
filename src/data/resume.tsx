@@ -29,7 +29,10 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
   ],
   skills: [
-    { label: "Languages", items: ["JavaScript", "TypeScript", "HTML5", "CSS"] },
+    {
+      label: "Languages",
+      items: ["JavaScript", "TypeScript", "Java", "HTML5", "CSS", "SCSS"],
+    },
     {
       label: "Frameworks & Libraries",
       items: [
@@ -40,16 +43,34 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "Astro",
         "Qwik",
         "Radix UI",
+        "Tailwind CSS",
+        "Motion",
         "Angular",
-        "Node.js",
         "Redux",
         "RxJS",
         "Capacitor (Ionic)",
         "Konva",
       ],
     },
-    { label: "Testing", items: ["Jest", "Mocha", "Jasmine", "Karma"] },
-    { label: "Tools", items: ["Vite", "Webpack", "npm", "pnpm", "Yarn", "Git"] },
+    {
+      label: "Backend",
+      items: ["Node.js", "Express.js", "Hono", "Cloudflare Workers", "MongoDB"],
+    },
+    {
+      label: "Testing & Tools",
+      items: [
+        "Jest",
+        "Mocha",
+        "Jasmine",
+        "Karma",
+        "Vite",
+        "Webpack",
+        "npm",
+        "pnpm",
+        "Yarn",
+        "Git",
+      ],
+    },
   ],
   sections: {
     about: { order: 1, enabled: true, heading: "About" },
