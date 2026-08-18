@@ -77,6 +77,8 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "Mocha",
         "Jasmine",
         "Karma",
+        "Playwright",
+        "Puppeteer",
         "Storybook",
         "Vite",
         "Webpack",
