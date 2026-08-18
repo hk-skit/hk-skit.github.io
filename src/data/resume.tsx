@@ -31,7 +31,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   skills: [
     {
       label: "Languages",
-      items: ["JavaScript", "TypeScript", "Java", "HTML5", "CSS", "SCSS"],
+      items: ["JavaScript", "TypeScript", "HTML5", "CSS"],
     },
     {
       label: "Frameworks & Libraries",
@@ -52,7 +52,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "React Query",
         "Capacitor (Ionic)",
         "Konva",
-        "ChartJS",
+        "Highcharts",
       ],
     },
     {
