@@ -9,13 +9,8 @@ const stripUrl = (u: string) =>
 const social = DATA.contact.social;
 const presentLabel = DATA.sections.work.presentLabel;
 
-// Social links shown in the sidebar as full, resolvable handles.
-const socialLinks = [
-  social.GitHub,
-  social.LinkedIn,
-  social.X,
-  social.StackOverflow,
-];
+// Social links shown in the sidebar as icon + full, resolvable handle.
+const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
 ---
 
 <ResumeLayout>
@@ -77,9 +72,15 @@ const socialLinks = [
         <section class="resume-sec">
           <h2>Social</h2>
           <ul class="resume-social">
-            {socialLinks.map((s) => (
-              <li><a href={s.url}>{stripUrl(s.url)}</a></li>
-            ))}
+            {socialLinks.map((s) => {
+              const Icon = s.icon;
+              return (
+                <li>
+                  <span class="resume-social-icon"><Icon /></span>
+                  <a href={s.url}>{stripUrl(s.url)}</a>
+                </li>
+              );
+            })}
           </ul>
         </section>
       </aside>
