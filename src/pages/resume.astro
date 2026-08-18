@@ -1,0 +1,91 @@
+---
+export const prerender = true;
+import ResumeLayout from "@/layouts/ResumeLayout.astro";
+import { DATA } from "@/data/resume";
+
+const stripUrl = (u: string) =>
+  u.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
+
+const social = DATA.contact.social;
+const presentLabel = DATA.sections.work.presentLabel;
+
+// Contact links render as human-readable handles so the printed PDF carries
+// resolvable addresses, not dead label text.
+const links = [
+  { label: DATA.contact.email, href: `mailto:${DATA.contact.email}` },
+  { label: stripUrl(DATA.url), href: DATA.url },
+  { label: stripUrl(social.LinkedIn.url), href: social.LinkedIn.url },
+  { label: stripUrl(social.GitHub.url), href: social.GitHub.url },
+];
+---
+
+<ResumeLayout>
+  <main class="resume">
+    <div class="resume-toolbar no-print">
+      <a href="/" class="resume-back">← hiteshkumar.dev</a>
+      <button type="button" class="resume-print" onclick="window.print()">
+        Print / Download PDF
+      </button>
+    </div>
+
+    <header class="resume-header">
+      <div class="resume-id">
+        <h1 class="resume-name">{DATA.name}</h1>
+        <p class="resume-headline">{DATA.resume.headline}</p>
+      </div>
+      <ul class="resume-contact">
+        <li>{DATA.location}</li>
+        {links.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+        <li class="print-only">{DATA.contact.tel}</li>
+      </ul>
+    </header>
+
+    <div class="resume-cols">
+      <aside class="resume-aside">
+        <section class="resume-section">
+          <h2>Summary</h2>
+          <p>{DATA.resume.summary}</p>
+        </section>
+
+        <section class="resume-section">
+          <h2>Skills</h2>
+          <ul class="resume-skills">
+            {DATA.skills.map((s) => <li>{s}</li>)}
+          </ul>
+        </section>
+
+        <section class="resume-section">
+          <h2>Education</h2>
+          {DATA.education.map((e) => (
+            <div class="resume-edu">
+              <p class="resume-edu-degree">{e.degree}, {e.field}</p>
+              <p class="resume-edu-school">{e.school}</p>
+              <p class="resume-edu-meta">{e.start}&ndash;{e.end} &middot; {e.location}</p>
+            </div>
+          ))}
+        </section>
+      </aside>
+
+      <div class="resume-main">
+        <section class="resume-section">
+          <h2>Experience</h2>
+          {DATA.work.map((job) => (
+            <article class="resume-role">
+              <h3 class="resume-role-title">{job.title} &middot; {job.company}</h3>
+              <p class="resume-role-meta">
+                {job.start} &ndash; {job.end ?? presentLabel} &middot; {job.location}
+              </p>
+              {job.highlights && job.highlights.length > 0 && (
+                <ul class="resume-bullets">
+                  {job.highlights.map((h) => <li>{h}</li>)}
+                </ul>
+              )}
+            </article>
+          ))}
+        </section>
+      </div>
+    </div>
+  </main>
+</ResumeLayout>

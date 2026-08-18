@@ -1,0 +1,217 @@
+/*
+ * Standalone /resume document styles.
+ * Screen: two-column monochrome document (collapses to one column on mobile).
+ * Print: A4, light, controls hidden, phone revealed, roles never split a page.
+ * Colors reference the light tokens from global.css; the page never gets `.dark`.
+ */
+
+.resume {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* Toolbar: back link + print button (screen only) */
+.resume-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.resume-back {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+.resume-back:hover {
+  color: var(--foreground);
+}
+.resume-print {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  background: var(--background);
+  color: var(--foreground);
+}
+.resume-print:hover {
+  background: var(--muted);
+}
+.resume-print:focus-visible,
+.resume-back:focus-visible,
+.resume a:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Header: name + headline left, contact right */
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--foreground);
+  padding-bottom: 1rem;
+  margin-bottom: 1.75rem;
+}
+.resume-name {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.resume-headline {
+  color: var(--muted-foreground);
+  margin-top: 0.25rem;
+}
+.resume-contact {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: right;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+.resume-contact a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+.resume-contact a:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+}
+
+/* Two-column body */
+.resume-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+  gap: 2.5rem;
+}
+.resume-section {
+  margin-bottom: 1.75rem;
+}
+.resume-section > h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+.resume-aside p,
+.resume-main p {
+  line-height: 1.55;
+}
+
+/* Skills as wrapped chips */
+.resume-skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.resume-skills li {
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+/* Education */
+.resume-edu + .resume-edu {
+  margin-top: 0.75rem;
+}
+.resume-edu-degree {
+  font-weight: 600;
+}
+.resume-edu-meta {
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+}
+
+/* Experience */
+.resume-role {
+  margin-bottom: 1.25rem;
+}
+.resume-role-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.resume-role-meta {
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+  margin: 0.1rem 0 0.45rem;
+}
+.resume-bullets {
+  padding-left: 1.1rem;
+}
+.resume-bullets li {
+  list-style: disc;
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.print-only {
+  display: none;
+}
+
+/* Mobile: single column */
+@media (max-width: 640px) {
+  .resume {
+    padding: 1.5rem 1.25rem 3rem;
+  }
+  .resume-cols {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .resume-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .resume-contact {
+    text-align: left;
+  }
+}
+
+/* Print / PDF */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  html {
+    font-size: 100%;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block;
+  }
+  .resume {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  .resume-cols {
+    gap: 1.75rem;
+  }
+  /* Keep a role together on one page; let pages break between roles. */
+  .resume-role,
+  .resume-edu {
+    break-inside: avoid;
+  }
+  .resume a {
+    color: #000;
+    text-decoration: none;
+  }
+}

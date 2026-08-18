@@ -4,7 +4,7 @@ export const DATA = {
   name: "Hitesh Kumar",
   initials: "HK",
   url: "https://hiteshkumar.dev",
-  location: "",
+  location: "Bengaluru, India",
   locationLink: "",
   description:
     "Senior architect. Building for the web since browsers were the hard part — not models.",
@@ -13,6 +13,43 @@ export const DATA = {
 Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mornings, and travelling whenever I can — preferably hills and beaches. I binge documentaries, and occasionally ramble at [smellycode](https://smellycode.com).`,
   avatarUrl: "/avatar.jpg",
   ogImage: "/open-graph.jpg",
+  resume: {
+    headline: "Senior Architect · Frontend & UI Engineering",
+    summary:
+      "Senior frontend architect with 10+ years building for the web — from large-scale marketplaces like Myntra to the founding teams of D2C startups (Virgio, Tectonic). I specialize in server-driven UI, design systems, and internal frameworks that let non-engineers ship. I launch fast (Virgio: 0→100k+ installs in two months), lead small high-leverage teams, and care about craft and performance.",
+  },
+  education: [
+    {
+      school: "Swami Keshvanand Institute of Technology (SKIT)",
+      degree: "B.Tech",
+      field: "Information Technology",
+      start: "2010",
+      end: "2014",
+      location: "Jaipur, India",
+    },
+  ],
+  skills: [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "React Native",
+    "React Native Web",
+    "Remix",
+    "Node.js",
+    "Angular",
+    "Redux",
+    "RxJS",
+    "Capacitor",
+    "Konva / HTML5 Canvas",
+    "Server-driven UI",
+    "Design systems",
+    "Internal frameworks & CLIs",
+    "Web performance",
+    "A/B experimentation",
+    "Personalization",
+    "Jest / Mocha / Jasmine / Karma",
+    "Team building & mentoring",
+  ],
   sections: {
     about: { order: 1, enabled: true, heading: "About" },
     work: { order: 2, enabled: true, heading: "Work Experience", presentLabel: "Present" },
@@ -48,7 +85,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   ],
   contact: {
     email: "hk.skit@gmail.com",
-    tel: "",
+    tel: "+91 9660675398",
     social: {
       GitHub: {
         name: "GitHub",
@@ -86,6 +123,11 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   work: [
     {
       company: "Tectonic",
+      highlights: [
+        "Founding engineer on a multi-tenant headless storefront platform for Shopify brands — visual page building, a merchandising DSL, A/B experiments, and personalization on one surface.",
+        "Lead UI engineering across web (Remix) and app (Capacitor), both rendering through a single shared pipeline.",
+        "Enabled brand teams to ship layouts, experiments, and personalization live — with no engineering in the loop.",
+      ],
       href: "#",
       badges: ["Founding Team"],
       location: "Bengaluru, India",
@@ -98,6 +140,11 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     {
       company: "Virgio",
+      highlights: [
+        "Led UI engineering from day one; built the app and web from scratch on React Native and React Native Web.",
+        "Architected an almost fully server-driven UI; launched in two months and crossed 100k+ installs.",
+        "Led architecture and end-to-end delivery with a team of 3–5.",
+      ],
       href: "#",
       badges: [],
       location: "Bengaluru, India",
@@ -110,6 +157,11 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     {
       company: "Myntra",
+      highlights: [
+        "Led frontend for Vorta.ai, Myntra's AI fashion-trend platform, and grew it into the Market Intelligence Platform opened to external brands.",
+        "Owned Spectrum — Myntra's React framework and CLI for internal apps — adopted by every SCM team for vendor portals, annotation tools, and dashboards.",
+        "Promoted to Technical Lead; hired and ramped engineers, and drove adoption through internal talks on React and performance.",
+      ],
       href: "https://www.myntra.com",
       badges: [],
       location: "Bengaluru, India",
@@ -122,6 +174,11 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     {
       company: "Greytip",
+      highlights: [
+        "Solo-rebuilt the employee self-service portal — onboarding, leave, attendance, payslips, a company feed, and a document manager.",
+        "Built a server-driven UI framework so new screens shipped as config, not handwritten components.",
+        "Started an internal Angular + TypeScript training track; earned the Rising Star award.",
+      ],
       href: "https://www.greytip.com/",
       badges: [],
       location: "Bengaluru, India",
@@ -134,6 +191,9 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     {
       company: "Eventifier",
+      highlights: [
+        "Built frontend features and Mocha test specs for a social-media livewall SPA (Twitter, Facebook, Instagram) before the company wound down.",
+      ],
       href: "#",
       badges: [],
       location: "Bengaluru, India",
@@ -146,6 +206,10 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     },
     {
       company: "In Time Tec",
+      highlights: [
+        "Built the frontend for Cartos, a managed-print SaaS with an HTML5 Canvas/Konva floor-plan editor on a MEAN-stack SPA.",
+        "Owned the Canvas/Konva UI layer, the API service layer, and a Karma + Jasmine unit-test setup.",
+      ],
       href: "#",
       badges: [],
       location: "Jaipur, India",
