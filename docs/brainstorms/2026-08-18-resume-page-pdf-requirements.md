@@ -52,7 +52,7 @@ source with.
 **Data model**
 
 - R1. Extend `DATA` in `src/data/resume.tsx` additively with `resume { headline,
-  summary }`, `education[]`, a flat `skills: string[]`, and an optional
+  summary }`, `education[]`, grouped `skills` (labeled categories), and an optional
   `highlights: string[]` plus a short `blurb: string` on each `work` entry.
 - R2. `resume.summary` is a professional summary distinct from the casual
   `DATA.summary`; the homepage continues to use `DATA.summary` and does not

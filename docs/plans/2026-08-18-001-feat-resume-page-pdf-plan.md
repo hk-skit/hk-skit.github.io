@@ -129,8 +129,9 @@ src/
   - `education: [{ school, degree, field, start, end, location }]` — seed with
     the confirmed entry: B.Tech, Information Technology — SKIT, Jaipur,
     2010–2014 (see Assumptions for name/GPA confirmation).
-  - `skills: string[]` — a flat list compiled from the current stack + old-resume
-    proficiencies, modernized (drop stale-only tools).
+  - `skills` — grouped as `{ label, items[] }[]` (Languages, Frameworks &
+    Libraries, Architecture, Testing, Leadership), compiled from the current
+    stack + old-resume proficiencies, modernized (drop stale-only tools).
   - `highlights?: string[]` on each `work[]` entry — achievement bullets;
     optional so the homepage is unaffected.
   - Contact data: set the currently-empty `DATA.location` to "Bengaluru, India"

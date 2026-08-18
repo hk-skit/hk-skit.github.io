@@ -55,7 +55,14 @@ const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
 
         <section class="resume-sec">
           <h2>Proficiencies</h2>
-          <p class="resume-prof">{DATA.skills.join(", ")}</p>
+          <dl class="resume-prof">
+            {DATA.skills.map((g) => (
+              <div class="resume-prof-group">
+                <dt>{g.label}</dt>
+                <dd>{g.items.join(", ")}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         <section class="resume-sec">

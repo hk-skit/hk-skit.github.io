@@ -127,8 +127,22 @@
   margin-bottom: 0.5rem;
 }
 .resume-prof {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.resume-prof-group dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  margin-bottom: 0.1rem;
+}
+.resume-prof-group dd {
+  margin: 0;
   font-size: 0.82rem;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 .resume-edu + .resume-edu {
   margin-top: 0.6rem;
@@ -286,7 +300,8 @@
   .resume-social-icon,
   .resume-contact a,
   .resume-role-dates,
-  .resume-edu-meta {
+  .resume-edu-meta,
+  .resume-prof-group dt {
     color: #000;
   }
 }
