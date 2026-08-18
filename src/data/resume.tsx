@@ -56,15 +56,18 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       ],
     },
     {
-      label: "Backend",
+      label: "Backend & Infra",
       items: [
         "Node.js",
         "Express.js",
         "Hono",
-        "Cloudflare Workers",
         "GraphQL",
         "MongoDB",
         "Firebase",
+        "Cloudflare Workers",
+        "Vercel",
+        "Docker",
+        "Fly.io",
       ],
     },
     {
