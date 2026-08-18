@@ -44,7 +44,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "Qwik",
         "Radix UI",
         "Tailwind CSS",
-        "Motion",
+        "Framer Motion",
         "Angular",
         "Redux",
         "NgRx",
