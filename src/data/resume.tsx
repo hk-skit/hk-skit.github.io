@@ -21,7 +21,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   resume: {
     headline: "Senior Frontend Architect",
     summary: [
-      `Senior architect with ${YEARS_EXPERIENCE}+ years across large-scale marketplaces (Myntra) and the founding teams of D2C startups (Virgio, Tectonic).`,
+      `Senior Frontend Architect — ${YEARS_EXPERIENCE}+ years of experience across marketplace (Myntra), B2B SaaS, and D2C, with founding-team roles.`,
       "Build high-performance, server-driven web and mobile apps with React, React Native, Remix, and the modern JavaScript ecosystem.",
       "Specialize in design systems, internal frameworks and CLIs, and UI architecture that let product and non-engineering teams ship without engineering in the loop.",
       "Launch fast and lead small, high-leverage teams — took Virgio 0→100k+ installs in two months; hire, mentor, and drive technical standards.",
