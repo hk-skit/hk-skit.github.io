@@ -22,7 +22,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     headline: "Senior Frontend Architect",
     summary: [
       `Senior Frontend Architect — ${YEARS_EXPERIENCE}+ years of experience across marketplace (Myntra), B2B SaaS, and D2C, with founding-team roles.`,
-      "Build high-performance, server-driven web and mobile apps with React, React Native, Remix, and the modern JavaScript ecosystem.",
+      "Build performant, accessible, and resilient web and mobile apps on modular, scalable frontend architecture.",
       "Specialize in design systems, internal frameworks and CLIs, and UI architecture that let product and non-engineering teams ship without engineering in the loop.",
       "Launch fast and lead small, high-leverage teams — took Virgio 0→100k+ installs in two months; hire, mentor, and drive technical standards.",
     ],
