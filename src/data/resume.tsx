@@ -1,5 +1,10 @@
 import { Icons } from "@/components/icons";
 
+// Career started July 2014; compute years-of-experience at build time so the
+// resume summary never goes stale.
+const CAREER_START_YEAR = 2014;
+const YEARS_EXPERIENCE = new Date().getFullYear() - CAREER_START_YEAR;
+
 export const DATA = {
   name: "Hitesh Kumar",
   initials: "HK",
@@ -15,8 +20,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   ogImage: "/open-graph.jpg",
   resume: {
     headline: "Senior Architect · Frontend & UI Engineering",
-    summary:
-      "Senior frontend architect with 10+ years building for the web — from large-scale marketplaces like Myntra to the founding teams of D2C startups (Virgio, Tectonic). I specialize in server-driven UI, design systems, and internal frameworks that let non-engineers ship. I launch fast (Virgio: 0→100k+ installs in two months), lead small high-leverage teams, and care about craft and performance.",
+    summary: `Senior frontend architect with ${YEARS_EXPERIENCE}+ years building for the web — from large-scale marketplaces like Myntra to the founding teams of D2C startups (Virgio, Tectonic). I specialize in server-driven UI, design systems, and internal frameworks that let non-engineers ship. I launch fast (Virgio: 0→100k+ installs in two months), lead small high-leverage teams, and care about craft and performance.`,
   },
   education: [
     {
