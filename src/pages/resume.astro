@@ -94,8 +94,10 @@ const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
 
       <div class="resume-main">
         <section class="resume-sec">
-          <h2>Profile Snapshot</h2>
-          <p class="resume-profile">{DATA.resume.summary}</p>
+          <h2>Summary</h2>
+          <ul class="resume-bullets resume-summary">
+            {DATA.resume.summary.map((point) => <li>{point}</li>)}
+          </ul>
         </section>
 
         <section class="resume-sec">

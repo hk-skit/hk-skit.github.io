@@ -200,8 +200,8 @@
   letter-spacing: -0.01em;
   margin-bottom: 0.75rem;
 }
-.resume-profile {
-  line-height: 1.55;
+.resume-summary {
+  margin-top: 0.1rem;
 }
 
 /* Experience */
