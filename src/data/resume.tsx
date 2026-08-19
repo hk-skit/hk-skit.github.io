@@ -19,7 +19,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   avatarUrl: "/avatar.jpg",
   ogImage: "/open-graph.jpg",
   resume: {
-    headline: "Senior Architect · Frontend & UI Engineering",
+    headline: "Senior Frontend Architect",
     summary: [
       `Senior architect with ${YEARS_EXPERIENCE}+ years across large-scale marketplaces (Myntra) and the founding teams of D2C startups (Virgio, Tectonic).`,
       "Build high-performance, server-driven web and mobile apps with React, React Native, Remix, and the modern JavaScript ecosystem.",
