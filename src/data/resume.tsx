@@ -97,6 +97,17 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "Git",
       ],
     },
+    {
+      label: "Leadership",
+      items: [
+        "Team building & hiring",
+        "Mentoring & coaching",
+        "Performance management",
+        "Delivery ownership",
+        "Roadmap & planning",
+        "Engineering standards & process",
+      ],
+    },
   ],
   sections: {
     about: { order: 1, enabled: true, heading: "About" },
