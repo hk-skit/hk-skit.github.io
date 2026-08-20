@@ -24,6 +24,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       `Senior Architect — ${YEARS_EXPERIENCE}+ years of experience across marketplace (Myntra), B2B SaaS, and D2C, with founding-team roles.`,
       "Build and lead engineering teams while staying hands-on — from hiring and mentoring to owning delivery and the engineering practices behind it.",
       "Seasoned in building products, frameworks, libraries, and developer tools of all scales.",
+      "Work at the frontier of AI-assisted development and build the agent skills, commands, and tooling underneath.",
     ],
   },
   education: [
