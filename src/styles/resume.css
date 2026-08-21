@@ -292,16 +292,25 @@
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  /* Top padding lives inside the columns (not the page) so the tint stays
-     edge-to-edge; sides/bottom stay tight to fit more content. */
+  /*
+   * Top padding lives inside the columns (not the page) so the tint stays
+   * edge-to-edge; sides/bottom stay tight to fit more content.
+   * box-decoration-break: clone re-applies the top/bottom padding on every
+   * printed page, so pages 2+ get the same top breathing room as page 1.
+   */
+  .resume-sidebar,
+  .resume-main {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
   .resume-sidebar {
     background: transparent;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    padding: 12mm 3mm 7mm;
+    padding: 12mm 3mm;
   }
   .resume-main {
-    padding: 12mm 6mm 7mm;
+    padding: 12mm 6mm;
   }
   /*
    * The print sidebar is far narrower than on screen, so tighten the contact
