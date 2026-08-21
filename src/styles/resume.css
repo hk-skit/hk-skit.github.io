@@ -255,7 +255,8 @@
 @media print {
   @page {
     size: A4;
-    margin: 0;
+    /* Top breathing room on every page; sides/bottom keep the tint bleed. */
+    margin: 8mm 0 0;
   }
   html {
     font-size: 100%;
@@ -295,10 +296,10 @@
     background: transparent;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    padding: 14mm 6mm;
+    padding: 7mm 3mm;
   }
   .resume-main {
-    padding: 14mm 12mm;
+    padding: 7mm 6mm;
   }
   /*
    * The print sidebar is far narrower than on screen, so tighten the contact
