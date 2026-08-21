@@ -10,7 +10,7 @@ const social = DATA.contact.social;
 const presentLabel = DATA.sections.work.presentLabel;
 
 // Social links shown in the sidebar as icon + full, resolvable handle.
-const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow, social.Blog];
+const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
 ---
 
 <ResumeLayout>
@@ -46,6 +46,10 @@ const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow, socia
           <div class="resume-contact-row">
             <dt>Website</dt>
             <dd><a href={DATA.url}>{stripUrl(DATA.url)}</a></dd>
+          </div>
+          <div class="resume-contact-row">
+            <dt>Blog</dt>
+            <dd><a href={social.Blog.url}>{stripUrl(social.Blog.url)}</a></dd>
           </div>
           <div class="resume-contact-row">
             <dt>Address</dt>
