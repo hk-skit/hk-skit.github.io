@@ -274,18 +274,45 @@
     margin: 0;
     padding: 0;
   }
+  /*
+   * Paint the sidebar tint as a gradient on the whole card so it fills the
+   * left 30% on every printed page — a column background alone stops where
+   * the sidebar content ends, leaving page 2 white below it.
+   */
   .resume {
     border: none;
     border-radius: 0;
-  }
-  /* Keep the sidebar tint when printing and let it bleed to the page edge. */
-  .resume-sidebar {
+    overflow: visible;
+    background: linear-gradient(
+      to right,
+      var(--secondary) 0 30%,
+      var(--background) 30% 100%
+    );
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    padding: 14mm 10mm;
+  }
+  .resume-sidebar {
+    background: transparent;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 14mm 6mm;
   }
   .resume-main {
     padding: 14mm 12mm;
+  }
+  /*
+   * The print sidebar is far narrower than on screen, so tighten the contact
+   * label column and let values wrap only at word boundaries — never mid-word.
+   */
+  .resume-contact-row {
+    grid-template-columns: 4rem 1fr;
+  }
+  .resume-contact-row dd,
+  .resume-social a {
+    overflow-wrap: break-word;
+  }
+  .resume-social a {
+    font-size: 0.72rem;
   }
   /* Keep a role together on one page; break between roles. */
   .resume-role,
