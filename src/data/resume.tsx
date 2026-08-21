@@ -167,6 +167,12 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         icon: Icons.stackoverflow,
         navbar: true,
       },
+      Blog: {
+        name: "Blog",
+        url: "https://smellycode.com",
+        icon: Icons.blog,
+        navbar: false,
+      },
       email: {
         name: "Send Email",
         url: "mailto:hk.skit@gmail.com",
