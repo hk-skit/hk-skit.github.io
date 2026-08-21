@@ -100,12 +100,9 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     {
       label: "Leadership",
       items: [
-        "Team building & hiring",
-        "Mentoring & coaching",
-        "Performance management",
+        "Hiring & interview design",
+        "Coaching & performance management",
         "Delivery ownership",
-        "Roadmap & planning",
-        "Engineering standards & process",
       ],
     },
   ],
