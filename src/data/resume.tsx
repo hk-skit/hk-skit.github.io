@@ -65,7 +65,6 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "Shopify Themes",
         "Shopify Apps",
         "Hydrogen",
-        "Checkout UI Extensions",
       ],
     },
     {
