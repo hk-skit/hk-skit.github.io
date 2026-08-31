@@ -60,6 +60,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "NgRx",
         "RxJS",
         "React Query",
+        "Zustand",
         "Capacitor (Ionic)",
         "Konva",
         "Highcharts",
