@@ -236,7 +236,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     {
       company: "Greytip",
       blurb:
-        "HR and payroll SaaS. I rebuilt the employee self-service portal end-to-end and built the server-driven UI framework behind it.",
+        "greytHR is Greytip's HR & payroll software suite. I revamped greytHR's Employee Self Service portal — the employee-facing app for payslips, leave, and attendance — and built Employee Onboarding, its new-hire-onboarding product, from scratch.",
       highlights: [
         "Solo-rebuilt the employee self-service portal — onboarding, leave, attendance, payslips, a company feed, and a document manager.",
         "Built a server-driven UI framework so new screens shipped as config, not handwritten components.",
@@ -245,7 +245,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       href: "https://www.greytip.com/",
       badges: [],
       location: "Bengaluru, India",
-      title: "Frontend Developer",
+      title: "Web Developer",
       logoUrl: "https://www.google.com/s2/favicons?domain=greytip.com&sz=128",
       start: "Jan 17",
       end: "Jan 19",
