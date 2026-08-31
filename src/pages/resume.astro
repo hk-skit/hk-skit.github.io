@@ -65,7 +65,9 @@ const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
                 <dt>{g.label}</dt>
                 <dd>
                   {"lines" in g
-                    ? g.lines.map((line) => <div>{line.join(", ")}</div>)
+                    ? g.lines.map((line) => (
+                        <div class="resume-prof-line">{line.join(", ")}</div>
+                      ))
                     : g.items.join(", ")}
                 </dd>
               </div>
