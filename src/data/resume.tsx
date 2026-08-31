@@ -277,6 +277,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "Architected and developed the entire frontend from scratch.",
         "Built the interactive HTML5 Canvas editor (Konva) on a MEAN-stack SPA — designers dropped printers onto floor plans to lay out and visualize enterprise fleets.",
         "Root-caused performance bottlenecks and kept the canvas responsive with the massive fleets of enterprises like HP and Xerox.",
+        "Established the frontend's unit-testing foundation with Karma and Jasmine.",
       ],
       href: "#",
       badges: [],
