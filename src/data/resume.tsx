@@ -60,6 +60,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       label: "Backend & Infra",
       items: [
         "Node.js",
+        "Bun",
         "Express.js",
         "Hono",
         "GraphQL",
