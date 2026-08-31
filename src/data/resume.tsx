@@ -40,7 +40,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   skills: [
     {
       label: "Languages",
-      items: ["JavaScript", "TypeScript", "JSX", "HTML5", "CSS", "Liquid"],
+      items: ["JavaScript", "TypeScript", "JSX", "HTML5", "CSS", "Liquid", "MDX"],
     },
     {
       label: "Frameworks & Libraries",
@@ -50,6 +50,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "React Native Web",
         "Remix",
         "Astro",
+        "Gatsby",
         "Qwik",
         "Radix UI",
         "Tailwind CSS",
