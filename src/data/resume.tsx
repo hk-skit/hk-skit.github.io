@@ -252,7 +252,8 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         {
           label: "Employee Onboarding",
           highlights: [
-            "Built a multi-step wizard from scratch that collected new-hire data through schema-driven forms.",
+            "Built a store-driven, multi-step wizard from scratch to collect new-hire data.",
+            "Enhanced a JSON-Schema forms framework to render onboarding's metadata-driven reactive forms.",
           ],
         },
       ],
