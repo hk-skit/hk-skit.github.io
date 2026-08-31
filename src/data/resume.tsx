@@ -40,7 +40,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
   skills: [
     {
       label: "Languages",
-      items: ["JavaScript", "TypeScript", "HTML5", "CSS"],
+      items: ["JavaScript", "TypeScript", "HTML5", "CSS", "Liquid"],
     },
     {
       label: "Frameworks & Libraries",
