@@ -245,6 +245,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
           label: "Employee Self Service (ESS)",
           highlights: [
             "Built a JSON-driven UI framework from scratch that became the portal's rendering backbone.",
+            "Built the portal's UI kit — reusable components, services, and pipes — on an SCSS styling foundation.",
             "Introduced and implemented app-wide state management with NgRx/Redux.",
           ],
         },
