@@ -144,10 +144,6 @@
   font-size: 0.82rem;
   line-height: 1.5;
 }
-/* Space between clustered lines (not within a wrapped cluster). */
-.resume-prof-line + .resume-prof-line {
-  margin-top: 0.3rem;
-}
 .resume-edu + .resume-edu {
   margin-top: 0.6rem;
 }
