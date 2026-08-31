@@ -236,7 +236,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     {
       company: "Greytip",
       blurb:
-        "greytHR is Greytip's HR & payroll software suite. I revamped greytHR's Employee Self Service portal — the employee-facing app for payslips, leave, and attendance — and built Employee Onboarding, its new-hire-onboarding product, from scratch.",
+        "greytHR is Greytip's HR & payroll software suite. I revamped greytHR's Employee Self Service (ESS) portal — the employee-facing app for payslips, leave, and attendance — and built Employee Onboarding, its new-hire-onboarding product, from scratch.",
       highlights: [
         "Solo-rebuilt the employee self-service portal — onboarding, leave, attendance, payslips, a company feed, and a document manager.",
         "Built a server-driven UI framework so new screens shipped as config, not handwritten components.",
