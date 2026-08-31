@@ -274,14 +274,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       blurb:
         "At In Time Tec, I worked on Cartos — a managed-print-solution (MPS) tool where fleet designers plot and visualize enterprise printer fleets.",
       highlights: [
-        "Owner of many features and their releases for in-house product Cartos",
-        "Designed architecture and directory structure for front-end from scratch",
-        "Created UI Layers for canvas objects using Konva JS",
-        "Created a service layer to interact with backend",
-        "Responsible for root causing and scaling up the performance of Cartos for large enterprises like HP and Xerox",
-        "Code review for front-end, especially JavaScript and AngularJS",
-        "Setup unit-testing framework using Karma with Jasmine",
-        "Gave talks on JavaScript and AngularJS",
+        "Architected and built the entire frontend from scratch.",
       ],
       href: "#",
       badges: [],
