@@ -25,6 +25,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       "Build and lead engineering teams while staying hands-on — from hiring and mentoring to owning delivery and the engineering practices behind it.",
       "Seasoned in building products, frameworks, libraries, and developer tools of all scales.",
       "Work at the frontier of AI-assisted development and build the agent skills, commands, and tooling underneath.",
+      "Teach and speak on UI engineering — from internal tech talks to a [public webinar](https://youtu.be/n85awpNb0Ek) for aspiring developers.",
     ],
   },
   education: [

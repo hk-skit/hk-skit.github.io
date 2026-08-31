@@ -203,6 +203,12 @@
 .resume-summary {
   margin-top: 0.1rem;
 }
+/* Inline links inside summary points: clearly clickable but still monochrome. */
+.resume-summary a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 /* Experience */
 .resume-role {

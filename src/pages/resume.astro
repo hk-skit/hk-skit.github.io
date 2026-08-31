@@ -9,6 +9,23 @@ const stripUrl = (u: string) =>
 const social = DATA.contact.social;
 const presentLabel = DATA.sections.work.presentLabel;
 
+// Summary points may embed a [label](url) markdown link; split into text/link
+// segments so they render as real anchors (same link syntax DATA uses elsewhere).
+type Segment = { t: "text"; v: string } | { t: "link"; v: string; href: string };
+const parseInlineLinks = (text: string): Segment[] => {
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const segments: Segment[] = [];
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) segments.push({ t: "text", v: text.slice(last, m.index) });
+    segments.push({ t: "link", v: m[1], href: m[2] });
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) segments.push({ t: "text", v: text.slice(last) });
+  return segments;
+};
+
 // Social links shown in the sidebar as icon + full, resolvable handle.
 const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
 ---
@@ -106,7 +123,17 @@ const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
         <section class="resume-sec">
           <h2>Summary</h2>
           <ul class="resume-bullets resume-summary">
-            {DATA.resume.summary.map((point) => <li>{point}</li>)}
+            {DATA.resume.summary.map((point) => (
+              <li>
+                {parseInlineLinks(point).map((seg) =>
+                  seg.t === "link" ? (
+                    <a href={seg.href} target="_blank" rel="noopener noreferrer">{seg.v}</a>
+                  ) : (
+                    seg.v
+                  )
+                )}
+              </li>
+            ))}
           </ul>
         </section>
 
