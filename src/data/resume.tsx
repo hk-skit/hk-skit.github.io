@@ -53,7 +53,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         ["Radix UI", "Tailwind CSS", "Framer Motion"],
         ["Capacitor (Ionic)", "PWA"],
         ["Konva", "Highcharts"],
-        ["Shopify Themes", "Shopify Apps", "Hydrogen"],
+        ["Shopify — Themes", "Apps", "Hydrogen"],
       ],
     },
     {
