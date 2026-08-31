@@ -252,7 +252,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         {
           label: "Employee Onboarding",
           highlights: [
-            "Built the onboarding flow on a schema-driven forms engine and a store-driven wizard — new-hire data captured through metadata-defined reactive forms.",
+            "Built a multi-step wizard from scratch that collected new-hire data through schema-driven forms.",
           ],
         },
       ],
