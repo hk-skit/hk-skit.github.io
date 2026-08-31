@@ -272,7 +272,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     {
       company: "In Time Tec",
       blurb:
-        "Cartos — a managed-print (MPS) tool where fleet designers plot and visualize enterprise printer fleets on an HTML5 Canvas, built as a MEAN-stack SPA. I owned the frontend, working with the R&D team at In Time Tec.",
+        "At In Time Tec, I worked on Cartos — a managed-print (MPS) tool where fleet designers plot and visualize enterprise printer fleets on an HTML5 Canvas, an SPA on the MEAN stack. I built the frontend of the entire tool from scratch.",
       highlights: [
         "Owner of many features and their releases for in-house product Cartos",
         "Designed architecture and directory structure for front-end from scratch",
