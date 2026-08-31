@@ -238,6 +238,16 @@
   font-size: 0.9rem;
 }
 
+/* A role that spans multiple products: labeled sub-blocks, each with bullets. */
+.resume-subsection {
+  margin-top: 0.55rem;
+}
+.resume-subsection-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
 .print-only {
   display: none;
 }

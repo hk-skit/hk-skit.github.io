@@ -238,9 +238,21 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       blurb:
         "Greytip offers HR and payroll software through its greytHR suite. I revamped its Employee Self Service (ESS) portal — the employee-facing app for payslips, leave, and attendance — and built its Employee Onboarding module from scratch.",
       highlights: [
-        "Solo-rebuilt the employee self-service portal — onboarding, leave, attendance, payslips, a company feed, and a document manager.",
-        "Built a server-driven UI framework so new screens shipped as config, not handwritten components.",
-        "Started an internal Angular + TypeScript training track; earned the Rising Star award.",
+        "Ran internal Angular + TypeScript training sessions; earned the Rising Star award.",
+      ],
+      subsections: [
+        {
+          label: "Employee Self Service (ESS)",
+          highlights: [
+            "Built ESS's UI framework from scratch — screens rendered from JSON config instead of hand-coded — and the NgRx/Redux state layer beneath it.",
+          ],
+        },
+        {
+          label: "Employee Onboarding",
+          highlights: [
+            "Built the onboarding flow on a schema-driven forms engine and a store-driven wizard — new-hire data captured through metadata-defined reactive forms.",
+          ],
+        },
       ],
       href: "https://www.greytip.com/",
       badges: [],

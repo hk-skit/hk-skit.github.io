@@ -126,6 +126,15 @@ const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
                   {job.highlights.map((h) => <li>{h}</li>)}
                 </ul>
               )}
+              {"subsections" in job &&
+                job.subsections.map((sub) => (
+                  <div class="resume-subsection">
+                    <h4 class="resume-subsection-label">{sub.label}</h4>
+                    <ul class="resume-bullets">
+                      {sub.highlights.map((h) => <li>{h}</li>)}
+                    </ul>
+                  </div>
+                ))}
             </article>
           ))}
         </section>
