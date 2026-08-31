@@ -286,7 +286,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     {
       company: "In Time Tec",
       blurb:
-        "Cartos — a managed-print-solution (MPS) tool where fleet designers plot and visualize enterprise printer fleets.",
+        "I contributed to building Cartos — a managed-print-solution (MPS) tool where fleet designers plot and visualize enterprise printer fleets.",
       highlights: [
         "Architected and developed the entire frontend from scratch.",
         "Built the interactive HTML5 Canvas editor (Konva) on a MEAN-stack SPA — designers dropped printers onto floor plans to lay out and visualize enterprise fleets.",
