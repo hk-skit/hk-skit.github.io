@@ -255,7 +255,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     {
       company: "Eventifier",
       blurb:
-        "A social-media livewall SPA for moderating and embedding feeds from Twitter, Facebook, and Instagram.",
+        "At Eventifier, I worked on a social-media aggregation platform — a real-time “livewall” that pulled, curated, and embedded user-generated content from Twitter, Facebook, Instagram, and Google+.",
       highlights: [
         "Built frontend features and Mocha test specs for a social-media livewall SPA (Twitter, Facebook, Instagram) before the company wound down.",
       ],
