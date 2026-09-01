@@ -30,23 +30,36 @@ const parseInlineLinks = (text: string): Segment[] => {
 // Social links shown in the sidebar as icon + full, resolvable handle.
 const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
 
-// Printer icon for the print / download-PDF toolbar button.
+// Toolbar icons: print / download-PDF and view-as-Markdown.
 const PrinterIcon = Icons.printer;
+const FileTextIcon = Icons.filetext;
 ---
 
 <ResumeLayout>
   <div class="resume-page">
     <div class="resume-toolbar no-print">
       <a href="/" class="resume-back">← hiteshkumar.dev</a>
-      <button
-        type="button"
-        class="resume-print"
-        onclick="window.print()"
-        aria-label="Print / Download PDF"
-        title="Print / Download PDF"
-      >
-        <PrinterIcon aria-hidden="true" />
-      </button>
+      <div class="resume-actions">
+        <a
+          href="/resume.md"
+          class="resume-action"
+          target="_blank"
+          rel="noopener"
+          aria-label="View as Markdown"
+          title="View as Markdown"
+        >
+          <FileTextIcon aria-hidden="true" />
+        </a>
+        <button
+          type="button"
+          class="resume-action"
+          onclick="window.print()"
+          aria-label="Print / Download PDF"
+          title="Print / Download PDF"
+        >
+          <PrinterIcon aria-hidden="true" />
+        </button>
+      </div>
     </div>
 
     <main class="resume">

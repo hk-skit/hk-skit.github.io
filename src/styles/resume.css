@@ -13,7 +13,7 @@
   padding: 2rem 1.5rem 4rem;
 }
 
-/* Toolbar: back link + print button (screen only) */
+/* Toolbar: back link + action buttons (screen only) */
 .resume-toolbar {
   display: flex;
   justify-content: space-between;
@@ -28,7 +28,12 @@
 .resume-back:hover {
   color: var(--foreground);
 }
-.resume-print {
+.resume-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.resume-action {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -39,14 +44,14 @@
   background: var(--background);
   color: var(--foreground);
 }
-.resume-print svg {
+.resume-action svg {
   width: 1.15rem;
   height: 1.15rem;
 }
-.resume-print:hover {
+.resume-action:hover {
   background: var(--muted);
 }
-.resume-print:focus-visible,
+.resume-action:focus-visible,
 .resume-back:focus-visible,
 .resume a:focus-visible {
   outline: 2px solid var(--ring);
