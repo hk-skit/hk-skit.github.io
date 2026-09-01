@@ -2,6 +2,7 @@
 export const prerender = true;
 import ResumeLayout from "@/layouts/ResumeLayout.astro";
 import { DATA } from "@/data/resume";
+import { Icons } from "@/components/icons";
 
 const stripUrl = (u: string) =>
   u.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
@@ -28,14 +29,23 @@ const parseInlineLinks = (text: string): Segment[] => {
 
 // Social links shown in the sidebar as icon + full, resolvable handle.
 const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
+
+// Printer icon for the print / download-PDF toolbar button.
+const PrinterIcon = Icons.printer;
 ---
 
 <ResumeLayout>
   <div class="resume-page">
     <div class="resume-toolbar no-print">
       <a href="/" class="resume-back">← hiteshkumar.dev</a>
-      <button type="button" class="resume-print" onclick="window.print()">
-        Print / Download PDF
+      <button
+        type="button"
+        class="resume-print"
+        onclick="window.print()"
+        aria-label="Print / Download PDF"
+        title="Print / Download PDF"
+      >
+        <PrinterIcon aria-hidden="true" />
       </button>
     </div>
 
@@ -157,9 +167,14 @@ const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
                 job.subsections.map((sub) => (
                   <div class="resume-subsection">
                     <h4 class="resume-subsection-label">{sub.label}</h4>
-                    <ul class="resume-bullets">
-                      {sub.highlights.map((h) => <li>{h}</li>)}
-                    </ul>
+                    {"blurb" in sub && sub.blurb && (
+                      <p class="resume-subsection-blurb">{sub.blurb}</p>
+                    )}
+                    {sub.highlights && sub.highlights.length > 0 && (
+                      <ul class="resume-bullets">
+                        {sub.highlights.map((h) => <li>{h}</li>)}
+                      </ul>
+                    )}
                   </div>
                 ))}
             </article>

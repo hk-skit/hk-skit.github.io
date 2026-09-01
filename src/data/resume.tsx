@@ -25,7 +25,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       "Build and lead engineering teams while staying hands-on — from hiring and mentoring to owning delivery and the engineering practices behind it.",
       "Seasoned in building products, frameworks, libraries, and developer tools of all scales.",
       "Work at the frontier of AI-assisted development and build the agent skills, commands, and tooling underneath.",
-      "Teach and speak on UI engineering — from internal tech talks to [public webinars](https://youtu.be/n85awpNb0Ek).",
+      "Teach and speak on UI engineering — from internal tech talks to public webinars.",
     ],
   },
   education: [
@@ -180,11 +180,27 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     {
       company: "Tectonic",
       blurb:
-        "A multi-tenant headless storefront platform for Shopify brands — page building, merchandising, experiments, and personalization on one surface. I co-build it as a founding-team engineer leading UI across web and app.",
+        "Tectonic platformizes growth for D2C Shopify brands. As a founding engineer, I led UI across web and app — from the first in-house framework to the Shopify-native pivot.",
       highlights: [
-        "Founding engineer on a multi-tenant headless storefront platform for Shopify brands — visual page building, a merchandising DSL, A/B experiments, and personalization on one surface.",
-        "Lead UI engineering across web (Remix) and app (Capacitor), both rendering through a single shared pipeline.",
-        "Enabled brand teams to ship layouts, experiments, and personalization live — with no engineering in the loop.",
+        "Established the foundation for UI engineering — design, standards, and patterns — and stayed in the code, shipping alongside the team.",
+        "Architected and shipped the platform's first version solo — a schema-driven system of primitives that composed storefronts across web and a mobile app — validating the model and landing the first paying brands (The Label Life, Includ, Ohsogo).",
+        "Helped grow the platform to $1M ARR — lifting conversion 30–50% on nearly every storefront it onboarded.",
+        "Drove store onboarding as the platform grew into a self-serve builder — shipping flagship storefronts hands-on for brands like Frido, Bombae, and Vaaree, among a dozen-plus D2C names.",
+        "Extended the foundation to create mobile apps for each store — on Capacitor, reusing the web codebase — and authored the native integration plugins (Shopify Checkout Kit, Klaviyo) available on npm.",
+        "Set the technical hiring bar — from take-home to live rounds — and mentored 10–20 interns and juniors, several to promotion.",
+      ],
+      subsections: [
+        {
+          label: "Spectrum",
+          blurb:
+            "Spectrum was the pivot back into Shopify — Tectonic's growth platform for D2C brands, consolidating 30+ storefront apps into one system with experimentation, personalization, and playbooks. I led its UI and migrated existing stores onto it.",
+          highlights: [
+            "Built Spectrum's Studio — a visual builder with A/B testing and personalization baked in, so merchant teams build and target storefront experiences on Shopify themselves.",
+            "Developed the Spectrum Shopify app — one install that wires the platform into a merchant's store, unlocking the theme and data everything else runs on.",
+            "Improved GTmetrix grades from E–F to A–B — replacing third-party app bloat with Shopify-native Spectrum sections, blocks, and snippets rendered server-side.",
+            "Introduced AI-assisted development across the team — Claude skills, commands, and hooks that encode and enforce Spectrum's theme and performance standards, so the team ships safely with AI.",
+          ],
+        },
       ],
       href: "#",
       badges: ["Founding Team"],
@@ -192,18 +208,21 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       title: "Senior Architect",
       logoUrl: "/logos/tectonic.png",
       start: "Jul 23",
-      end: undefined,
+      end: "May 26",
       description:
         "Founding-team engineer co-building Tectonic's storefront platform from scratch — a multi-tenant headless storefront platform for Shopify brands. Tectonic owns everything a shopper sees and a brand team configures — visual page building, merchandising rules through a small scripting language, A/B experiments, and personalization, all on one surface. Web runs on Remix, the app on Capacitor JS, both rendering through the same pipeline. Brand teams iterate live — layouts, experiments, and personalization ship without engineering in the loop. Leading UI engineering across web and app.",
     },
     {
       company: "Virgio",
       blurb:
-        "An early-stage fashion D2C. I led UI engineering from day one and built the app and web from the ground up.",
+        "Virgio is a D2C fashion label. As a founding-team engineer, I led the UI engineering charter from day one for both app and web.",
       highlights: [
-        "Led UI engineering from day one; built the app and web from scratch on React Native and React Native Web.",
-        "Architected an almost fully server-driven UI; launched in two months and crossed 100k+ installs.",
-        "Led architecture and end-to-end delivery with a team of 3–5.",
+        "Owned the architecture, technical direction, and quality bar — leading a team of 3–5 and driving delivery end to end.",
+        "Built a universal frontend — one codebase across native and web, with ~80–90% of the code shared.",
+        "Built the page service and rendering engine — screens rendered on the fly from a backend schema, shipping content, layout, and flows live with no app release.",
+        "Launched in two months and crossed 100k+ installs, staying solid at scale — 99% crash-free rate with near-zero ANRs.",
+        "Ensured the app stayed fast and fluid even on low-end devices, media-heavy screens and all — through performance optimizations across rendering, caching, and data fetching.",
+        "Hired and grew the UI team — turning junior engineers into independent owners of end-to-end delivery.",
       ],
       href: "#",
       badges: [],
@@ -218,11 +237,28 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
     {
       company: "Myntra",
       blurb:
-        "India's largest fashion marketplace. I led frontend for its in-house AI trend-prediction and market-intelligence platforms, and owned Spectrum, the internal React framework powering SCM tooling.",
+        "At Myntra, I joined the Vorta team as an SDE-2 and grew into a Technical Lead. I led the frontend for the Market Intelligence Platform (fka Vorta.ai) and re-engineered Spectrum — the internal React framework behind most of Myntra's in-house tools.",
       highlights: [
-        "Led frontend for Vorta.ai, Myntra's AI fashion-trend platform, and grew it into the Market Intelligence Platform opened to external brands.",
-        "Owned Spectrum — Myntra's React framework and CLI for internal apps — adopted by every SCM team for vendor portals, annotation tools, and dashboards.",
-        "Promoted to Technical Lead; hired and ramped engineers, and drove adoption through internal talks on React and performance.",
+        "Led frontend hiring and mentored engineers on the team.",
+        "Drove engineering-wide talks on React, web development, and performance.",
+        "Raised the frontend performance bar across Myntra's internal apps through Spectrum CLI.",
+      ],
+      subsections: [
+        {
+          label: "Market Intelligence Platform",
+          highlights: [
+            "Architected and built the frontend from scratch — shipped in a month with a two-engineer team.",
+            "Built the server-driven UI — dashboards, charts, and competitor views all rendered from backend-supplied config, personalized per seller.",
+            "Kept dashboards responsive at scale — dozens of Highcharts widgets over large per-seller datasets.",
+          ],
+        },
+        {
+          label: "Spectrum",
+          highlights: [
+            "Re-engineered the CLI — every generated app shipped 70–80% smaller with performance baked in (lazy loading, resource hinting, etc.), and version upgrades went from manual to automated.",
+            "30+ in-house tools ran on it — nearly every internal app at Myntra.",
+          ],
+        },
       ],
       href: "https://www.myntra.com",
       badges: [],

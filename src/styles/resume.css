@@ -29,13 +29,19 @@
   color: var(--foreground);
 }
 .resume-print {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  padding: 0.5rem;
   cursor: pointer;
   background: var(--background);
   color: var(--foreground);
+}
+.resume-print svg {
+  width: 1.15rem;
+  height: 1.15rem;
 }
 .resume-print:hover {
   background: var(--muted);
@@ -253,6 +259,11 @@
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
+.resume-subsection-blurb {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 0.4rem;
+}
 
 .print-only {
   display: none;
@@ -343,8 +354,25 @@
   .resume-social a {
     font-size: 0.72rem;
   }
-  /* Keep a role together on one page; break between roles. */
-  .resume-role,
+  /*
+   * Let roles flow across page breaks so each column fills top-to-bottom,
+   * instead of bumping a whole role to the next page and leaving a gap (a long
+   * role like the lead one is taller than a page and would break anyway).
+   * Protect the smaller units instead: never strand a section/role/subsection
+   * heading at the foot of a page, and never split a single bullet, blurb, or
+   * role title across a page break.
+   */
+  .resume-main .resume-sec > h2,
+  .resume-role-head,
+  .resume-subsection-label {
+    break-after: avoid;
+  }
+  .resume-role-head,
+  .resume-role-blurb,
+  .resume-bullets li {
+    break-inside: avoid;
+  }
+  /* Education entries are short — keep each one whole. */
   .resume-edu {
     break-inside: avoid;
   }
