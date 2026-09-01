@@ -1,4 +1,12 @@
-import { BookOpenIcon, FileTextIcon, GlobeIcon, MailIcon, PrinterIcon } from "lucide-react";
+import {
+  BookOpenIcon,
+  FileTextIcon,
+  GlobeIcon,
+  MailIcon,
+  MoonIcon,
+  PrinterIcon,
+  SunIcon,
+} from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -8,6 +16,8 @@ export const Icons = {
   blog: (props: IconProps) => <BookOpenIcon {...props} />,
   printer: (props: IconProps) => <PrinterIcon {...props} />,
   filetext: (props: IconProps) => <FileTextIcon {...props} />,
+  sun: (props: IconProps) => <SunIcon {...props} />,
+  moon: (props: IconProps) => <MoonIcon {...props} />,
   linkedin: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <title>LinkedIn</title>

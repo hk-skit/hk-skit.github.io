@@ -59,6 +59,25 @@
   border-radius: 2px;
 }
 
+/* Theme toggle: moon offers "go dark" in light mode, sun offers "go light" in
+ * dark mode. Only one icon shows at a time, driven by the `.dark` class the
+ * toggle flips on <html>. */
+.dark {
+  color-scheme: dark;
+}
+.resume-theme-moon {
+  display: inline-flex;
+}
+.resume-theme-sun {
+  display: none;
+}
+.dark .resume-theme-moon {
+  display: none;
+}
+.dark .resume-theme-sun {
+  display: inline-flex;
+}
+
 /* The document card: tinted sidebar + main column */
 .resume {
   display: grid;
@@ -286,6 +305,22 @@
 
 /* Print / PDF */
 @media print {
+  /*
+   * Firewall against dark mode: paper is always light. Reset every
+   * theme-sensitive token to its light value for both :root and .dark, so
+   * printing while the screen is dark can't produce a dark sidebar tint or
+   * invisible white-on-white body text. Kept in sync with global.css :root.
+   */
+  :root,
+  .dark {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --secondary: oklch(0.97 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --border: oklch(0.922 0 0);
+    color-scheme: light;
+  }
   @page {
     size: A4;
     /* No page margin: the sidebar tint bleeds to all four edges. */

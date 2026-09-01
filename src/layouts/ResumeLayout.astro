@@ -30,8 +30,9 @@ const ogImage = image
 const { baseFontSize } = CONFIG.typography;
 
 // Standalone document layout for /resume. Deliberately omits the FlickeringGrid
-// header, the navbar dock, and the shared dark-mode FOUC script — the resume
-// renders light-only (no `.dark` class is ever applied), matching print.
+// header and the navbar dock. Dark mode is supported (toggled from the resume
+// toolbar and shared with the rest of the site via the `theme` localStorage
+// key); print always renders light, enforced by a token reset in resume.css.
 // Document width lives in resume.css, not here.
 ---
 
@@ -43,6 +44,25 @@ const { baseFontSize } = CONFIG.typography;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- FOUC prevention: apply stored theme before first paint (shared with the
+         rest of the site via the `theme` key). Print stays light regardless. -->
+    <script is:inline>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          if (
+            theme === "dark" ||
+            (!theme &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        } catch (_) {}
+      })();
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
