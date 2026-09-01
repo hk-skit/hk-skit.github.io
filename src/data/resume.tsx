@@ -202,15 +202,10 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
           ],
         },
       ],
-      href: "#",
-      badges: ["Founding Team"],
-      location: "Bengaluru, India",
       title: "Senior Architect",
       logoUrl: "/logos/tectonic.png",
       start: "Jul 23",
       end: "May 26",
-      description:
-        "Founding engineer on Tectonic, a growth platform for D2C Shopify brands — I led UI across web and app. I built the first version from scratch — a schema-driven system of primitives that composed storefronts across web (Remix) and a mobile app (Capacitor) from a single pipeline, with experiments and personalization built in. It lifted conversion 30–50% on nearly every storefront it onboarded, helping grow the platform to $1M ARR. When Tectonic pivoted to build natively on Shopify, I led UI through the rebuild — Spectrum, one system that folded 30-plus storefront apps into a Shopify-native platform, with a visual builder merchants run themselves. I also introduced AI-assisted development across the team, building the tooling that lets us ship safely with it.",
     },
     {
       company: "Virgio",
@@ -224,15 +219,10 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "Ensured the app stayed fast and fluid even on low-end devices, media-heavy screens and all — through performance optimizations across rendering, caching, and data fetching.",
         "Hired and grew the UI team — turning junior engineers into independent owners of end-to-end delivery.",
       ],
-      href: "#",
-      badges: [],
-      location: "Bengaluru, India",
       title: "Technical Lead",
       logoUrl: "/logos/virgio.png",
       start: "Mar 22",
       end: "Jul 23",
-      description:
-        "Led UI engineering at Virgio from day one. Built the app and web from scratch using React Native and React Native Web. Almost all screens and layouts were server-driven. Launched in two months, crossed 100k+ installs. Led architecture and end-to-end development with a team of 3–5.",
     },
     {
       company: "Myntra",
@@ -260,15 +250,10 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
           ],
         },
       ],
-      href: "https://www.myntra.com",
-      badges: [],
-      location: "Bengaluru, India",
       title: "Technical Lead",
       logoUrl: "https://www.google.com/s2/favicons?domain=myntra.com&sz=128",
       start: "Feb 19",
       end: "Mar 22",
-      description:
-        "Led frontend for Vorta.ai, Myntra's in-house AI platform for fashion trend prediction. Designers and buyers used it to spot trends — colors, silhouettes, aesthetics — and turn them into product decisions. Continued to lead the frontend as Vorta evolved into the Market Intelligence Platform — opening up to brands with insights on pricing, promotions, revenues, sale trends, etc.\n\nIn parallel, owned Spectrum — Myntra's in-house React-based framework for internal apps. The Spectrum CLI scaffolded a fully-wired app with Myntra's UI kit, internal libs, and conventions, plus a Node proxy server (Spectrum Server); teams dropped in business-logic screens and shipped. Every Myntra SCM team — inbound and outbound — built their tools on it: data-annotation tools, vendor portals, SCM dashboards.\n\nEarned the Technical Lead title along the way. Helped build the team — interviewing, hiring, and ramping new engineers. Drove Spectrum adoption with internal talks on React, web development, and performance optimization.",
     },
     {
       company: "Greytip",
@@ -295,15 +280,10 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
           ],
         },
       ],
-      href: "https://www.greytip.com/",
-      badges: [],
-      location: "Bengaluru, India",
       title: "Web Developer",
       logoUrl: "https://www.google.com/s2/favicons?domain=greytip.com&sz=128",
       start: "Jan 17",
       end: "Jan 19",
-      description:
-        "Rewrote the employee self-service portal from scratch — onboarding, leaves, attendance, payslips, a company feed, and a document manager. Solo on the frontend, owning the modules end-to-end. Built a server-driven UI framework — new screens landed as server config instead of handwritten components. Started an internal Angular + TypeScript training track for the team, and picked up the Rising Star award along the way.",
     },
     {
       company: "Eventifier",
@@ -312,15 +292,10 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       highlights: [
         "Built the livewall UI, moderation controls, and embeddable widgets that surfaced real-time social content across sites.",
       ],
-      href: "#",
-      badges: [],
-      location: "Bengaluru, India",
       title: "Front End Developer",
       logoUrl: "/logos/eventifier.png",
       start: "Oct 16",
       end: "Jan 17",
-      description:
-        "Brief stop at Eventifier, an SPA for moderating and embedding social-media livewalls (Twitter, Facebook, Instagram, Google+). Wrote frontend features, refactors, and Mocha test specs before the company wound down.",
     },
     {
       company: "In Time Tec",
@@ -333,15 +308,10 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
         "Established the frontend's unit-testing foundation with Karma and Jasmine.",
         "Ran internal talks on JavaScript and AngularJS to level up the team.",
       ],
-      href: "#",
-      badges: [],
-      location: "Jaipur, India",
       title: "Software Engineer",
       logoUrl: "/logos/in-time-tec.png",
       start: "Jul 14",
       end: "Oct 16",
-      description:
-        "Built the frontend for Cartos, a managed-print SaaS where fleet designers uploaded floor maps and plotted enterprise printers onto an HTML5 Canvas. Owned the architecture on a MEAN-stack SPA — the Canvas/Konva UI layer, the service layer to the API, and a Karma + Jasmine unit-test setup.",
     },
   ],
   projects: [

@@ -86,8 +86,33 @@ export default function WorkSection() {
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="p-0 pt-2 text-xs sm:text-sm text-muted-foreground whitespace-pre-line">
-                  {work.description}
+                <AccordionContent className="p-0 pt-3 text-xs sm:text-sm text-muted-foreground">
+                  <div className="flex flex-col gap-3">
+                    {work.blurb && <p>{work.blurb}</p>}
+                    {work.highlights && work.highlights.length > 0 && (
+                      <ul className="list-disc pl-4 flex flex-col gap-1.5 marker:text-muted-foreground/50">
+                        {work.highlights.map((h, i) => (
+                          <li key={i}>{h}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {"subsections" in work &&
+                      work.subsections.map((sub) => (
+                        <div key={sub.label} className="flex flex-col gap-1.5">
+                          <h4 className="font-medium text-foreground/80">
+                            {sub.label}
+                          </h4>
+                          {"blurb" in sub && sub.blurb && <p>{sub.blurb}</p>}
+                          {sub.highlights && sub.highlights.length > 0 && (
+                            <ul className="list-disc pl-4 flex flex-col gap-1.5 marker:text-muted-foreground/50">
+                              {sub.highlights.map((h, i) => (
+                                <li key={i}>{h}</li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             </TimelineItem>
