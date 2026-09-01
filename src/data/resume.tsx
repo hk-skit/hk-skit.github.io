@@ -195,7 +195,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
           blurb:
             "Spectrum was the pivot back into Shopify — Tectonic's growth platform for D2C brands, consolidating 30+ storefront apps into one system with experimentation, personalization, and playbooks. I led its UI and migrated existing stores onto it.",
           highlights: [
-            "Built Spectrum's Studio — a visual builder with A/B testing and personalization baked in, so merchant teams build and target storefront experiences on Shopify themselves.",
+            "Built Spectrum's Studio — a visual builder with A/B testing and personalization baked in, letting merchants tailor the storefront to different customer cohorts.",
             "Developed the Spectrum Shopify app — one install that wires the platform into a merchant's store, unlocking the theme and data everything else runs on.",
             "Improved GTmetrix grades from E–F to A–B — replacing third-party app bloat with Shopify-native Spectrum sections, blocks, and snippets rendered server-side.",
             "Introduced AI-assisted development across the team — Claude skills, commands, and hooks that encode and enforce Spectrum's theme and performance standards, so the team ships safely with AI.",
@@ -210,7 +210,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       start: "Jul 23",
       end: "May 26",
       description:
-        "Founding-team engineer co-building Tectonic's storefront platform from scratch — a multi-tenant headless storefront platform for Shopify brands. Tectonic owns everything a shopper sees and a brand team configures — visual page building, merchandising rules through a small scripting language, A/B experiments, and personalization, all on one surface. Web runs on Remix, the app on Capacitor JS, both rendering through the same pipeline. Brand teams iterate live — layouts, experiments, and personalization ship without engineering in the loop. Leading UI engineering across web and app.",
+        "Founding engineer on Tectonic, a growth platform for D2C Shopify brands — I led UI across web and app. I built the first version from scratch — a schema-driven system of primitives that composed storefronts across web (Remix) and a mobile app (Capacitor) from a single pipeline, with experiments and personalization built in. It lifted conversion 30–50% on nearly every storefront it onboarded, helping grow the platform to $1M ARR. When Tectonic pivoted to build natively on Shopify, I led UI through the rebuild — Spectrum, one system that folded 30-plus storefront apps into a Shopify-native platform, with a visual builder merchants run themselves. I also introduced AI-assisted development across the team, building the tooling that lets us ship safely with it.",
     },
     {
       company: "Virgio",
