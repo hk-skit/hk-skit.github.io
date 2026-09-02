@@ -36,7 +36,7 @@ const sectionComponents: Record<string, React.ReactNode> = {
               href="/resume"
               className="text-sm text-muted-foreground underline decoration-muted-foreground/40 underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground"
             >
-              Resume
+              Résumé
             </a>
           </div>
         </BlurFade>
