@@ -30,7 +30,15 @@ const sectionComponents: Record<string, React.ReactNode> = {
     <section id="work">
       <div className="flex min-h-0 flex-col gap-y-6">
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
-          <h2 className="text-xl font-bold">{DATA.sections.work.heading}</h2>
+          <div className="flex items-center justify-between gap-4">
+            <h2 className="text-xl font-bold">{DATA.sections.work.heading}</h2>
+            <a
+              href="/resume"
+              className="text-sm text-muted-foreground underline decoration-muted-foreground/40 underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground"
+            >
+              Résumé
+            </a>
+          </div>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 6}>
           <WorkSection />

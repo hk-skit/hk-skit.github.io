@@ -1,0 +1,431 @@
+/*
+ * Standalone /resume document — sidebar-forward, information-dense layout.
+ * Left: tinted sidebar (avatar, identity, contact, proficiencies, education,
+ * social). Right: profile + experience (blurb + bullets per role).
+ * Monochrome: the tint is a light-gray theme token, never a color.
+ * Screen collapses to a single column on mobile; print is A4, light, with the
+ * sidebar tint bleeding to the page edge and roles kept whole.
+ */
+
+.resume-page {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Toolbar: back link + action buttons (screen only) */
+.resume-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.resume-back {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+.resume-back:hover {
+  color: var(--foreground);
+}
+.resume-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.resume-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  cursor: pointer;
+  background: var(--background);
+  color: var(--foreground);
+}
+.resume-action svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+.resume-action:hover {
+  background: var(--muted);
+}
+.resume-action:focus-visible,
+.resume-back:focus-visible,
+.resume a:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Theme toggle: moon offers "go dark" in light mode, sun offers "go light" in
+ * dark mode. Only one icon shows at a time, driven by the `.dark` class the
+ * toggle flips on <html>. */
+.dark {
+  color-scheme: dark;
+}
+.resume-theme-moon {
+  display: inline-flex;
+}
+.resume-theme-sun {
+  display: none;
+}
+.dark .resume-theme-moon {
+  display: none;
+}
+.dark .resume-theme-sun {
+  display: inline-flex;
+}
+
+/* The document card: tinted sidebar + main column */
+.resume {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--background);
+}
+.resume-sidebar {
+  background: var(--secondary);
+  padding: 2rem 1.5rem;
+}
+.resume-main {
+  padding: 2rem 1.75rem;
+}
+
+/* Sidebar identity */
+.resume-avatar {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  object-position: 35% center;
+  display: block;
+  margin-bottom: 1.1rem;
+}
+.resume-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.resume-title {
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+  margin: 0.15rem 0 1.25rem;
+}
+
+/* Sidebar contact rows: label + value */
+.resume-contact {
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.resume-contact-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+.resume-contact-row dt {
+  color: var(--muted-foreground);
+}
+.resume-contact-row dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.resume-contact a {
+  color: inherit;
+  text-decoration: none;
+}
+.resume-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar sections */
+.resume-sidebar .resume-sec {
+  margin-top: 1.5rem;
+}
+.resume-sidebar .resume-sec > h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+.resume-prof {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.resume-prof-group dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  margin-bottom: 0.1rem;
+}
+.resume-prof-group dd {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.resume-edu + .resume-edu {
+  margin-top: 0.6rem;
+}
+.resume-edu-degree {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.resume-edu-school {
+  font-size: 0.85rem;
+}
+.resume-edu-meta {
+  color: var(--muted-foreground);
+  font-size: 0.78rem;
+  margin-top: 0.1rem;
+}
+.resume-social {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.resume-social li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.resume-social-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+}
+.resume-social-icon svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+.resume-social a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+.resume-social a:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+}
+
+/* Main column */
+.resume-main .resume-sec {
+  margin-bottom: 1.75rem;
+}
+.resume-main .resume-sec > h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+.resume-summary {
+  margin-top: 0.1rem;
+}
+/* Inline links inside summary points: clearly clickable but still monochrome. */
+.resume-summary a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Experience */
+.resume-role {
+  margin-bottom: 1.25rem;
+}
+.resume-role-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.resume-role-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.resume-role-dates {
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.resume-role-blurb {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0.3rem 0 0.5rem;
+}
+.resume-bullets {
+  padding-left: 1.1rem;
+}
+.resume-bullets li {
+  list-style: disc;
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* A role that spans multiple products: labeled sub-blocks, each with bullets. */
+.resume-subsection {
+  margin-top: 0.55rem;
+}
+.resume-subsection-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.resume-subsection-blurb {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 0.4rem;
+}
+
+.print-only {
+  display: none;
+}
+
+/* Mobile: sidebar stacks on top */
+@media (max-width: 680px) {
+  .resume-page {
+    padding: 1.5rem 1rem 3rem;
+  }
+  .resume {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print / PDF */
+@media print {
+  /*
+   * Firewall against dark mode: paper is always light. Reset every
+   * theme-sensitive token to its light value for both :root and .dark, so
+   * printing while the screen is dark can't produce a dark sidebar tint or
+   * invisible white-on-white body text. Kept in sync with global.css :root.
+   */
+  :root,
+  .dark {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --secondary: oklch(0.97 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --border: oklch(0.922 0 0);
+    color-scheme: light;
+  }
+  @page {
+    size: A4;
+    /* No page margin: the sidebar tint bleeds to all four edges. */
+    margin: 0;
+  }
+  html {
+    font-size: 100%;
+  }
+  body {
+    background: #fff;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .resume-contact-row.print-only {
+    display: grid;
+  }
+  .resume-page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  /*
+   * Paint the sidebar tint as a gradient on the whole card so it fills the
+   * left 30% on every printed page — a column background alone stops where
+   * the sidebar content ends, leaving page 2 white below it.
+   */
+  .resume {
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    background: linear-gradient(
+      to right,
+      var(--secondary) 0 30%,
+      var(--background) 30% 100%
+    );
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  /*
+   * Top padding lives inside the columns (not the page) so the tint stays
+   * edge-to-edge; sides/bottom stay tight to fit more content.
+   * box-decoration-break: clone re-applies the top/bottom padding on every
+   * printed page, so pages 2+ get the same top breathing room as page 1.
+   */
+  .resume-sidebar,
+  .resume-main {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  .resume-sidebar {
+    background: transparent;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 12mm 3mm;
+  }
+  .resume-main {
+    padding: 12mm 6mm;
+  }
+  /*
+   * The print sidebar is far narrower than on screen, so tighten the contact
+   * label column and let values wrap only at word boundaries — never mid-word.
+   */
+  .resume-contact-row {
+    grid-template-columns: 4rem 1fr;
+  }
+  .resume-contact-row dd,
+  .resume-social a {
+    overflow-wrap: break-word;
+  }
+  .resume-social a {
+    font-size: 0.72rem;
+  }
+  /*
+   * Let roles flow across page breaks so each column fills top-to-bottom,
+   * instead of bumping a whole role to the next page and leaving a gap (a long
+   * role like the lead one is taller than a page and would break anyway).
+   * Protect the smaller units instead: never strand a section/role/subsection
+   * heading at the foot of a page, and never split a single bullet, blurb, or
+   * role title across a page break.
+   */
+  .resume-main .resume-sec > h2,
+  .resume-role-head,
+  .resume-subsection-label {
+    break-after: avoid;
+  }
+  .resume-role-head,
+  .resume-role-blurb,
+  .resume-bullets li {
+    break-inside: avoid;
+  }
+  /* Education entries are short — keep each one whole. */
+  .resume-edu {
+    break-inside: avoid;
+  }
+  .resume a {
+    color: #000;
+    text-decoration: none;
+  }
+  .resume-social a,
+  .resume-social-icon,
+  .resume-contact a,
+  .resume-role-dates,
+  .resume-edu-meta,
+  .resume-prof-group dt {
+    color: #000;
+  }
+}

@@ -1,0 +1,226 @@
+---
+export const prerender = true;
+import ResumeLayout from "@/layouts/ResumeLayout.astro";
+import { DATA } from "@/data/resume";
+import { Icons } from "@/components/icons";
+
+const stripUrl = (u: string) =>
+  u.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
+
+const social = DATA.contact.social;
+const presentLabel = DATA.sections.work.presentLabel;
+
+// Summary points may embed a [label](url) markdown link; split into text/link
+// segments so they render as real anchors (same link syntax DATA uses elsewhere).
+type Segment = { t: "text"; v: string } | { t: "link"; v: string; href: string };
+const parseInlineLinks = (text: string): Segment[] => {
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const segments: Segment[] = [];
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) segments.push({ t: "text", v: text.slice(last, m.index) });
+    segments.push({ t: "link", v: m[1], href: m[2] });
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) segments.push({ t: "text", v: text.slice(last) });
+  return segments;
+};
+
+// Social links shown in the sidebar as icon + full, resolvable handle.
+const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
+
+// Toolbar icons: view-as-Markdown, print / download-PDF, and theme toggle.
+const PrinterIcon = Icons.printer;
+const FileTextIcon = Icons.filetext;
+const SunIcon = Icons.sun;
+const MoonIcon = Icons.moon;
+---
+
+<ResumeLayout>
+  <div class="resume-page">
+    <div class="resume-toolbar no-print">
+      <a href="/" class="resume-back">← hiteshkumar.dev</a>
+      <div class="resume-actions">
+        <a
+          href="/resume.md"
+          class="resume-action"
+          target="_blank"
+          rel="noopener"
+          aria-label="View as Markdown"
+          title="View as Markdown"
+        >
+          <FileTextIcon aria-hidden="true" />
+        </a>
+        <button
+          type="button"
+          class="resume-action"
+          onclick="window.print()"
+          aria-label="Print / Download PDF"
+          title="Print / Download PDF"
+        >
+          <PrinterIcon aria-hidden="true" />
+        </button>
+        <button
+          type="button"
+          class="resume-action resume-theme"
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+        >
+          <span class="resume-theme-moon"><MoonIcon aria-hidden="true" /></span>
+          <span class="resume-theme-sun"><SunIcon aria-hidden="true" /></span>
+        </button>
+      </div>
+    </div>
+
+    <main class="resume">
+      <aside class="resume-sidebar">
+        <img
+          class="resume-avatar"
+          src={DATA.avatarUrl}
+          alt={DATA.name}
+          width="128"
+          height="128"
+        />
+        <h1 class="resume-name">{DATA.name}</h1>
+        <p class="resume-title">{DATA.resume.headline}</p>
+
+        <dl class="resume-contact">
+          <div class="resume-contact-row print-only">
+            <dt>Telephone</dt>
+            <dd>{DATA.contact.tel}</dd>
+          </div>
+          <div class="resume-contact-row">
+            <dt>Email</dt>
+            <dd><a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a></dd>
+          </div>
+          <div class="resume-contact-row">
+            <dt>Website</dt>
+            <dd><a href={DATA.url}>{stripUrl(DATA.url)}</a></dd>
+          </div>
+          <div class="resume-contact-row">
+            <dt>Writings</dt>
+            <dd><a href={social.Blog.url}>{stripUrl(social.Blog.url)}</a></dd>
+          </div>
+          <div class="resume-contact-row">
+            <dt>Address</dt>
+            <dd>{DATA.location}</dd>
+          </div>
+        </dl>
+
+        <section class="resume-sec">
+          <h2>Proficiencies</h2>
+          <dl class="resume-prof">
+            {DATA.skills.map((g) => (
+              <div class="resume-prof-group">
+                <dt>{g.label}</dt>
+                <dd>
+                  {"lines" in g
+                    ? g.lines.map((line) => (
+                        <div class="resume-prof-line">{line.join(", ")}</div>
+                      ))
+                    : g.items.join(", ")}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <section class="resume-sec">
+          <h2>Education</h2>
+          {DATA.education.map((e) => (
+            <div class="resume-edu">
+              <p class="resume-edu-degree">{e.degree} {e.field}</p>
+              <p class="resume-edu-school">{e.school}</p>
+              <p class="resume-edu-meta">{e.start}&ndash;{e.end} &middot; {e.location}</p>
+            </div>
+          ))}
+        </section>
+
+        <section class="resume-sec">
+          <h2>Social</h2>
+          <ul class="resume-social">
+            {socialLinks.map((s) => {
+              const Icon = s.icon;
+              return (
+                <li>
+                  <span class="resume-social-icon"><Icon /></span>
+                  <a href={s.url}>{stripUrl(s.url)}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      </aside>
+
+      <div class="resume-main">
+        <section class="resume-sec">
+          <h2>Summary</h2>
+          <ul class="resume-bullets resume-summary">
+            {DATA.resume.summary.map((point) => (
+              <li>
+                {parseInlineLinks(point).map((seg) =>
+                  seg.t === "link" ? (
+                    <a href={seg.href} target="_blank" rel="noopener noreferrer">{seg.v}</a>
+                  ) : (
+                    seg.v
+                  )
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section class="resume-sec">
+          <h2>Experience</h2>
+          {DATA.work.map((job) => (
+            <article class="resume-role">
+              <div class="resume-role-head">
+                <h3 class="resume-role-title">{job.title} &middot; {job.company}</h3>
+                <span class="resume-role-dates">
+                  {job.start} &ndash; {job.end ?? presentLabel}
+                </span>
+              </div>
+              {job.blurb && <p class="resume-role-blurb">{job.blurb}</p>}
+              {job.highlights && job.highlights.length > 0 && (
+                <ul class="resume-bullets">
+                  {job.highlights.map((h) => <li>{h}</li>)}
+                </ul>
+              )}
+              {"subsections" in job &&
+                job.subsections.map((sub) => (
+                  <div class="resume-subsection">
+                    <h4 class="resume-subsection-label">{sub.label}</h4>
+                    {"blurb" in sub && sub.blurb && (
+                      <p class="resume-subsection-blurb">{sub.blurb}</p>
+                    )}
+                    {sub.highlights && sub.highlights.length > 0 && (
+                      <ul class="resume-bullets">
+                        {sub.highlights.map((h) => <li>{h}</li>)}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+            </article>
+          ))}
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Theme toggle: flips `.dark` and persists to the shared `theme` key.
+       Vanilla JS keeps /resume island-free; the FOUC script in the layout
+       applies the stored value before paint. -->
+  <script is:inline>
+    (function () {
+      var btn = document.querySelector(".resume-theme");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var isDark = document.documentElement.classList.toggle("dark");
+        try {
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+        } catch (_) {}
+      });
+    })();
+  </script>
+</ResumeLayout>
