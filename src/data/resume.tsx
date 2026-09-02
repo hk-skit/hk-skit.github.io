@@ -12,8 +12,8 @@ export const DATA = {
   location: "Bengaluru, India",
   locationLink: "",
   description:
-    "Senior architect. Building for the web since browsers were the hard part — not models.",
-  summary: `Over the past decade, I've built for the web across the full spectrum — large marketplaces like Myntra, B2B SaaS, and the founding teams of early-stage D2C startups. Quietly obsessed with craft, performance, and the long game of shipping.
+    "Senior architect. Building for web and mobile since browsers were the hard part — not models.",
+  summary: `Over the past decade, I've built for web and mobile across the full spectrum — large marketplaces like Myntra, B2B SaaS, and the founding teams of early-stage D2C startups. I'm quietly obsessed with craft, performance, and the long game of shipping.
 
 Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mornings, and travelling whenever I can — preferably hills and beaches. I binge documentaries, and occasionally ramble at [smellycode](https://smellycode.com).`,
   avatarUrl: "/avatar.jpg",
