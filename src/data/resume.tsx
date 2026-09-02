@@ -337,7 +337,7 @@ Off the keyboard, I'm raising a toddler, picking up the ukulele, walking most mo
       dates: "May 1, 2020",
       description:
         "A tour of bitwise operators in JavaScript, with practical tricks for when bits beat arithmetic.",
-      image: "",
+      image: "/articles/js-bithacks.jpg",
     },
     {
       title: "Building an Accordion with React Hooks",
