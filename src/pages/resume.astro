@@ -30,7 +30,7 @@ const parseInlineLinks = (text: string): Segment[] => {
 // Social links shown in the sidebar as icon + full, resolvable handle.
 const socialLinks = [social.GitHub, social.LinkedIn, social.StackOverflow];
 
-// Toolbar icons: view-as-Markdown, print / download-PDF, and theme toggle.
+// Toolbar icons: view-as-Markdown, download-PDF, and theme toggle.
 const PrinterIcon = Icons.printer;
 const FileTextIcon = Icons.filetext;
 const SunIcon = Icons.sun;
@@ -52,15 +52,16 @@ const MoonIcon = Icons.moon;
         >
           <FileTextIcon aria-hidden="true" />
         </a>
-        <button
-          type="button"
+        <a
+          href="/resume.pdf"
           class="resume-action"
-          onclick="window.print()"
-          aria-label="Print / Download PDF"
-          title="Print / Download PDF"
+          target="_blank"
+          rel="noopener"
+          aria-label="Download PDF"
+          title="Download PDF"
         >
           <PrinterIcon aria-hidden="true" />
-        </button>
+        </a>
         <button
           type="button"
           class="resume-action resume-theme"
