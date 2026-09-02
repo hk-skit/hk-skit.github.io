@@ -36,7 +36,7 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
 
 export default function WorkSection() {
   return (
-    <Accordion type="single" collapsible className="w-full">
+    <Accordion type="multiple" className="w-full">
       <Timeline className="px-0">
         {DATA.work.map((work, idx) => {
           const itemValue = `${work.company}-${work.title}-${idx}`;
@@ -61,9 +61,16 @@ export default function WorkSection() {
                           <ChevronRight
                             className={cn(
                               "absolute h-3.5 w-3.5 shrink-0 text-muted-foreground stroke-2 transition-all duration-300 ease-out",
-                              "translate-x-0 opacity-0",
-                              "group-hover/row:translate-x-1 group-hover/row:opacity-100",
-                              "group-data-[state=open]/row:opacity-0 group-data-[state=open]/row:translate-x-0"
+                              // Visible by default so touch devices (no hover) show
+                              // the expand affordance. On hover-capable devices,
+                              // revert to the hidden-until-hover reveal.
+                              "translate-x-0 opacity-100",
+                              "[@media(hover:hover)]:opacity-0",
+                              "[@media(hover:hover)]:group-hover/row:translate-x-1 [@media(hover:hover)]:group-hover/row:opacity-100",
+                              // !important so an open row's chevron stays hidden even
+                              // while hovered (open-hide vs hover-reveal are otherwise
+                              // an equal-specificity, source-order tie).
+                              "group-data-[state=open]/row:!opacity-0 group-data-[state=open]/row:translate-x-0"
                             )}
                           />
                           <ChevronDown
